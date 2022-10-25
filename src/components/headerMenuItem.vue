@@ -1,5 +1,9 @@
 <template>
-  <router-link :to="{ path: link }">{{ title }}</router-link>
+  <router-link
+    :to="{ path: link }"
+    class="p-2 hover:bg-indigo-500 hover:text-white hover:border-indigo-700 rounded-xl"
+    >{{ title }}</router-link
+  >
 </template>
 
 <script>
