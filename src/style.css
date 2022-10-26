@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-normal {
+    @apply text-xl;
+}
+.grid-of-12-container {
+    @apply grid grid-cols-12;
+}
+
+.cols-2-10 {
+    @apply col-start-2 col-span-10;
+}
+
+.blog-container-grid-2-1 {
+    @apply grid grid-cols-1 md:grid-cols-2 p-8 pt-6 gap-10 mt-10 items-center
+    bg-blue-100 border-indigo-50 rounded-3xl;
+}
+
+.blog-title {
+    @apply text-3xl pb-4 text-center underline;
+}
+
+.blog-image-mobile {
+    @apply flex md:hidden py-4;
+}
+
+.blog-image-desktop {
+    @apply hidden md:flex border rounded-3xl;
+}
+
+.blog-text {
+    @apply text-xl text-center;
+}
+
