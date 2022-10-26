@@ -1,7 +1,9 @@
 <template>
-  <div class="grid-of-12-container">
+  <div class="grid-of-12-container bg-slate-500">
     <div class="cols-2-10">
-      <div class="text-5xl text-center p-4 py-6 font-semibold">My therapy is sport!</div>
+      <div class="text-5xl text-center p-4 py-6 font-semibold text-white tracking-wide">
+        My therapy is sport!
+      </div>
       <div class="text-normal bg-indigo-200 px-8 py-6 border-indigo-50 rounded-2xl">
         &emsp; &emsp; I like to keep my mind and my body in shape. This helps me reach my maximum
         potential. There is a saying:
@@ -45,7 +47,7 @@
       <div class="blog-container-grid-2-1">
         <div>
           <div class="blog-title">Gym</div>
-          <img src="../assets/basketball.jpg" class="blog-image-mobile" />
+          <img src="../assets/gym.jpeg" class="blog-image-mobile" />
           <div class="blog-text">
             "There are many things I like about the weight room. One of them is the fact that it
             helps me grow in strength and muscle size, but I use the gym to get better at movements
@@ -53,13 +55,13 @@
             like jumping."
           </div>
         </div>
-        <img class="blog-image-desktop" src="../assets/basketball.jpg" />
+        <img class="blog-image-desktop" src="../assets/gym.jpeg" />
       </div>
       <div class="blog-container-grid-2-1 mb-10">
-        <img class="blog-image-desktop" src="../assets/basketball.jpg" />
+        <img class="blog-image-desktop" src="../assets/pingpong.jpeg" />
         <div>
           <div class="blog-title">Ping-Pong</div>
-          <img src="../assets/basketball.jpg" class="blog-image-mobile" />
+          <img src="../assets/pingpong.jpeg" class="blog-image-mobile" />
           <div class="blog-text">
             "Ping pong is a great sport in my opinion. It demonstrates that consistency is key to
             perfecting and that the little things count. I also like the fact that it trains the
