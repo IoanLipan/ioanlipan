@@ -1,19 +1,19 @@
 <template>
-  <div class="grid-of-12-container bg-slate-500">
+  <div class="grid-of-12-container">
     <div class="cols-2-10">
-      <div class="text-5xl text-center p-4 py-6 font-semibold text-white tracking-wide">
+      <div class="text-5xl text-center p-4 py-6 font-semibold tracking-wide">
         My therapy is sport!
       </div>
-      <div class="text-normal bg-indigo-200 px-8 py-6 border-indigo-50 rounded-2xl">
-        &emsp; &emsp; I like to keep my mind and my body in shape. This helps me reach my maximum
+      <div class="text-normal bg-indigo-100 px-8 py-6 border-indigo-50 rounded-2xl">
+        &emsp; I like to keep my mind and my body in shape. This helps me reach my maximum
         potential. There is a saying:
-        <HoverText text="Mens sano in corpore sano"></HoverText>
+        <HoverText text="Mens sano in corpore sano" />
         . If problem-solving keeps the brain active and healthy, the same is with sports and the
         body. Nowadays, most of the people are negligent towards their body, especially programmers.
         The body reacts to what it is doing most of the time. Having a
-        <HoverText text="sedentary job"></HoverText>
+        <HoverText text="sedentary job" />
         and 10+ hours of screentime should not be a motivation to adopt a
-        <HoverText text="sedentary lifestyle"></HoverText>
+        <HoverText text="sedentary lifestyle" />
         . In order to compensate for the physical inactivity of my job, I play every sport that I
         can, whenever I have the occasion.
       </div>

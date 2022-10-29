@@ -1,8 +1,8 @@
 <template>
   <a
-    class="flex justify-center w-fit gap-2 items-center justify-self-center p-1 px-3
-    bg-indigo-100 cursor-pointer border-collapse border-4 rounded-xl border-indigo-300
-    hover:bg-indigo-500 hover:text-white hover:border-indigo-100"
+    class="flex justify-center w-fit gap-2 items-center justify-self-center p-0.5 px-2
+    cursor-pointer border-2 rounded-xl bg-gray-300 border-gray-600
+    hover:bg-gray-400 hover:border-gray-800"
     :href="url"
   >
     <div><svgIcon :name=image /></div>

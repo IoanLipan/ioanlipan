@@ -1,6 +1,6 @@
 <template>
-  <div class="grid-of-12-container mt-auto">
-    <div class="col-start-2 col-span-8">
+  <div class="grid-of-12-container my-10">
+    <div class="col-start-3 col-span-8">
       <ol class="relative border-l border-gray-200">
         <li class="ml-10 mb-10">
           <span class="flex absolute -left-5 justify-center items-center w-10 h-10
