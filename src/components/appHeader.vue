@@ -1,37 +1,20 @@
 <template>
-  <nav class="h-16 md:h-16">
-    <!-- desktop menu -->
-    <div class="hidden fixed w-full bg-black p-[10px] md:grid grid-cols-12 text-white">
-      <div class="col-start-2 col-span-10 flex justify-between items-center">
-        <!-- menu -->
-        <HeaderMenuItem title="Ioan Lipan" link="/" class="text-normal" />
-        <HeaderMenuItem title="Web-Developer" link="/web-dev" />
-        <div @click="onClickAbout()" class="flex flex-col text-center items-center">
-          <HeaderMenuItem class="z-10" title="About me" />
-          <div
-            v-if="showDropdown"
-            class="flex flex-col absolute pt-10 bg-gray-800 border border-gray-800 rounded-xl"
-          >
-            <HeaderMenuItem title="Engineer" link="/engineer" />
-            <HeaderMenuItem title="Athlete" link="/athlete" />
-            <HeaderMenuItem title="Problem-Solver" link="/problem-solver" />
-          </div>
+  <nav class="h-[72px] md:h-20">
+    <div class="w-full fixed bg-black p-5 text-white">
+      <div class="grid grid-cols-3 items-center">
+        <div class="space-y-2 w-8 ease-in transition-all duration-500" @click="toggleMenu">
+          <div :class="['h-0.5 bg-gray-200 transition-all duration-400',
+            showMenu ? 'rotate-45 translate-y-[5px]' : '']" />
+          <div :class="['h-0.5 bg-gray-200 transition-all duration-300',
+            showMenu ? 'hidden' : '']" />
+          <div :class="['h-0.5 bg-gray-200 transition-all duration-400',
+            showMenu ? '-rotate-45 -translate-y-[5px]' : '']" />
         </div>
+        <h1 class="font-cinzel text-2xl md:text-4xl col-span-2 md:col-span-1 text-center">
+          Ioan Lipan
+        </h1>
       </div>
-    </div>
-    <!-- mobile menu -->
-    <div class="md:hidden w-full fixed bg-black p-6 text-white">
-      <div v-if="!showMobileMenu" class="space-y-2 w-8" @click="toggleMenu">
-        <div class="h-0.5 bg-gray-200" />
-        <div class="h-0.5 bg-gray-200" />
-        <div class="h-0.5 bg-gray-200" />
-      </div>
-      <div v-else class="space-y-2 w-8" @click="toggleMenu">
-        <div class="w-8 h-0.5 bg-gray-200 rotate-45 translate-y-[10px]" />
-        <div class="w-8 h-0.5 " />
-        <div class="w-8 h-0.5 bg-gray-200 -rotate-45 translate-y-[-10px]" />
-      </div>
-      <div v-show="showMobileMenu" class="h-[92vh] z-50">
+      <div v-show="showMenu" class="h-[92vh] z-50 md:max-w-[40vw]">
         <div class="h-full flex flex-col gap-10 text-3xl pl-5">
           <div></div>
           <HeaderMenuItem title="Home" link="/" @click="closeMenu" />
@@ -54,15 +37,15 @@ export default {
   data() {
     return {
       showDropdown: false,
-      showMobileMenu: false,
+      showMenu: false,
     };
   },
   methods: {
     toggleMenu() {
-      this.showMobileMenu = !this.showMobileMenu;
+      this.showMenu = !this.showMenu;
     },
     closeMenu() {
-      this.showMobileMenu = false;
+      this.showMenu = false;
     },
     onClickAbout() {
       this.showDropdown = !this.showDropdown;
