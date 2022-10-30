@@ -1,7 +1,7 @@
 <template>
   <router-link
     :to="{ path: link }"
-    class="p-2 hover:bg-gray-500 hover:text-white hover:border-gray-700 rounded-xl"
+    class="p-2 font-cinzel"
     >{{ title }}</router-link
   >
 </template>

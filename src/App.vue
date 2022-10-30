@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="min-h-screen flex flex-col bg-slate-800">
     <AppHeader />
-    <router-view class="-z-10"/>
+    <router-view class=""/>
     <AppFooter />
   </div>
 </template>
