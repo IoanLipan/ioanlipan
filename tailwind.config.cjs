@@ -5,7 +5,13 @@ module.exports = {
     './src/**/*.{vue,js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        superstar: ['SUPERSTAR'],
+        cinzel: ['Cinzel'],
+        coolvetica: ['Coolvetica'],
+      },
+    },
   },
   plugins: [],
 };
