@@ -9,6 +9,8 @@
         <div>puzzle</div>
         <div>other rubiks</div>
         <div>math</div>
+        <div>lego</div>
+        <div>chess</div>
       </div>
       <div class="text-5xl">this is the problem solving page</div>
     </div>
