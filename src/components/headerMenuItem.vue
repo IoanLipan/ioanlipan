@@ -1,7 +1,7 @@
 <template>
   <router-link
     :to="{ path: link }"
-    class="p-2 font-cinzel"
+    class="p-2 font-mono"
     >{{ title }}</router-link
   >
 </template>
