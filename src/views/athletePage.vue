@@ -1,10 +1,11 @@
 <template>
   <div class="grid-of-12-container bg-slate-800">
-    <div class="cols-2-10 font-mono text-white">
+    <div class="p-4 md:p-0 col-start-1 col-span-12 font-mono text-white
+                md:col-start-2 md:col-span-10">
       <h1 class="text-4xl md:text-6xl text-center font-superstar p-4 py-6 tracking-wider">
         My therapy is sport and healthy competition!
       </h1>
-      <p class="text-lg px-8 py-6 tracking-wide rounded-2xl">
+      <p class="text-sm md:text-lg text-center px-8 py-6 tracking-wide rounded-2xl">
         &emsp; I like to keep my mind and my body in shape. This helps me reach my maximum
         potential. There is a saying: Mens sano in corpore sano
         . If problem-solving keeps the brain active and healthy, the same is with sports and the

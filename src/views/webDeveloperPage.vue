@@ -1,6 +1,6 @@
 <template>
   <div class="grid-of-12-container">
-    <div class="text-white text-2xl text-center font-mono tracking-widest leading-relaxed
+    <div class="text-white md:text-2xl text-center font-mono tracking-widest leading-relaxed
       col-start-2 col-span-10 md:col-start-4 md:col-span-6 pt-10">
       Programming is my passion. My mindstate is that anything can be
       <span class="text-blue-400">&lt;created&gt;</span>,
