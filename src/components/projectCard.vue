@@ -7,7 +7,7 @@
      w-fit mx-auto px-5 py-2 border-slate-600 rounded-xl bg-slate-500">
       {{ usedTech }}
     </h4>
-    <p class="text-sm">{{ description }}</p>
+    <p class="">{{ description }}</p>
   </div>
 </template>
 
