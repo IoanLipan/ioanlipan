@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-of-12-container bg-slate-800">
+  <container class="grid-of-12-container bg-slate-800">
     <div
       class="p-4 md:p-0 col-start-1 col-span-12 font-mono text-white md:col-start-2 md:col-span-10"
     >
@@ -21,7 +21,7 @@
         motivation to adopt a sedentary lifestyle. In order to compensate for the physical
         inactivity of my job, I play every sport that I can, whenever I have the occasion.
       </p>
-      <div class="blog-container-grid-2-1">
+      <container class="blog-container-grid-2-1">
         <div>
           <h1 class="blog-title" v-motion-slide-left :delay="delay">Basketball</h1>
           <img
@@ -44,8 +44,8 @@
           v-motion-pop
           :delay="delay"
         />
-      </div>
-      <div class="blog-container-grid-2-1">
+      </container>
+      <container class="blog-container-grid-2-1">
         <img
           class="blog-image-desktop"
           src="../assets/kickbox.jpeg"
@@ -67,8 +67,8 @@
             and gas you in the first 2 minutes is insane!
           </p>
         </div>
-      </div>
-      <div class="blog-container-grid-2-1">
+      </container>
+      <container class="blog-container-grid-2-1">
         <div>
           <h1 class="blog-title" v-motion-slide-visible-left :delay="delay">Gym</h1>
           <img
@@ -90,8 +90,8 @@
           v-motion-pop-visible
           :delay="delay"
         />
-      </div>
-      <div class="blog-container-grid-2-1 mb-10">
+      </container>
+      <container class="blog-container-grid-2-1 mb-10">
         <img
           class="blog-image-desktop"
           src="../assets/pingpong.jpeg"
@@ -112,9 +112,9 @@
             agility, dexterity and the reaction time.
           </p>
         </div>
-      </div>
+      </container>
     </div>
-  </div>
+  </container>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white font-mono flex flex-col text-center gap-4 p-4
+  <container class="text-white font-mono flex flex-col text-center gap-4 p-4
     md:py-10 w-full md:w-[40%] bg-slate-600 border-slate-600 rounded-xl mb-12" >
     <SvgIcon :name="imageName" class="self-center fill-white md:scale-100" />
     <h3 class="text-2xl text-lime-300 underline">{{ title }}</h3>
@@ -8,7 +8,7 @@
       {{ usedTech }}
     </h4>
     <p class="">{{ description }}</p>
-  </div>
+  </container>
 </template>
 
 <script>

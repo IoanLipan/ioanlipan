@@ -2,19 +2,19 @@
   <div class="min-h-screen flex flex-col bg-slate-800">
     <AppHeader />
     <router-view class=""/>
-    <AppFooter />
+    <ContactMe v-motion-pop />
   </div>
 </template>
 
 <script>
 import AppHeader from './components/appHeader.vue';
-import AppFooter from './components/appFooter.vue';
+import ContactMe from './components/footerMail.vue';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    AppFooter,
+    ContactMe,
   },
 };
 </script>
