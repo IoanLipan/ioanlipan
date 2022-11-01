@@ -27,7 +27,7 @@
     <div
       v-show="showMenu"
       class="h-[92vh] top-[72px] fixed z-50 bg-black md:bg-opacity-90
-      text-white w-full md:w-[36vw] xl:w-[25vw] px-6"
+      text-white w-full md:w-[36vw] xl:w-[25vw] px-6" v-motion-slide-visible-left
     >
       <div class="h-full flex flex-col gap-8 text-3xl pt-10 text-center md:text-left">
         <div></div>

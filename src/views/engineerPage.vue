@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-of-12-container py-10 bg-slate-800">
+  <div class="grid-of-12-container py-10 bg-slate-800 font-mono">
     <div class="col-start-3 col-span-8">
       <ol class="relative border-l border-gray-200">
         <li class="ml-10 mb-10">
