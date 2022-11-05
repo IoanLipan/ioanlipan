@@ -1,8 +1,8 @@
 <template>
   <div class="grid-of-12-container">
-    <div class="cols-2-10 mt-10 text-white">
-      <h1 class="font-cinzel text-3xl font-semibold">I'm always looking for challanges!</h1>
-      <p class="font-cinzel text">
+    <div class="cols-2-10 mt-10 font-mono text-white">
+      <h1 class="text-3xl font-semibold">I'm always looking for challanges!</h1>
+      <p class="text-lg">
         Anything that implies being smart and adaptable</p>
       <div class="text-normal">
         <div>rubiks speed cubing</div>

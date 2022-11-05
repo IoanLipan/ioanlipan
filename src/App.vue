@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col bg-slate-800">
     <AppHeader />
-    <router-view class=""/>
+    <router-view />
     <ContactMe v-motion-pop />
   </div>
 </template>

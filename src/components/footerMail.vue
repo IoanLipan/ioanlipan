@@ -1,5 +1,5 @@
 <template>
-  <container class="grid-of-12-container w-[100vw]">
+  <div class="grid-of-12-container w-[100vw]">
     <article
       class="col-start-2 col-span-10 lg:col-start-3 lg:col-span-8 2xl:mx-20
       p-4 md:p-6 bg-slate-700 border-slate-700
@@ -43,7 +43,7 @@
         />
       </form>
     </article>
-  </container>
+  </div>
 </template>
 
 <script>
