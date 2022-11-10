@@ -38,11 +38,11 @@
         <div v-if="!showAboutMe" @click="toggleAboutMe" class="p-2">🦁 About me ↘️</div>
         <div v-else class="flex flex-col gap-8 p-2" @click="toggleAboutMe">
           🦁 About me ↗️
-          <HeaderMenuItem title="🔧 Engineer" link="/engineer" @click="closeMenu" v-motion-pop />
-          <HeaderMenuItem title="⛹🏼‍♂️ Athlete" link="/athlete" @click="closeMenu" v-motion-pop />
+          <HeaderMenuItem title="🔧 Engineer" link="/engineer" @click="closeMenu" v-motion-fade />
+          <HeaderMenuItem title="⛹🏼‍♂️ Athlete" link="/athlete" @click="closeMenu" v-motion-fade />
           <HeaderMenuItem title="🧐 Problem-Solver"
             link="/problem-solver"
-            @click="closeMenu" v-motion-pop />
+            @click="closeMenu" v-motion-fade />
         </div>
       </div>
     </div>
