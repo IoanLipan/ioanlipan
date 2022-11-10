@@ -23,25 +23,71 @@
         motivation to adopt a sedentary lifestyle. In order to compensate for the physical
         inactivity of my job, I play every sport that I can, whenever I have the occasion.
       </p>
-      <TextWithRightImage v-motion-pop title="Basketball" image="basketball.jpg" text="I always liked basketball, but since it requires practice, I only started to be a good basketball player when I started practicing more and training even more. The feeling was the same as in programming. The better I got at scoring the ball, the more I loved the game and the more competitive I got. I am now pursuing a shooter role in a division 2 league in my country Romania, so good luck to me :D" />
-      <TextWithLeftImage title="Kick-Boxing" image="kickbox.jpeg" text="Kickboxing thaught me a lot about respect, conduite and hard work. If you want a sport that is very challenging on your cardio-vascular system, pick kickboxing. The amount of training that you have to do in order to perform good in kickboxing and not get tired and gas you in the first 2 minutes is insane!" />
-      <TextWithRightImage title="Gym" image="gym.jpeg" text="There are many things I like about the weight room. One of them is the fact that it helps me grow in strength and muscle size, but I use the gym to get better at movements that I want to improve for the sports I play. It helps me focus on my weaker movements like jumping." />
-      <TextWithLeftImage title="Ping-Pong" image="pingpong.jpeg" text="Ping pong is a great sport in my opinion. It demonstrates that consistency is key to perfecting and that the little things count. I also like the fact that it trains the agility, dexterity and the reaction time." />
+      <div v-for="article in athleteArticles" :key="article.title">
+        <TextWithImage
+          :imageIsRight="!!(article.articleNumber % 2)"
+          :title="article.title"
+          :text="article.text"
+          :image="article.image"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import TextWithLeftImage from '../components/textWithLeftImage.vue';
-import TextWithRightImage from '../components/textWithRightImage.vue';
+import { ref } from 'vue';
+import TextWithImage from '../components/textWithImage.vue';
 
 export default {
   name: 'AthletePage',
+  setup() {
+    /* eslint-disable global-require */
+    const athleteArticles = ref([
+      {
+        articleNumber: 1,
+        title: 'Basketball',
+        image: require('../assets/images/basketball.jpeg'),
+        text: `I always liked basketball, but since it requires practice, I only started to be a good
+        basketball player when I started practicing more and training even more. The feeling was the
+        same as in programming. The better I got at scoring the ball, the more I loved the game and the
+        more competitive I got. I am now pursuing a shooter role in a division 2 league in my country
+        Romania, so good luck to me :D`,
+      },
+      {
+        articleNumber: 2,
+        title: 'Kick-Boxing',
+        image: require('../assets/images/kickbox.jpeg'),
+        text: `Kickboxing thaught me a lot about respect, conduite and hard work. If you
+          want a sport that is very challenging on your cardio-vascular system, pick kickboxing.
+          The amount of training that you have to do in order to perform good in kickboxing and
+          not get tired and gas you in the first 2 minutes is insane!`,
+      },
+      {
+        articleNumber: 3,
+        title: 'Gym',
+        image: require('../assets/images/gym.jpeg'),
+        text: `There are many things I like about the weight room. One of them is the fact that
+        it helps me grow in strength and muscle size, but I use the gym to get better at movements
+        that I want to improve for the sports I play. It helps me focus on my weaker movements like jumping.`,
+      },
+      {
+        articleNumber: 4,
+        title: 'Ping-Pong',
+        image: require('../assets/images/pingpong.jpeg'),
+        text: `Ping pong is a great sport in my opinion. It demonstrates that consistency is key to
+        perfecting and that the little things count. I also like the fact that it trains the agility,
+        dexterity and the reaction time.`,
+      },
+    ]);
+    return { athleteArticles };
+    /* eslint-enable global-require */
+  },
   data() {
     return {
       delay: 200,
     };
   },
-  components: { TextWithRightImage, TextWithLeftImage },
+  components: { TextWithImage },
 };
 </script>
