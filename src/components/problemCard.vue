@@ -2,7 +2,7 @@
   <div class="text-center bg-slate-600 border-slate-800 border-2 rounded-2xl
    max-w-fit mx-auto flex flex-col justify-between cursor-grab
    h-[380px] sm:h-[480px] p-8">
-    <img class="h-48 sm:h-80 w-auto rounded-xl mx-auto" :src="imagePath" />
+    <img class="h-48 sm:h-80 w-auto rounded-xl mx-auto" :src="image" />
     <div>
       <div class="text-2xl pb-2">{{ title }}</div>
       <div class="max-w-lg mb2">{{ description }}</div>
@@ -24,15 +24,7 @@ export default {
     },
     image: {
       type: String,
-      default: 'placeholder.png',
-    },
-  },
-  computed: {
-    imagePath() {
-      if (this.image !== '') {
-        return require(`@/assets/images/${this.image}`);
-      }
-      return 0;
+      default: '',
     },
   },
 };

@@ -38,34 +38,36 @@ export default {
   name: 'ProblemSolverPage',
   components: { Swiper, SwiperSlide, ProblemCard },
   setup() {
+    /* eslint-disable global-require */
     const swiperProblems = ref([
       {
-        image: 'rubiks.jpeg',
+        image: require('../assets/images/rubiks.jpeg'),
         title: 'Rubiks Cube',
         description: "I can solve a rubik's cube in less than a minute",
       },
       {
-        image: 'chess.jpeg',
+        image: require('../assets/images/chess.jpeg'),
         title: 'Chess',
         description: 'I think chess is the best strategy game you can play',
       },
       {
-        image: 'jigsawPuzzle.jpeg',
+        image: require('../assets/images/jigsawPuzzle.jpeg'),
         title: 'Jigsaw Puzzle',
         description: 'These kind of puzzles train your patience. Trust me.',
       },
       {
-        image: 'otherRubiks.jpeg',
+        image: require('../assets/images/otherRubiks.jpeg'),
         title: 'Other Rubiks Puzzles',
         description: 'I tried almost evey variation of rubik puzzle',
       },
       {
-        image: 'mathLogic.jpeg',
+        image: require('../assets/images/mathLogic.jpeg'),
         title: 'Math and logic problems',
         description: 'I love math and logic',
       },
     ]);
     return { modules: [Pagination, Autoplay], swiperProblems };
+    /* eslint-enable global-require */
   },
 };
 </script>
