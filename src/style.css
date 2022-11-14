@@ -7,16 +7,6 @@
     src: url("../public/fonts/superstar_m54/Superstar\ M54.ttf");
 }
 
-@font-face {
-    font-family: "Cinzel";
-    src: url("../public/fonts/Cinzel/Cinzel-VariableFont_wght.ttf");
-}
-
-@font-face {
-    font-family: "Coolvetica";
-    src: url("../public/fonts/coolvetica/coolvetica\ rg.otf");
-}
-
 
 .grid-of-12-container {
     @apply grid grid-cols-12;
