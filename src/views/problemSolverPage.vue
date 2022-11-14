@@ -36,6 +36,7 @@ import 'swiper/swiper-bundle.min.css';
 
 export default {
   name: 'ProblemSolverPage',
+  // title: '🧐 Ioan Lipan - Problem Solver',
   components: { Swiper, SwiperSlide, ProblemCard },
   setup() {
     /* eslint-disable global-require */

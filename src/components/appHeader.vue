@@ -21,10 +21,10 @@
         </div>
         <router-link
           class="font-mono text-2xl md:text-4xl col-span-2 text-center"
-          to="/"
-          @click="closeMenu()"
-          >Ioan Lipan</router-link
-        >
+          to="/" @click="closeMenu()" >
+            Ioan Lipan
+        </router-link>
+        <img src="../assets/ILLogo.png" class="h-10 w-auto col-start-4 place-self-end" />
       </div>
     </div>
     <div
@@ -40,9 +40,12 @@
           🦁 About me ↗️
           <HeaderMenuItem title="🔧 Engineer" link="/engineer" @click="closeMenu" v-motion-fade />
           <HeaderMenuItem title="⛹🏼‍♂️ Athlete" link="/athlete" @click="closeMenu" v-motion-fade />
-          <HeaderMenuItem title="🧐 Problem-Solver"
+          <HeaderMenuItem
+            title="🧐 Problem-Solver"
             link="/problem-solver"
-            @click="closeMenu" v-motion-fade />
+            @click="closeMenu"
+            v-motion-fade
+          />
         </div>
       </div>
     </div>
