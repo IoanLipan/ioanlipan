@@ -6,7 +6,7 @@
       rounded-3xl mb-10 font-mono text-slate-100"
     >
       <h3 class="text-3xl py-6 text-center text-red-500">
-        Lets get your site up and running A.S.A.P.!
+        Let's get your site up and running A.S.A.P.!
       </h3>
       <form class="flex flex-col gap-4">
         <label class="text-xl text-yellow-400">Name:</label>
