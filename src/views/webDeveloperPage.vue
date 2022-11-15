@@ -50,6 +50,7 @@ import ProjectCard from '../components/projectCard.vue';
 
 export default {
   name: 'WebDevPage',
+  title: 'Ioan Lipan | Web-Dev',
   components: {
     ProjectCard,
   },

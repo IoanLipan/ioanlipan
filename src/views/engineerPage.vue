@@ -31,6 +31,7 @@ import TimeLineItem from '../components/timeLineItem.vue';
 
 export default {
   name: 'EngineerPage',
+  title: 'Ioan Lipan | Engineer',
   components: { TimeLineItem },
 };
 </script>

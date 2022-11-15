@@ -41,6 +41,7 @@ import TextWithImage from '../components/textWithImage.vue';
 
 export default {
   name: 'AthletePage',
+  title: 'Ioan Lipan | Athlete',
   setup() {
     /* eslint-disable global-require */
     const athleteArticles = ref([

@@ -17,5 +17,6 @@
 <script>
 export default {
   name: 'Not-found',
+  title: 'Ioan Lipan | Error 404',
 };
 </script>
