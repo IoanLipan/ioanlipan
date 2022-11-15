@@ -3,7 +3,7 @@
     <article
       class="col-start-2 col-span-10 lg:col-start-3 lg:col-span-8 2xl:mx-20
       p-4 md:p-6 bg-slate-700 border-slate-700
-      rounded-3xl mb-10 font-mono text-slate-100"
+      rounded-3xl my-10 font-mono text-slate-100"
     >
       <h3 class="text-3xl py-6 text-center text-red-500">
         Let's get your site up and running A.S.A.P.!

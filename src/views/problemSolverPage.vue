@@ -1,8 +1,30 @@
 <template>
   <div class="grid-of-12-container">
+    <!-- <svgIcon name="arrowLeft" class="fill-white col-span-1 col-start-1 align-middle" /> -->
     <div class="cols-2-10 mt-10 font-mono text-white text-center">
       <h1 class="text-3xl font-semibold">I'm always looking a new challenge!</h1>
       <p class="text-lg">Anything that implies being smart and adaptable</p>
+      <swiper
+        :modules="modules"
+        :space-between="20"
+        :slides-per-view="2"
+        :loop="true"
+        :pagination="{ clickable: true }"
+        :autoplay="{
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }"
+        class="my-10 hidden lg:block"
+      >
+        <swiper-slide v-for="problem in swiperProblems" :key="problem.description">
+          <ProblemCard
+            :image="problem.image"
+            :title="problem.title"
+            :description="problem.description"
+          />
+        </swiper-slide>
+      </swiper>
       <swiper
         :modules="modules"
         :space-between="20"
@@ -13,7 +35,7 @@
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }"
-        class="my-10"
+        class="my-10 block lg:hidden"
       >
         <swiper-slide v-for="problem in swiperProblems" :key="problem.description">
           <ProblemCard
@@ -29,7 +51,7 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
-import { Autoplay, Pagination } from 'swiper';
+import { Autoplay, Navigation, Pagination } from 'swiper';
 import { ref } from 'vue';
 import ProblemCard from '../components/problemCard.vue';
 import 'swiper/swiper-bundle.min.css';
@@ -67,7 +89,7 @@ export default {
         description: 'I love math and logic',
       },
     ]);
-    return { modules: [Pagination, Autoplay], swiperProblems };
+    return { modules: [Pagination, Autoplay, Navigation], swiperProblems };
     /* eslint-enable global-require */
   },
 };
