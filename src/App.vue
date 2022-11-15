@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen flex flex-col bg-slate-800">
     <AppHeader />
-    <router-view />
-    <ContactMe v-motion-pop />
+    <router-view class="max-w-fit" />
+    <ContactMe class="max-w-fit" v-motion-pop />
     <ScrollTopArrow />
   </div>
 </template>
