@@ -11,7 +11,7 @@
       <span class="text-yellow-400" v-motion-pop :delay="1000">&lt;broken/&gt;</span>
     </article>
     <div class="col-start-1 col-span-12 md:col-start-2 md:col-span-10">
-      <article class="text-normal p-5 sm:p-10 flex flex-row flex-wrap justify-evenly">
+      <article class="text-normal p-5 lg:p-10 flex flex-row flex-wrap justify-evenly">
         <ProjectCard
           title="UI library"
           usedTech="VueJS"

@@ -1,82 +1,73 @@
 <template>
   <div class="grid-of-12-container w-[100vw]">
     <article
-      class="col-start-2 col-span-10 lg:col-start-3 lg:col-span-8 2xl:mx-20
-      p-4 md:p-6 bg-slate-700 border-slate-700
-      rounded-3xl my-10 font-mono text-slate-100"
+      class="col-start-2 col-span-10 lg:col-start-3 lg:col-span-8 2xl:mx-20 p-4 md:p-6
+      bg-slate-700 border-slate-700 rounded-3xl my-10 font-mono text-slate-100"
     >
-      <h3 class="text-3xl py-6 text-center text-red-500">
-        Let's get your site up and running A.S.A.P.!
-      </h3>
-      <form class="flex flex-col gap-4">
+      <form
+        class="flex flex-col gap-4"
+        :action="FORM_ENDPOINT"
+        @submit="handleSubmit"
+        method="POST"
+        target="_blank"
+      >
+        <h3 class="text-3xl py-6 text-center text-red-500">
+          Let's get your site up and running A.S.A.P.!
+        </h3>
         <label class="text-xl text-yellow-400">Name:</label>
         <input
-          type="text"
-          v-model="name"
           name="name"
-          placeholder="Your Name"
+          type="text"
+          placeholder="Your Name ..."
+          required
           class="p-3 rounded-2xl focus:outline-none focus:bg-yellow-200 text-black"
         />
         <label class="text-xl text-blue-400">Email:</label>
         <input
-          type="email"
-          v-model="email"
           name="email"
-          placeholder="Your Email"
+          type="email"
+          placeholder="Your Email ..."
+          required
           class="p-3 rounded-2xl focus:outline-none focus:bg-blue-200 text-black"
         />
         <label class="text-xl text-green-500">Your idea:</label>
         <textarea
           name="message"
-          v-model="message"
           cols="30"
           rows="5"
-          placeholder="Extraordinary idea ..."
+          placeholder="Your extraordinary idea ..."
+          required
           class="p-3 rounded-2xl focus:outline-none focus:bg-green-200 text-black"
-        >
-        </textarea>
-
-        <input
-          type="submit"
-          value="Send"
-          class="text-2xl p-2 bg-slate-500 w-1/2 self-center rounded-xl focus:bg-red-400"
         />
+        <button
+          type="submit"
+          class="text-2xl p-2 bg-slate-500 w-1/2 self-center rounded-xl focus:bg-red-400"
+        >
+          Send
+        </button>
       </form>
+      <div v-if="submitted" class="text-center mt-10">
+        <h2 class="text-2xl">Thanks you!</h2>
+        <div class="text-md">We'll be in touch soon.</div>
+      </div>
     </article>
   </div>
 </template>
 
 <script>
-import emailjs from 'emailjs-com';
-
 export default {
   name: 'ContactMe',
   data() {
     return {
-      name: '',
-      email: '',
-      message: '',
+      submitted: false,
+      FORM_ENDPOINT: 'https://public.herotofu.com/v1/2004e660-6504-11ed-891b-4f350712a1f0',
     };
   },
   methods: {
-    sendEmail(e) {
-      const SERVICE_ID = 'service_ut4yb7j';
-      const TEMPLATE_ID = 'template_zglhvp7';
-      const USER_ID = 'tyHAdDh5Ey0ViOR3i';
-
-      try {
-        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID, {
-          name: this.name,
-          email: this.email,
-          message: this.message,
-        });
-      } catch (error) {
-        console.log({ error });
-      }
-      // Reset form field
-      this.name = '';
-      this.email = '';
-      this.message = '';
+    handleSubmit() {
+      setTimeout(() => {
+        this.submitted = true;
+      }, 100);
     },
   },
 };
