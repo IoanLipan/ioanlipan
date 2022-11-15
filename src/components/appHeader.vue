@@ -2,7 +2,8 @@
   <nav class="h-[72px] md:h-20 z-40">
     <div class="w-full fixed bg-black p-5 text-white font-mono">
       <div class="grid grid-cols-4 items-center">
-        <div class="space-y-2 w-8 ease-in transition-all duration-500" @click="toggleMenu">
+        <div class="space-y-2 w-8 ease-in transition-all duration-500 cursor-pointer"
+        @click="toggleMenu">
           <div
             :class="[
               'h-0.5 bg-gray-200 transition-all duration-400',
@@ -30,13 +31,15 @@
     <div
       v-show="showMenu"
       class="h-[92vh] top-[72px] fixed z-50 bg-black md:bg-opacity-90
-      text-white w-full md:w-[36vw] xl:w-[25vw] px-6"
+      text-white w-full md:w-[36vw] xl:w-[28vw] px-6"
     >
       <div class="h-full flex flex-col gap-8 text-3xl pt-10 text-center md:text-left">
         <div></div>
         <HeaderMenuItem title="🧠 Web-Developer" link="/" @click="closeMenu" />
-        <div v-if="!showAboutMe" @click="toggleAboutMe" class="p-2">🦁 About me ↘️</div>
-        <div v-else class="flex flex-col gap-8 p-2" @click="toggleAboutMe">
+        <div v-if="!showAboutMe" @click="toggleAboutMe" class="p-2 cursor-pointer">
+          🦁 About me ↘️
+        </div>
+        <div v-else class="flex flex-col gap-8 p-2 cursor-pointer" @click="toggleAboutMe">
           🦁 About me ↗️
           <HeaderMenuItem title="🔧 Engineer" link="/engineer" @click="closeMenu" v-motion-fade />
           <HeaderMenuItem title="⛹🏼‍♂️ Athlete" link="/athlete" @click="closeMenu" v-motion-fade />

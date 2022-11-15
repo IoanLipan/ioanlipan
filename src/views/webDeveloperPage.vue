@@ -1,8 +1,8 @@
 <template>
   <div class="grid-of-12-container w-[100vw]">
     <article
-      class="text-white md:text-2xl text-center font-mono tracking-widest
-      leading-relaxed col-start-2 col-span-10 md:col-start-4 md:col-span-6 py-10"
+      class="text-white md:text-2xl text-center font-mono tracking-widest leading-relaxed
+      col-start-2 col-span-10 md:col-start-4 md:col-span-6 py-10"
       v-motion-fade>
       My dev mindstate: anything can be <br />
       <span class="text-lime-400" v-motion-pop :delay="300">&lt;created&gt;</span> =>
@@ -15,31 +15,65 @@
         <ProjectCard
           title="UI library"
           usedTech="VueJS"
-          description="A library with UI components"
+          description="A library with homogenized UI components for developers"
           imageName="library"
           v-motion-roll-top
         />
         <ProjectCard
           title="TLC"
-          usedTech="ReactJS, TailwindCss"
+          usedTech="ReactJS, TailWindCss"
           description="A e-commerce website for a dentist accessories company"
           imageName="e-commerce"
           v-motion-roll-bottom
         />
+        <div
+          v-if="!showMore"
+          class="text-white w-full text-center mb-10 hover:text-slate-300 cursor-pointer
+          font-mono text-xl"
+          @click="ShowMoreProjects()"
+        >
+          Show more programming projects...
+        </div>
         <ProjectCard
-          title="UI library"
-          usedTech="VueJS"
-          description="A library with UI components"
-          imageName="library"
-          v-motion-roll-bottom
-        />
-        <ProjectCard
-          title="TLC"
-          usedTech="ReactJS, TailwindCss"
-          description="A e-commerce website for a dentist accessories company"
-          imageName="e-commerce"
+          v-if="showMore"
+          title="Custom Video Browser"
+          usedTech="VueJS, YouTubeAPI"
+          description="A custom video browser connected to the YouTubeAPI"
+          imageName="video"
           v-motion-roll-top
         />
+        <ProjectCard
+          v-if="showMore"
+          title="AVM Assistant"
+          usedTech="ReactJS, DJango"
+          description="A web application to help Auditive/Visualy/Motricly impaired people"
+          imageName="wheelchair"
+          v-motion-roll-top
+        />
+        <ProjectCard
+          v-if="showMore"
+          title="Traffic Sign Detector"
+          usedTech="YOLOv4"
+          description="A trained model that detects traffic signs with AI"
+          imageName="sign"
+          v-motion-roll-top
+        />
+        <ProjectCard
+          v-if="showMore"
+          title="TicTacToe Game"
+          usedTech="Java"
+          description="A game that can be played in the console"
+          imageName="game"
+          v-motion-roll-bottom
+        />
+        <div
+          v-if="showMore"
+          class="text-white w-full text-center mb-10 hover:text-slate-300 cursor-pointer
+          font-mono text-xl"
+          @click="ShowLessProjects()"
+        >
+          Show less...
+        </div>
       </article>
     </div>
   </div>
@@ -53,6 +87,20 @@ export default {
   title: 'Ioan Lipan | Web-Dev',
   components: {
     ProjectCard,
+  },
+  data() {
+    return {
+      showMore: false,
+    };
+  },
+  methods: {
+    ShowMoreProjects() {
+      this.showMore = true;
+    },
+    ShowLessProjects() {
+      this.showMore = false;
+      window.scroll(0, 0);
+    },
   },
 };
 </script>
