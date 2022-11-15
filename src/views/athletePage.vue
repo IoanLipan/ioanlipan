@@ -5,7 +5,7 @@
       class="p-4 md:p-0 col-start-1 col-span-12 font-mono text-white md:col-start-2 md:col-span-10"
     >
       <h1
-        class="text-4xl md:text-6xl text-center font-superstar p-4 py-6 tracking-wider"
+        class="text-4xl md:text-5xl text-center font-superstar p-4 pb-4 pt-10 tracking-wider"
         v-motion-pop
       >
         My therapy is sport and healthy competition!
