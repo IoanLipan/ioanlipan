@@ -4,7 +4,6 @@ function getTitle(vm) {
   if (title) {
     return typeof title === 'function' ? title.call(vm) : title;
   }
-//   return 'Ioan Lipan';
 }
 export default {
   created() {
