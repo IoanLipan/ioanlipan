@@ -3,9 +3,7 @@
   <div class="blog-container-grid-2-1">
     <img
       v-if="!imageIsRight && title !== 'Basketball'"
-      class="blog-image-desktop"
-      :src="image"
-      v-motion-pop-visible
+      class="blog-image-desktop" :src="image" v-motion-pop-visible
     />
     <div v-if="title !== 'Basketball'">
       <h1 class="blog-title" v-motion-slide-visible-left>{{ title }}</h1>
@@ -16,16 +14,12 @@
     </div>
     <img
       v-if="imageIsRight && title !== 'Basketball'"
-      class="blog-image-desktop"
-      :src="image"
-      v-motion-pop-visible
+      class="blog-image-desktop" :src="image" v-motion-pop-visible
     />
   <!-- this is for the first article -->
     <img
       v-if="!imageIsRight && title === 'Basketball'"
-      class="blog-image-desktop"
-      :src="image"
-      v-motion-pop
+      class="blog-image-desktop" :src="image" v-motion-pop
     />
     <div v-if="title === 'Basketball'">
       <h1 class="blog-title" v-motion-slide-left>{{ title }}</h1>
@@ -36,9 +30,7 @@
     </div>
     <img
       v-if="imageIsRight && title === 'Basketball'"
-      class="blog-image-desktop"
-      :src="image"
-      v-motion-pop
+      class="blog-image-desktop" :src="image" v-motion-pop
     />
   </div>
 </template>

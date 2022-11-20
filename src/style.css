@@ -16,7 +16,7 @@
 }
 
 .blog-container-grid-2-1 {
-    @apply grid grid-cols-1 md:grid-cols-2 p-8 pt-6 gap-10 mt-10 items-center rounded-3xl;
+    @apply grid grid-cols-1 lg:grid-cols-2 p-8 pt-6 gap-16 items-center rounded-3xl;
 }
 
 .blog-title {
@@ -24,14 +24,14 @@
 }
 
 .blog-image-mobile {
-    @apply flex md:hidden py-4;
+    @apply flex lg:hidden mx-auto border rounded-3xl;
 }
 
 .blog-image-desktop {
-    @apply hidden md:flex border rounded-3xl;
+    @apply hidden lg:flex mx-auto border rounded-3xl;
 }
 
 .blog-text {
-    @apply text-lg text-center;
+    @apply text-lg pt-5 text-center;
 }
 

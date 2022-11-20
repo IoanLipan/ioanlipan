@@ -7,7 +7,7 @@
       <swiper
         :modules="modules"
         :space-between="20"
-        :slides-per-view="2"
+        :slides-per-view="getSlidesPerView"
         :loop="true"
         :pagination="{ clickable: true }"
         :autoplay="{
@@ -15,27 +15,7 @@
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }"
-        class="my-10 hidden lg:block"
-      >
-        <swiper-slide v-for="problem in swiperProblems" :key="problem.description">
-          <ProblemCard
-            :image="problem.image"
-            :title="problem.title"
-            :description="problem.description"
-          />
-        </swiper-slide>
-      </swiper>
-      <swiper
-        :modules="modules"
-        :space-between="20"
-        :loop="true"
-        :pagination="{ clickable: true }"
-        :autoplay="{
-          delay: 5000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }"
-        class="my-10 block lg:hidden"
+        class="my-10"
       >
         <swiper-slide v-for="problem in swiperProblems" :key="problem.description">
           <ProblemCard
@@ -91,6 +71,19 @@ export default {
     ]);
     return { modules: [Pagination, Autoplay, Navigation], swiperProblems };
     /* eslint-enable global-require */
+  },
+  // implement watch() later for window resizing
+  // this.$forceUpdate();
+  computed: {
+    getSlidesPerView() {
+      let slidesPerView = 0;
+
+      if (window.innerWidth <= 1200) slidesPerView = 1;
+      else if (window.innerWidth > 1200 && window.innerWidth <= 2000) slidesPerView = 2;
+      else if (window.innerWidth > 2000) slidesPerView = 3;
+
+      return slidesPerView;
+    },
   },
 };
 </script>

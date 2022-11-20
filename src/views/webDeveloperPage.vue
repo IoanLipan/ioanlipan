@@ -28,11 +28,11 @@
         />
         <div
           v-if="!showMore"
-          class="text-white w-full text-center mb-10 hover:text-slate-300 cursor-pointer
-          font-mono text-xl"
+          class="text-white bg-slate-600 px-5 py-4 rounded-3xl text-center mb-10 cursor-pointer
+         hover:bg-slate-500 font-mono text-xl"
           @click="ShowMoreProjects()"
         >
-          Show more programming projects...
+          ✨ Show more programming projects ...
         </div>
         <ProjectCard
           v-if="showMore"
@@ -68,11 +68,11 @@
         />
         <div
           v-if="showMore"
-          class="text-white w-full text-center mb-10 hover:text-slate-300 cursor-pointer
-          font-mono text-xl"
+          class="text-white bg-slate-600 py-4 rounded-3xl text-center mb-10 cursor-pointer
+         hover:bg-slate-500 font-mono text-xl w-1/3"
           @click="ShowLessProjects()"
         >
-          Show less...
+          ⏫ Show less ...
         </div>
       </article>
     </div>
