@@ -20,6 +20,8 @@
           type="text"
           ref="name"
           required
+          @keyup="catchForbiddenWords()"
+          @paste="catchForbiddenWords()"
           placeholder="Your Name ..."
           maxlength="30"
           class="p-3 rounded-2xl focus:outline-none focus:bg-yellow-200 text-black"
@@ -43,9 +45,9 @@
           placeholder="Your extraordinary idea (max 250 characters) ..."
           maxlength="250"
           required
-          @keypress="getMessageInputLength(); catchForbiddenWords()"
-          @keyup="getMessageInputLength(); catchForbiddenWords()"
-          @paste="getMessageInputLength(); catchForbiddenWords()"
+          @keypress="getMessageInputLength()"
+          @keyup="catchForbiddenWords()"
+          @paste="getMessageInputLength(); catchForbiddenWords();"
           class="p-3 rounded-2xl focus:outline-none focus:bg-green-200 text-black"
         />
         <div :class="'relative text-end bottom-12 right-4 ' + getMessageColor">
@@ -134,9 +136,12 @@ export default {
       this.messageInputLength = this.$refs.messageInput.value.length;
     },
     catchForbiddenWords() {
-      if (FORBIDDEN_WORDS.some((forbidden) => this.$refs.messageInput.value.includes(forbidden))) {
-        this.forbiddenWords = true;
-      } else if (FORBIDDEN_WORDS.some((forbidden) => this.$refs.name.value.includes(forbidden))) {
+      const messageContent = this.$refs.messageInput.value.toLowerCase();
+      const nameContent = this.$refs.name.value.toLowerCase();
+      const isNameForbidden = FORBIDDEN_WORDS.some((forb) => nameContent.includes(forb));
+      const isMessageForbidden = FORBIDDEN_WORDS.some((forb) => messageContent.includes(forb));
+
+      if (isNameForbidden || isMessageForbidden) {
         this.forbiddenWords = true;
       } else this.forbiddenWords = false;
     },
