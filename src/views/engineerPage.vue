@@ -7,7 +7,7 @@
           title="Engineer Diploma"
           period="2022"
           svgName="diploma"
-          description="My license project was a Traffic Sign Detection Application that used a CNN (Convolutional Neural Network) to train a model to detect traffic signs."
+          description="My final thesis was a Traffic Sign Detection Application that used a CNN (Convolutional Neural Network) to train a model to detect traffic signs."
         />
         <TimeLineItem
           title="Polytehnic University of Bucharest"

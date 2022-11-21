@@ -9,7 +9,7 @@
         :action="FORM_ENDPOINT"
         @submit="handleSubmit"
         method="POST"
-        target="_blank"
+        target="_parent"
       >
         <h3 class="text-3xl py-6 text-center text-red-500">
           Let's get your site up and running A.S.A.P.!
@@ -19,6 +19,7 @@
           name="name"
           type="text"
           ref="name"
+          required
           placeholder="Your Name ..."
           maxlength="30"
           class="p-3 rounded-2xl focus:outline-none focus:bg-yellow-200 text-black"
@@ -28,6 +29,8 @@
           name="email"
           type="email"
           ref="emailInput"
+          @blur="verifyEmail"
+          required
           placeholder="Your Email ..."
           maxlength="30"
           class="p-3 rounded-2xl focus:outline-none focus:bg-blue-200 text-black"
@@ -39,37 +42,32 @@
           rows="5"
           placeholder="Your extraordinary idea (max 250 characters) ..."
           maxlength="250"
-          @keypress="getMessageInputLength"
-          @keyup="getMessageInputLength"
-          @paste="getMessageInputLength"
+          required
+          @keypress="getMessageInputLength(); catchForbiddenWords()"
+          @keyup="getMessageInputLength(); catchForbiddenWords()"
+          @paste="getMessageInputLength(); catchForbiddenWords()"
           class="p-3 rounded-2xl focus:outline-none focus:bg-green-200 text-black"
         />
         <div :class="'relative text-end bottom-12 right-4 ' + getMessageColor">
           maximum characters {{ messageInputLength }}/250
         </div>
         <div
-          class="relative bottom-6 text-red-600 text-center text-lg bg-amber-400 w-2/3 p-3 rounded-3xl mx-auto"
-          v-if="noName"
-        >
-          ⛔️ You know my name. Let me know yours!
-        </div>
-        <div
-          class="relative bottom-6 text-red-600 text-center text-lg bg-amber-400 w-2/3 p-3 rounded-3xl mx-auto"
-          v-if="noEmail"
+          class="relative bottom-6 text-red-600 text-center text-lg bg-amber-400 w-3/4 md:w-2/3 p-3 rounded-3xl mx-auto"
+          v-if="!isEmailValid"
         >
           ⛔️ You should choose a valid email!
         </div>
         <div
-          class="relative bottom-6 text-red-600 text-center text-lg bg-amber-400 w-2/3 p-3 rounded-3xl mx-auto"
-          v-if="noMessage"
+          class="relative bottom-6 text-red-600 text-center text-lg bg-amber-400 w-3/4 md:w-2/3 p-3 rounded-3xl mx-auto"
+          v-if="forbiddenWords"
         >
-          ⛔️ You should type a message!
+          ⛔️ Let's speak like adults!
         </div>
         <button
           type="submit"
           :class="
             'text-2xl p-2 bg-slate-500 w-1/2 self-center rounded-xl focus:bg-red-400 ' +
-            SubmitButtonClass
+            submitButtonClass
           "
           @click="verifyEmail"
         >
@@ -85,6 +83,8 @@
 </template>
 
 <script>
+import FORBIDDEN_WORDS from './forbiddenWords';
+
 export default {
   name: 'ContactMe',
   data() {
@@ -93,16 +93,14 @@ export default {
       submitted: false,
       FORM_ENDPOINT: 'https://public.herotofu.com/v1/2004e660-6504-11ed-891b-4f350712a1f0',
       isEmailValid: false,
-      noName: false,
-      noEmail: false,
-      noMessage: false,
+      forbiddenWords: false,
     };
   },
   computed: {
     getMessageColor() {
       return this.messageInputLength > 249 ? 'text-red-500' : 'text-slate-400';
     },
-    SubmitButtonClass() {
+    submitButtonClass() {
       return this.isEmailValid ? 'cursor-pointer' : 'cursor-not-allowed';
     },
   },
@@ -110,9 +108,6 @@ export default {
     async verifyEmail() {
       const API_KEY = '8a3a19de71f34deebdad56d55880563c';
       const email = this.$refs.emailInput.value;
-      if (!email) {
-        return false;
-      }
       const API_URL = `https://emailvalidation.abstractapi.com/v1/?api_key=${API_KEY}`;
       const fullURL = `${API_URL}&email=${email}`;
       const apiResponse = await fetch(fullURL);
@@ -122,22 +117,14 @@ export default {
       return isValid;
     },
     handleSubmit(e) {
-      if (!this.$refs.messageInput.value) {
-        this.noMessage = true;
-        e.preventDefault();
-      } else this.noMessage = false;
-
-      if (!this.$refs.name.value) {
-        this.noName = true;
-        e.preventDefault();
-      } else this.noName = false;
-
       if (!this.isEmailValid) {
-        this.noEmail = true;
         e.preventDefault();
         return;
       }
-      this.noEmail = false;
+      if (this.forbiddenWords) {
+        e.preventDefault();
+        return;
+      }
 
       setTimeout(() => {
         this.submitted = true;
@@ -145,6 +132,13 @@ export default {
     },
     getMessageInputLength() {
       this.messageInputLength = this.$refs.messageInput.value.length;
+    },
+    catchForbiddenWords() {
+      if (FORBIDDEN_WORDS.some((forbidden) => this.$refs.messageInput.value.includes(forbidden))) {
+        this.forbiddenWords = true;
+      } else if (FORBIDDEN_WORDS.some((forbidden) => this.$refs.name.value.includes(forbidden))) {
+        this.forbiddenWords = true;
+      } else this.forbiddenWords = false;
     },
   },
 };
