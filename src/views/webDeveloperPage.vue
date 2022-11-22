@@ -11,7 +11,7 @@
       <span class="text-yellow-400" v-motion-pop :delay="1000">&lt;broken/&gt;</span>
     </article>
     <div class="col-start-1 col-span-12 md:col-start-2 md:col-span-10">
-      <article class="text-normal p-5 lg:p-10 flex flex-row flex-wrap justify-evenly">
+      <article class="text-normal p-5 lg:px-10 flex flex-row flex-wrap justify-evenly">
         <ProjectCard
           title="UI library"
           usedTech="VueJS"
@@ -28,11 +28,11 @@
         />
         <div
           v-if="!showMore"
-          class="text-white bg-slate-600 px-5 py-4 rounded-3xl text-center mb-10 cursor-pointer
+          class="text-white bg-slate-600 px-5 py-4 rounded-3xl text-center cursor-pointer
          hover:bg-slate-500 font-mono text-xl"
           @click="ShowMoreProjects()"
         >
-          ✨ Show more programming projects ...
+          ✨ Show More Programming Projects ...
         </div>
         <ProjectCard
           v-if="showMore"
@@ -66,15 +66,15 @@
           imageName="game"
           v-motion-roll-bottom
         />
-        <div
-          v-if="showMore"
-          class="text-white bg-slate-600 py-4 rounded-3xl text-center mb-10 cursor-pointer
-         hover:bg-slate-500 font-mono text-xl w-1/3"
-          @click="ShowLessProjects()"
-        >
-          ⏫ Show less ...
-        </div>
       </article>
+      <div
+        v-if="showMore"
+        class="text-white bg-slate-600 py-4 rounded-3xl text-center mb-5 cursor-pointer
+       hover:bg-slate-500 font-mono text-xl w-[240px] mx-auto"
+        @click="ShowLessProjects()"
+      >
+        ⏫ Show less ...
+      </div>
     </div>
   </div>
 </template>

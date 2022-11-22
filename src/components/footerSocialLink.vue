@@ -1,13 +1,13 @@
 <template>
   <a
-    class="flex justify-center w-fit gap-2 items-center justify-self-center p-0.5 px-2
-    cursor-pointer border-2 rounded-xl bg-gray-300 border-gray-600
-    hover:bg-gray-400 hover:border-gray-800"
+    class="flex justify-center w-fit gap-3 items-center justify-self-center p-0.5 px-3
+    cursor-pointer border-2 rounded-xl bg-gray-800 border-gray-800 text-white h-10
+    hover:bg-gray-700"
     :href="url"
   >
     <div><svgIcon :name=image /></div>
     <div>{{ name }}</div>
-</a>
+  </a>
 </template>
 
 <script>

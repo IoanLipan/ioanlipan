@@ -46,7 +46,7 @@
           maxlength="250"
           required
           @keypress="getMessageInputLength()"
-          @keyup="catchForbiddenWords()"
+          @keyup="getMessageInputLength(); catchForbiddenWords()"
           @paste="getMessageInputLength(); catchForbiddenWords();"
           class="p-3 rounded-2xl focus:outline-none focus:bg-green-200 text-black"
         />
@@ -94,7 +94,7 @@ export default {
       messageInputLength: 0,
       submitted: false,
       FORM_ENDPOINT: 'https://public.herotofu.com/v1/2004e660-6504-11ed-891b-4f350712a1f0',
-      isEmailValid: false,
+      isEmailValid: true,
       forbiddenWords: false,
     };
   },
@@ -108,6 +108,7 @@ export default {
   },
   methods: {
     async verifyEmail() {
+      this.isEmailValid = false;
       const API_KEY = '8a3a19de71f34deebdad56d55880563c';
       const email = this.$refs.emailInput.value;
       const API_URL = `https://emailvalidation.abstractapi.com/v1/?api_key=${API_KEY}`;

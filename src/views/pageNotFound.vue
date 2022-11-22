@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-of-12-container py-16 md:py-20 bg-slate-800 font-mono">
+  <div class="grid-of-12-container py-16 md:py-20 min-w-full bg-slate-800 font-mono">
     <div class="col-start-3 col-span-8 text-center">
       <div class="text-white text-2xl md:text-4xl mb-16">
         Sorry, this page doesn't exist! 😔
