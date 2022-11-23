@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col bg-slate-800">
     <AppHeader />
     <router-view class="max-w-fit" />
-    <ContactMe class="max-w-fit mx-auto" v-motion-pop />
+    <ContactMe class="max-w-fit mx-auto" />
     <AppFooter />
     <ScrollTopArrow />
   </div>

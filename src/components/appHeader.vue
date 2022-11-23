@@ -2,7 +2,7 @@
 <template>
   <nav class="h-[72px] md:h-20 z-40">
     <!-- desktop menu -->
-    <container class="hidden lg:block">
+    <div class="hidden lg:block">
       <div class="w-full fixed bg-black text-white flex justify-between items-center p-4 px-8">
         <div class="flex gap-5 items-center">
           <router-link to="/" @click="closeAboutMeDesktop()">
@@ -28,9 +28,9 @@
           </div>
         </div>
       </div>
-    </container>
+    </div>
     <!-- mobile menu -->
-    <container class="lg:hidden">
+    <div class="lg:hidden">
       <div class="w-full fixed bg-black p-5 text-white font-mono">
         <div class="grid grid-cols-4 items-center">
           <div
@@ -88,7 +88,7 @@
           </div>
         </div>
       </div>
-    </container>
+    </div>
   </nav>
 </template>
 

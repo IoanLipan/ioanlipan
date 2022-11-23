@@ -17,6 +17,15 @@
           usedTech="VueJS"
           description="A library with homogenized UI components for developers"
           imageName="library"
+          workRelated
+          v-motion-roll-top
+        />
+        <ProjectCard
+          title="Custom Video Browser"
+          usedTech="VueJS, YouTubeAPI"
+          description="A custom video browser connected to the YouTubeAPI"
+          imageName="video"
+          url="https://github.com/IoanLipan/Video-browser"
           v-motion-roll-top
         />
         <ProjectCard
@@ -24,7 +33,17 @@
           usedTech="ReactJS, TailWindCss"
           description="A e-commerce website for a dentist accessories company"
           imageName="e-commerce"
+          workRelated
+          url="https://theloupescompany.com/"
           v-motion-roll-bottom
+        />
+        <ProjectCard
+          title="AVM Assistant"
+          usedTech="ReactJS, DJango"
+          description="A web-app to help Auditive, Visualy or Motricly impaired people"
+          imageName="wheelchair"
+          url="https://github.com/IoanLipan/avm_assistant"
+          v-motion-roll-top
         />
         <div
           v-if="!showMore"
@@ -36,34 +55,29 @@
         </div>
         <ProjectCard
           v-if="showMore"
-          title="Custom Video Browser"
-          usedTech="VueJS, YouTubeAPI"
-          description="A custom video browser connected to the YouTubeAPI"
-          imageName="video"
-          v-motion-roll-top
-        />
-        <ProjectCard
-          v-if="showMore"
-          title="AVM Assistant"
-          usedTech="ReactJS, DJango"
-          description="A web application to help Auditive/Visualy/Motricly impaired people"
-          imageName="wheelchair"
-          v-motion-roll-top
-        />
-        <ProjectCard
-          v-if="showMore"
           title="Traffic Sign Detector"
           usedTech="YOLOv4"
           description="A trained model that detects traffic signs with AI"
           imageName="sign"
+          url="https://github.com/IoanLipan/Traffic-sign-detection"
           v-motion-roll-top
         />
         <ProjectCard
           v-if="showMore"
           title="TicTacToe Game"
           usedTech="Java"
-          description="A game that can be played in the console"
+          description="TicTacToe that can be played in the console"
           imageName="game"
+          url="https://github.com/IoanLipan/TicTacToe"
+          v-motion-roll-bottom
+        />
+        <ProjectCard
+          v-if="showMore"
+          title="BattlePlanes Game"
+          usedTech="Python"
+          description="A game of Battleplanes that can be played in the console"
+          imageName="game"
+          url="https://github.com/IoanLipan/TicTacToe"
           v-motion-roll-bottom
         />
       </article>
