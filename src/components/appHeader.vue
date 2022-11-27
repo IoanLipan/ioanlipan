@@ -115,9 +115,11 @@ export default {
     },
     toggleMenu() {
       this.showMenu = !this.showMenu;
+      if (!this.showMenu) this.showAboutMe = false;
     },
     closeMenu() {
       this.showMenu = false;
+      this.showAboutMe = false;
     },
     closeAboutMeDesktop() {
       this.showAboutMeDesktop = false;

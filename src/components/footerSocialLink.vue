@@ -5,8 +5,8 @@
     hover:bg-gray-700"
     :href="url"
   >
-    <div><svgIcon :name=image /></div>
-    <div>{{ name }}</div>
+    <div class="w-[24px]"><svgIcon :name=image /></div>
+    <div class="min-w-fit">{{ name }}</div>
   </a>
 </template>
 
