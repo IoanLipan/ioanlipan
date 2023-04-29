@@ -13,6 +13,14 @@
     <div class="col-start-1 col-span-12 md:col-start-2 md:col-span-10">
       <article class="text-normal p-5 lg:px-10 flex flex-row flex-wrap justify-evenly">
         <ProjectCard
+          title="What to wear"
+          usedTech="ReactJS, TailwindCSS, genez.io"
+          description="A weather app with suggestions for dressing properly for the weather"
+          imageName="weather"
+          url="https://rose-junior-opossum.app.genez.io/"
+          v-motion-roll-top
+        />
+        <ProjectCard
           title="UI library"
           usedTech="VueJS"
           description="A library with homogenized UI components for developers"
@@ -21,16 +29,8 @@
           v-motion-roll-top
         />
         <ProjectCard
-          title="Custom Video Browser"
-          usedTech="VueJS, YouTubeAPI"
-          description="A custom video browser connected to the YouTubeAPI"
-          imageName="video"
-          url="https://github.com/IoanLipan/Video-browser"
-          v-motion-roll-top
-        />
-        <ProjectCard
           title="TLC"
-          usedTech="ReactJS, TailWindCss"
+          usedTech="ReactJS, TailWindCSS"
           description="A e-commerce website for a dentist accessories company"
           imageName="e-commerce"
           workRelated
@@ -55,6 +55,15 @@
         </div>
         <ProjectCard
           v-if="showMore"
+          title="Custom Video Browser"
+          usedTech="VueJS, YouTubeAPI"
+          description="A custom video browser connected to the YouTubeAPI"
+          imageName="video"
+          url="https://github.com/IoanLipan/Video-browser"
+          v-motion-roll-top
+        />
+        <ProjectCard
+          v-if="showMore"
           title="Traffic Sign Detector"
           usedTech="YOLOv4"
           description="A trained model that detects traffic signs with AI"
@@ -76,7 +85,7 @@
           title="BattlePlanes Game"
           usedTech="Python"
           description="A game of Battleplanes that can be played in the console"
-          imageName="game"
+          imageName="plane"
           url="https://github.com/IoanLipan/TicTacToe"
           v-motion-roll-bottom
         />
