@@ -1,46 +1,38 @@
 <template>
-  <a class="text-white font-mono text-center flex flex-col gap-6
-    py-6 border-slate-500 border-4 w-[320px] sm:w-[40%] bg-slate-900 rounded-3xl mb-12
-    transition transform duration-700 ease-in-out cursor-pointer"
-    @click="rotation" :style="{ transform: `rotate(${deg}deg)` }"
-    :href="url" target="_blank">
-    <div v-if="workRelated"
-      class="absolute -top-3 -right-6 bg-blue-600
-      z-10 w-fit self-end p-1 mr-3 rounded-xl max-w-[100px]">
-      Work Related
-    </div>
-    <div v-else class="absolute -top-3 -right-6 bg-green-600
-      z-10 w-fit self-end p-1 mr-3 rounded-xl max-w-[100px]">
-      Personal Project
-    </div>
-    <div class="flex flex-col justify-between h-[70%]">
-      <SvgIcon :name="imageName" class="self-center fill-white h-[100px] md:h-auto" />
+  <div class="card text-white font-mono rounded-3xl
+    items-center text-center w-[320px] sm:w-[40%] h-64 md:h-80 mb-10"
+    :class="{ 'flipped': isFlipped }" @click="flipCard">
+    <div class="front-of-card bg-slate-900 rounded-3xl border-4 border-slate-400 cursor-pointer
+    flex flex-col justify-between">
+      <div v-if="workRelated" class="absolute -top-3 -right-6 bg-blue-600
+        z-10 w-fit self-end p-1 mr-3 rounded-xl max-w-[100px]">
+        Work Related
+      </div>
+      <div v-else class="absolute -top-3 -right-6 bg-green-600
+        z-10 w-fit self-end p-1 mr-3 rounded-xl max-w-[100px]">
+        Personal Project
+      </div>
+      <SvgIcon :name="imageName"
+      class="self-center fill-white h-[100px] md:h-[200px] flex justify-center pt-5" />
       <h3 class="text-2xl text-lime-300 underline pt-2">{{ title }}</h3>
+      <p class="bg-slate-400 rounded-b-2xl text-black">Click to flip the card!</p>
     </div>
-    <div class="flex flex-col justify-between h-[30%]">
-      <div class="text-orange-400 font-semibold shadow-xl
-       w-full mx-auto px-5 py-2 border-slate-600 bg-slate-500">
+    <div class="back-of-card bg-slate-300 rounded-3xl border-4 border-slate-700 cursor-pointer
+    flex flex-col justify-between">
+      <a v-if="url" :href="url" class="bg-slate-700 rounded-t-2xl">Click for repo/project!</a>
+      <p v-else class="bg-slate-700 rounded-t-2xl">The repo/project is confidential</p>
+      <p class="p-2 xl:px-8 min-h-28 text-black">{{ description }}</p>
+      <div class="text-orange-400 font-semibold bg-slate-700 rounded-b-2xl
+       w-full mx-auto px-5 py-2 h-20 flex items-center justify-center">
         {{ usedTech }}
+      </div>
     </div>
-      <p class="p-2 xl:px-8 min-h-28">{{ description }}</p>
-    </div>
-  </a>
-  <!-- <div class="text-white font-mono flex flex-col text-center gap-4 p-4
-    md:py-10 w-[320px] sm:w-[40%] bg-black rounded-3xl mb-12
-    transition transform duration-700 ease-in-out cursor-pointer"
-    @click="rotation" :style="{ transform: `rotate(${deg}deg)` }">
-    <SvgIcon :name="imageName" class="self-center fill-white h-[100px] md:h-auto" />
-    <h3 class="text-2xl text-lime-300 underline">{{ title }}</h3>
-    <h4 class="text-orange-400 font-semibold shadow-xl
-     w-full mx-auto px-5 py-2 border-slate-600 rounded-xl bg-slate-500">
-      {{ usedTech }}
-    </h4>
-    <p class="xl:px-8">{{ description }}</p>
-  </div> -->
+  </div>
 </template>
 
 <script>
 import SvgIcon from './svgIcon.vue';
+import './projectCard.css';
 
 export default {
   name: 'ProjectCard',
@@ -73,12 +65,12 @@ export default {
   components: { SvgIcon },
   data() {
     return {
-      deg: 0,
+      isFlipped: false,
     };
   },
   methods: {
-    rotation() {
-      this.deg += 360;
+    flipCard() {
+      this.isFlipped = !this.isFlipped;
     },
   },
 };

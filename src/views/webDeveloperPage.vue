@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-of-12-container w-[100vw]">
+  <div class="grid-of-12-container w-[100vw] mx-auto">
     <article
       class="text-white md:text-2xl text-center font-mono tracking-widest leading-relaxed
       col-start-2 col-span-10 md:col-start-4 md:col-span-6 py-10"
