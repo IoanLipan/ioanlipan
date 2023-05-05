@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vueuse/motion": "^2.0.0-beta.12",
+    "dotenv": "^16.0.3",
     "swiper": "^8.4.4",
     "vue": "^3.2.13",
     "vue-awesome-swiper": "^5.0.1",

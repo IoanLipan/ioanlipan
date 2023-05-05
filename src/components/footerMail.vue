@@ -108,7 +108,7 @@ export default {
   },
   methods: {
     async verifyEmail() {
-      const API_KEY = '8a3a19de71f34deebdad56d55880563c';
+      const API_KEY = process.env.VUE_APP_ABSTRACT_API_KEY;
       const email = this.$refs.emailInput.value;
       const API_URL = `https://emailvalidation.abstractapi.com/v1/?api_key=${API_KEY}`;
       const fullURL = `${API_URL}&email=${email}`;
