@@ -32,7 +32,7 @@
 
 <script>
 import SvgIcon from './svgIcon.vue';
-import './projectCard.css';
+import '../assets/styles/projectCard.css';
 
 export default {
   name: 'ProjectCard',
