@@ -1,6 +1,6 @@
 <!-- eslint-disable max-len -->
 <template>
-  <nav class="h-[72px] md:h-20 z-40">
+  <nav  v-motion-slide-left :delay="250" class="h-[72px] md:h-20 z-40 font-mono">
     <!-- desktop menu -->
     <div class="hidden lg:block">
       <div class="w-full fixed bg-black text-white flex justify-between items-center p-4 px-8">
@@ -8,30 +8,27 @@
           <router-link to="/" @click="closeAboutMeDesktop()">
             <img src="../assets/ILLogo.png" class="h-10 w-auto" />
           </router-link>
-          <HeaderMenuItem title="Ioan Lipan - Web Developer" class="text-3xl" link="/" />
+          <HeaderMenuItem title="Ioan Lipan" description="WEB DEVELOPER" class="text-3xl tracking-widest" link="/" />
         </div>
         <HeaderMenuItem class="text-2xl cursor-pointer hidden" title="💰 My services" link="/services" />
         <div class="flex flex-col z-40">
-          <div class="text-2xl cursor-pointer" @click="toggleAboutMeDesktop">ℹ️ About Me</div>
+          <div class="text-2xl cursor-pointer flex items-center" @click="toggleAboutMeDesktop"><SvgIcon name="info" /> About Me</div>
           <div
             v-if="showAboutMeDesktop"
             class="text-xl absolute top-20 right-0 flex flex-col gap-3 pl-4 pb-3 bg-black rounded-bl-2xl"
             v-motion-roll-right
           >
-            <HeaderMenuItem title="🔧 Engineer" link="/engineer" @click="closeAboutMeDesktop" />
-            <HeaderMenuItem title="⛹🏼‍♂️ Athlete" link="/athlete" @click="closeAboutMeDesktop" />
-            <HeaderMenuItem
-              title="🧐 Problem-Solver"
-              link="/problem-solver"
-              @click="closeAboutMeDesktop"
-            />
+            <HeaderMenuItem iconName="thanos" title="Technologies" link="/tech-knowledge" @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="engineer" title="Engineer" link="/engineer" @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="athlete" title="Athlete" link="/athlete" @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="solution" title="Problem-Solver" link="/problem-solver" @click="closeAboutMeDesktop" />
           </div>
         </div>
       </div>
     </div>
     <!-- mobile menu -->
     <div class="lg:hidden">
-      <div class="w-full fixed bg-black p-5 text-white font-mono">
+      <div class="w-full fixed bg-black p-5 text-white">
         <div class="grid grid-cols-4 items-center">
           <div
             class="space-y-2 w-8 ease-in transition-all duration-500 cursor-pointer"
@@ -54,7 +51,7 @@
             />
           </div>
           <router-link
-            class="font-mono text-2xl md:text-4xl col-span-2 text-center"
+            class="text-2xl md:text-4xl col-span-2 text-center tracking-widest"
             to="/"
             @click="closeMenu()"
           >
@@ -94,10 +91,11 @@
 
 <script>
 import HeaderMenuItem from './headerMenuItem.vue';
+import SvgIcon from './svgIcon.vue';
 
 export default {
   name: 'HeaderMenu',
-  components: { HeaderMenuItem },
+  components: { HeaderMenuItem, SvgIcon },
   data() {
     return {
       showDropdown: false,

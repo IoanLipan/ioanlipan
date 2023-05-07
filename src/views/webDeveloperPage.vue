@@ -1,17 +1,47 @@
 <template>
-  <div class="grid-of-12-container w-[100vw] mx-auto">
+  <div class="grid-of-12-container w-[100vw] mx-auto font-mono text-white">
     <article
-      class="text-white md:text-2xl text-center font-mono tracking-widest leading-relaxed
+      class="md:text-2xl text-center tracking-widest leading-relaxed
       col-start-2 col-span-10 md:col-start-4 md:col-span-6 py-10"
       v-motion-fade>
       My dev mindstate: anything can be <br />
-      <span class="text-lime-400" v-motion-pop :delay="300">&lt;created&gt;</span> =>
+      <span class="text-lime-400" v-motion-pop :delay="250">&lt;created&gt;</span> =>
       <span class="text-green-500" v-motion-pop :delay="500">&lt;improved/&gt;</span> and
-      <span class="text-red-500" v-motion-pop :delay="800">&lt;fixed&gt;</span> if
+      <span class="text-red-500" v-motion-pop :delay="750">&lt;fixed&gt;</span> if
       <span class="text-yellow-400" v-motion-pop :delay="1000">&lt;broken/&gt;</span>
     </article>
     <div class="col-start-1 col-span-12 md:col-start-2 md:col-span-10">
-      <article class="text-normal p-5 lg:px-10 flex flex-row flex-wrap justify-evenly">
+      <RouterLink
+        v-motion-pop
+        :delay="600"
+        to="/tech-knowledge"
+        class="flex items-center justify-center w-fit mx-auto"
+      >
+        <div class="pl-5 pr-10 text-2xl py-4 rounded-l-3xl text-center max-w-fit
+          cursor-pointer bg-slate-600 hover:bg-slate-500 active:bg-slate-700">
+          Click here
+        </div>
+        <div class="relative right-5 w-16 h-16 text-center leading-5 rotate-45
+          bg-slate-600 hover:bg-slate-500 active:bg-slate-700">to see my tech</div>
+      </RouterLink>
+      <p
+        v-motion-pop
+        :delay="700"
+        class="text-center py-8"
+      >
+        OR
+      </p>
+      <h3
+        v-motion-pop
+        :delay="800"
+        class="text-center px-8 text-2xl pb-10"
+      >
+        Check out the projects I worked on below:
+      </h3>
+      <article
+        v-motion-pop
+        :delay="900"
+        class="text-normal p-5 lg:px-10 flex flex-row flex-wrap justify-evenly">
         <ProjectCard
           title="What to wear"
           usedTech="ReactJS, TailwindCSS, genez.io"
@@ -48,7 +78,7 @@
         <div
           v-if="!showMore"
           class="text-white bg-slate-600 px-5 py-4 rounded-3xl text-center cursor-pointer
-         hover:bg-slate-500 font-mono text-xl"
+         hover:bg-slate-500 active:bg-slate-700 font-mono text-xl"
           @click="ShowMoreProjects()"
         >
           ✨ Show More Programming Projects ...
@@ -93,7 +123,7 @@
       <div
         v-if="showMore"
         class="text-white bg-slate-600 py-4 rounded-3xl text-center mb-5 cursor-pointer
-       hover:bg-slate-500 font-mono text-xl w-[240px] mx-auto"
+       hover:bg-slate-500 active:bg-slate-700 font-mono text-xl w-[240px] mx-auto"
         @click="ShowLessProjects()"
       >
         ⏫ Show less ...
