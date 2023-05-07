@@ -1,6 +1,6 @@
 <!-- eslint-disable max-len -->
 <template>
-  <nav  v-motion-slide-left :delay="250" class="h-[72px] md:h-20 z-40 font-mono">
+  <nav class="h-[72px] md:h-20 z-40 font-mono sm:mb-10">
     <!-- desktop menu -->
     <div class="hidden lg:block">
       <div class="w-full fixed bg-black text-white flex justify-between items-center p-4 px-8">
@@ -28,8 +28,8 @@
     </div>
     <!-- mobile menu -->
     <div class="lg:hidden">
-      <div class="w-full fixed bg-black p-5 text-white">
-        <div class="grid grid-cols-4 items-center">
+      <div class="w-full fixed bg-black px-5 sm:p-5 text-white">
+        <div class="grid grid-cols-5 items-center">
           <div
             class="space-y-2 w-8 ease-in transition-all duration-500 cursor-pointer"
             @click="toggleMenu"
@@ -50,16 +50,18 @@
               ]"
             />
           </div>
-          <router-link
-            class="text-2xl md:text-4xl col-span-2 text-center tracking-widest"
-            to="/"
+          <HeaderMenuItem
+            title="Ioan Lipan"
+            description="WEB DEVELOPER"
+            class="text-2xl md:text-4xl col-span-3 text-center tracking-widest"
+            link="/"
             @click="closeMenu()"
-          >
-            Ioan Lipan
+          />
+          <div class="flex items-center justify-end col-start-5">
+            <router-link to="/" @click="closeMenu()" >
+          <img src="../assets/ILLogo.png" class="h-10 w-auto" />
           </router-link>
-          <router-link to="/" @click="closeMenu()" class="col-start-4 place-self-end">
-            <img src="../assets/ILLogo.png" class="h-10 w-auto" />
-          </router-link>
+            </div>
         </div>
       </div>
       <div
