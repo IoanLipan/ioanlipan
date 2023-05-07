@@ -10,18 +10,18 @@
           </router-link>
           <HeaderMenuItem title="Ioan Lipan" description="WEB DEVELOPER" class="text-3xl tracking-widest" link="/" />
         </div>
-        <HeaderMenuItem class="text-2xl cursor-pointer hidden" title="💰 My services" link="/services" />
+        <HeaderMenuItem class="text-2xl cursor-pointer hidden" title="💰 Freelance services" link="/services" />
         <div class="flex flex-col z-40">
-          <div class="text-2xl cursor-pointer flex items-center" @click="toggleAboutMeDesktop"><SvgIcon name="info" /> About Me</div>
+          <div class="text-3xl cursor-pointer flex items-center" @click="toggleAboutMeDesktop"><SvgIcon name="info" />About Me</div>
           <div
             v-if="showAboutMeDesktop"
-            class="text-xl absolute top-20 right-0 flex flex-col gap-3 pl-4 pb-3 bg-black rounded-bl-2xl"
+            class="text-3xl absolute top-20 right-0 flex flex-col gap-3 pl-4 pr-2 pb-3 bg-black rounded-bl-2xl"
             v-motion-roll-right
           >
-            <HeaderMenuItem iconName="thanos" title="Technologies" link="/tech-knowledge" @click="closeAboutMeDesktop" />
-            <HeaderMenuItem iconName="engineer" title="Engineer" link="/engineer" @click="closeAboutMeDesktop" />
-            <HeaderMenuItem iconName="athlete" title="Athlete" link="/athlete" @click="closeAboutMeDesktop" />
-            <HeaderMenuItem iconName="solution" title="Problem-Solver" link="/problem-solver" @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="thanosBig" title="Technologies" link="/tech-knowledge" @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="engineerBig" title="Engineer" link="/engineer" @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="athleteBig" title="Athlete" link="/athlete" @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="solutionBig" title="Problem-Solver" link="/problem-solver" @click="closeAboutMeDesktop" />
           </div>
         </div>
       </div>
@@ -66,24 +66,24 @@
       </div>
       <div
         v-show="showMenu"
-        class="h-[92vh] top-[72px] fixed z-50 bg-black md:bg-opacity-90 text-white w-full md:w-[36vw] xl:w-[28vw] px-6"
+        class="h-[94vh] top-[60px] sm:h-[92vh] sm:top-[72px] fixed z-50 bg-black md:bg-opacity-90 text-white w-full md:w-[58vw] xl:w-[28vw] px-6"
       >
-        <div class="h-full flex flex-col gap-8 text-3xl pt-10 text-center md:text-left">
+        <div class="h-full flex flex-col gap-8 text-4xl pt-10 text-center items-center md:items-start md:text-left">
           <div></div>
-          <HeaderMenuItem title="🧠 Web-Developer" link="/" @click="closeMenu" />
-          <div v-if="!showAboutMe" @click="toggleAboutMe" class="p-2 cursor-pointer">
-            🦁 About me ↘️
+          <HeaderMenuItem iconName="webdev" title="Web Developer" link="/" @click="closeMenu" />
+          <HeaderMenuItem iconName="thanosBig" title="Tech Stacks" link="/tech-knowledge" @click="closeMenu" />
+          <div v-if="!showAboutMe" @click="toggleAboutMe" class="p-2 cursor-pointer flex items-center gap-3">
+            <SvgIcon name="explore" />
+            About me ↘️
           </div>
-          <div v-else class="flex flex-col gap-8 p-2 cursor-pointer" @click="toggleAboutMe">
-            🦁 About me ↗️
-            <HeaderMenuItem title="🔧 Engineer" link="/engineer" @click="closeMenu" v-motion-fade />
-            <HeaderMenuItem title="⛹🏼‍♂️ Athlete" link="/athlete" @click="closeMenu" v-motion-fade />
-            <HeaderMenuItem
-              title="🧐 Problem-Solver"
-              link="/problem-solver"
-              @click="closeMenu"
-              v-motion-fade
-            />
+          <div v-else class="flex flex-col gap-8 p-2 cursor-pointer items-center md:items-start" @click="toggleAboutMe">
+            <div class="flex items-center gap-3 justify-center">
+              <SvgIcon name="explore" />
+              About me ↗️
+            </div>
+            <HeaderMenuItem iconName="engineerBig" title="Engineer" link="/engineer" @click="closeMenu" v-motion-fade />
+            <HeaderMenuItem iconName="athleteBig" title="Athlete" link="/athlete" @click="closeMenu" v-motion-fade />
+            <HeaderMenuItem iconName="solutionBig" title="Problem Solver" link="/problem-solver" @click="closeMenu" v-motion-fade />
           </div>
         </div>
       </div>
