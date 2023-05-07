@@ -27,14 +27,14 @@
       <p
         v-motion-pop
         :delay="700"
-        class="text-center py-8"
+        class="text-center py-4 md:py-8"
       >
         OR
       </p>
       <h3
         v-motion-pop
         :delay="800"
-        class="text-center px-8 text-2xl pb-10"
+        class="text-center px-8 md:text-2xl pb-5 md:pb-10"
       >
         Check out the projects I worked on below:
       </h3>
