@@ -18,7 +18,8 @@
         class="flex items-center justify-center w-fit mx-auto"
       >
         <div class="pl-5 pr-10 text-2xl py-4 rounded-l-3xl text-center max-w-fit
-          cursor-pointer bg-slate-600 hover:bg-slate-500 active:bg-slate-700">
+          cursor-pointer bg-slate-600 hover:bg-slate-500 active:bg-slate-700 flex gap-2">
+          <SvgIcon name="click" />
           Click here
         </div>
         <div class="relative right-5 w-16 h-16 text-center leading-5 rotate-45
@@ -34,10 +35,12 @@
       <h3
         v-motion-pop
         :delay="800"
-        class="text-center px-8 md:text-2xl pb-5 md:pb-10"
+        class="text-center px-8 md:text-2xl pb-5 md:pb-10 flex justify-between"
       >
-        Check out the projects I worked on below:
-      </h3>
+      <SvgIcon name="chevron-down" />
+      Check out the projects I worked on below:
+      <SvgIcon name="chevron-down" />
+    </h3>
       <article
         v-motion-pop
         :delay="900"
@@ -133,6 +136,7 @@
 </template>
 
 <script>
+import SvgIcon from '../components/svgIcon.vue';
 import ProjectCard from '../components/projectCard.vue';
 
 export default {
@@ -140,6 +144,7 @@ export default {
   title: 'Ioan Lipan | Web-Dev',
   components: {
     ProjectCard,
+    SvgIcon,
   },
   data() {
     return {
