@@ -9,7 +9,7 @@
     <div>
       {{ title }}
     </div>
-    <div v-if="description" class="text-[10px] tracking-[0.6rem] leading-[1rem]">
+    <div v-if="description" class="text-[10px] tracking-[0.4rem] sm:tracking-[0.6rem] leading-[1rem]">
       {{ description }}
     </div>
   </router-link>
