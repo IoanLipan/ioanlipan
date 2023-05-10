@@ -2,7 +2,7 @@
   <div class="grid-of-12-container">
     <!-- <svgIcon name="arrowLeft" class="fill-white col-span-1 col-start-1 align-middle" /> -->
     <div class="cols-2-10 mt-10 font-mono text-white text-center">
-      <h1 class="text-3xl font-semibold">I'm always looking a new challenge!</h1>
+      <h1 class="text-3xl font-semibold">I'm always looking for a new challenge!</h1>
       <swiper
         :modules="modules"
         :space-between="20"
