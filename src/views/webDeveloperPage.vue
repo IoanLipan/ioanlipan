@@ -27,7 +27,7 @@
         Check out the projects I worked on below:
         <SvgIcon name="chevron-down" />
       </h3>
-      <article v-motion-pop :delay="900" class="text-normal p-5 lg:px-10 flex flex-row flex-wrap justify-evenly">
+      <article v-motion-pop :delay="900" class="text-normal p-5 lg:px-10 flex flex-row flex-wrap justify-evenly w-full">
         <ProjectCard title="What to wear" usedTech="ReactJS, TailwindCSS, genez.io"
           description="A weather app with suggestions for dressing properly for the weather" imageName="weather"
           url="https://rose-junior-opossum.app.genez.io/" v-motion-roll-top />
