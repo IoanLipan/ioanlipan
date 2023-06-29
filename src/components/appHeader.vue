@@ -20,8 +20,10 @@
             v-motion-roll-right>
             <HeaderMenuItem iconName="thanosBig" title="Technologies" link="/tech-knowledge" is-desktop-item
               @click="closeAboutMeDesktop" />
-            <HeaderMenuItem iconName="engineerBig" title="Engineer" link="/engineer" is-desktop-item @click="closeAboutMeDesktop" />
-            <HeaderMenuItem iconName="athleteBig" title="Athlete" link="/athlete" is-desktop-item @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="engineerBig" title="Engineer" link="/engineer" is-desktop-item
+              @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="athleteBig" title="Athlete" link="/athlete" is-desktop-item
+              @click="closeAboutMeDesktop" />
             <HeaderMenuItem iconName="solutionBig" title="Problem-Solver" link="/problem-solver" is-desktop-item
               @click="closeAboutMeDesktop" />
           </div>
@@ -52,9 +54,10 @@
           </div>
         </div>
       </div>
-      <div v-show="showMenu"
+      <div v-show="showMenu" v-click-outside="onClickOutside"
         class="h-[94vh] top-[60px] sm:h-[92vh] sm:top-[72px] md:top-[110px] fixed z-50 bg-black md:bg-opacity-80 text-white w-full md:w-[38vw] px-6">
-        <div class="h-full w-full md:w-fit pt-10 flex flex-col gap-4 text-base sm:text-lg lg:text-3xl items-center text-left">
+        <div
+          class="h-full w-full md:w-fit pt-10 flex flex-col gap-4 text-base sm:text-lg lg:text-3xl items-center text-left">
           <HeaderMenuItem iconName="webdev" title="Web Developer" link="/" @click="closeMenu" />
           <HeaderMenuItem iconName="thanos" title="Tech Stacks" link="/tech-knowledge" @click="closeMenu" />
           <div v-if="!showAboutMe" @click="toggleAboutMe" class="cursor-pointer flex items-center gap-3">
@@ -69,9 +72,12 @@
               <SvgIcon name="explore" />
             </div>
           </div>
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="engineer" title="Engineer" link="/engineer" @click="closeMenu" v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="athlete" title="Athlete" link="/athlete" @click="closeMenu" v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="solution" title="Problem Solver" link="/problem-solver" @click="closeMenu" v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="engineer" title="Engineer" link="/engineer" @click="closeMenu"
+            v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="athlete" title="Athlete" link="/athlete" @click="closeMenu"
+            v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="solution" title="Problem Solver" link="/problem-solver"
+            @click="closeMenu" v-motion-fade />
         </div>
       </div>
     </div>
@@ -79,12 +85,16 @@
 </template>
 
 <script>
+import vClickOutside from 'v-click-outside';
 import HeaderMenuItem from './headerMenuItem.vue';
 import SvgIcon from './svgIcon.vue';
 
 export default {
   name: 'HeaderMenu',
   components: { HeaderMenuItem, SvgIcon },
+  directives: {
+    'click-outside': vClickOutside,
+  },
   data() {
     return {
       showDropdown: false,
@@ -110,6 +120,9 @@ export default {
     },
     closeAboutMeDesktop() {
       this.showAboutMeDesktop = false;
+    },
+    onClickOutside() {
+      console.log('merge');
     },
   },
 };
