@@ -54,7 +54,7 @@
           </div>
         </div>
       </div>
-      <div v-show="showMenu" v-click-outside="onClickOutside"
+      <div v-show="showMenu"
         class="h-[94vh] top-[60px] sm:h-[92vh] sm:top-[72px] md:top-[110px] fixed z-50 bg-black md:bg-opacity-80 text-white w-full md:w-[38vw] px-6">
         <div
           class="h-full w-full md:w-fit pt-10 flex flex-col gap-4 text-base sm:text-lg lg:text-3xl items-center text-left">
@@ -85,16 +85,12 @@
 </template>
 
 <script>
-import vClickOutside from 'v-click-outside';
 import HeaderMenuItem from './headerMenuItem.vue';
 import SvgIcon from './svgIcon.vue';
 
 export default {
   name: 'HeaderMenu',
   components: { HeaderMenuItem, SvgIcon },
-  directives: {
-    'click-outside': vClickOutside,
-  },
   data() {
     return {
       showDropdown: false,
@@ -120,9 +116,6 @@ export default {
     },
     closeAboutMeDesktop() {
       this.showAboutMeDesktop = false;
-    },
-    onClickOutside() {
-      console.log('merge');
     },
   },
 };
