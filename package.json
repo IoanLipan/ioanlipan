@@ -13,7 +13,8 @@
     "swiper": "^8.4.4",
     "vue": "^3.2.13",
     "vue-awesome-swiper": "^5.0.1",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vue-tailwind-modal": "^1.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
