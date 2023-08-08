@@ -18,13 +18,15 @@
           <div v-if="showAboutMeDesktop"
             class="text-3xl absolute top-20 right-0 flex flex-col gap-3 pl-4 pr-2 pb-3 bg-black rounded-bl-2xl"
             v-motion-roll-right>
-            <HeaderMenuItem iconName="thanosBig" title="Technologies" link="/tech-knowledge" is-desktop-item
+            <HeaderMenuItem iconName="thanosBig" title="Technologies" link="/tech-knowledge"
               @click="closeAboutMeDesktop" />
-            <HeaderMenuItem iconName="engineerBig" title="Engineer" link="/engineer" is-desktop-item
+            <HeaderMenuItem iconName="engineerBig" title="Engineer" link="/engineer"
               @click="closeAboutMeDesktop" />
-            <HeaderMenuItem iconName="athleteBig" title="Athlete" link="/athlete" is-desktop-item
+            <HeaderMenuItem iconName="athleteBig" title="Athlete" link="/athlete"
               @click="closeAboutMeDesktop" />
-            <HeaderMenuItem iconName="solutionBig" title="Problem-Solver" link="/problem-solver" is-desktop-item
+            <HeaderMenuItem iconName="solutionBig" title="Problem-Solver" link="/problem-solver"
+              @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="travelBig" title="Travel" link="/travel"
               @click="closeAboutMeDesktop" />
           </div>
         </div>
@@ -57,19 +59,19 @@
       <div v-show="showMenu"
         class="h-[94vh] top-[60px] sm:h-[92vh] sm:top-[72px] md:top-[110px] fixed z-50 bg-black md:bg-opacity-80 text-white w-full md:w-[38vw] px-6">
         <div
-          class="h-full w-full md:w-fit pt-10 flex flex-col gap-4 text-base sm:text-lg lg:text-3xl items-center text-left">
+          class="h-full w-full md:w-fit pt-10 flex flex-col gap-4 text-base sm:text-lg lg:text-3xl items-start text-left">
           <HeaderMenuItem iconName="webdev" title="Web Developer" link="/" @click="closeMenu" />
           <HeaderMenuItem iconName="thanos" title="Tech Stacks" link="/tech-knowledge" @click="closeMenu" />
           <div v-if="!showAboutMe" @click="toggleAboutMe" class="cursor-pointer flex items-center gap-3">
             <div class="p-2 flex items-center gap-5 justify-between">
-              More about me &#8600;
               <SvgIcon name="explore" />
+              More about me &#8600;
             </div>
           </div>
           <div v-else class="flex flex-col gap-4 cursor-pointer items-start text-left" @click="toggleAboutMe">
             <div class="p-2 flex items-center gap-5 justify-between">
-              More about me &#8599;
               <SvgIcon name="explore" />
+              More about me &#8599;
             </div>
           </div>
           <HeaderMenuItem v-if="this.showAboutMe" iconName="engineer" title="Engineer" link="/engineer" @click="closeMenu"
@@ -77,6 +79,8 @@
           <HeaderMenuItem v-if="this.showAboutMe" iconName="athlete" title="Athlete" link="/athlete" @click="closeMenu"
             v-motion-fade />
           <HeaderMenuItem v-if="this.showAboutMe" iconName="solution" title="Problem Solver" link="/problem-solver"
+            @click="closeMenu" v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="travel" title="Travel" link="/travel"
             @click="closeMenu" v-motion-fade />
         </div>
       </div>
