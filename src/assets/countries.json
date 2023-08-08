@@ -1,0 +1,342 @@
+[
+  {
+    "country": "Malta",
+    "flag": "maltaFlag",
+    "days": [
+      {
+        "day": "Day 1: Central to Northern Malta",
+        "attractions": [
+          {
+            "name": "Ta’ Qali National Park",
+            "description": "Located centrally, this park is an oasis of relaxation offering play areas, botanical gardens, and open spaces perfect for picnics and family outings.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Mdina",
+            "description": "Once the capital of Malta, this ancient walled city boasts of history spanning over 4,000 years. A blend of medieval and baroque architecture provides a time-travel experience.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Rabat",
+            "description": "Adjacent to Mdina, Rabat is known for its catacombs, historical churches, and charming streets reflecting Roman and medieval past.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Dingli Cliffs",
+            "description": "Malta's highest cliffs offer stunning sea views and an insight into the island's natural beauty. A tranquil spot especially during sunset.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Mosta Rotunda",
+            "description": "One of Europe's largest unsupported domes, the Mosta Rotunda is an architectural marvel and also known for the World War II bomb which failed to explode inside.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "San Anton Gardens",
+            "description": "A beautifully landscaped garden that was once the private residence of Malta's governors. It's a calm retreat featuring diverse flora and fauna.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "The Limestone Heritage",
+            "description": "This attraction showcases Malta's stone masonry and sculpture tradition, tracing back to the island's ancient temples.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "L-Arka ta’ Noe",
+            "description": "A captivating sanctuary housing various animal species, ensuring they have a loving home. A testament to Malta's dedication to animal care.",
+            "googleMap": "...",
+            "image": "..."
+          }
+        ]
+      },
+      {
+        "day": "Day 2: Eastern Malta",
+        "attractions": [
+          {
+            "name": "Valletta",
+            "description": "The capital city of Malta, Valletta is a UNESCO World Heritage site known for its historical buildings, museums, and beautiful harbors. Every corner of this city tells a tale of its rich history.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Fort St. Elmo",
+            "description": "Guarding the harbors of Valletta, this fort played a pivotal role during the Great Siege of 1565. Its walls have witnessed numerous historic battles.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "St. John's Co-Cathedral in Valletta",
+            "description": "An architectural gem from the outside, the interior dazzles with baroque art, including Caravaggio's masterpiece - The Beheading of Saint John.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Marsamxett Harbour and the Three Cities",
+            "description": "A natural harbor offering panoramic views, surrounded by the ancient cities of Birgu, Senglea, and Cospicua, each steeped in history.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Sliema and the Tigne Point",
+            "description": "A modern cityscape juxtaposed with historical fortifications. The Tigne Point offers shopping, dining, and sweeping views of Valletta.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "St. Julian’s",
+            "description": "A hub for nightlife and entertainment, St. Julian's blends coastal beauty with urban luxury, making it a hotspot for tourists and locals alike.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Marsaxlokk",
+            "description": "A picturesque fishing village known for its vibrant market, colorful boats, and the serene Marsaxlokk Bay which reflects the island's deep connection with the sea.",
+            "googleMap": "...",
+            "image": "..."
+          }
+        ]
+      },
+      {
+        "day": "Day 3: Southern Malta",
+        "attractions": [
+          {
+            "name": "Blue Grotto",
+            "description": "A series of mesmerizing sea caves offering an ethereal experience with its azure waters, especially when the sunlight reflects off the white seabed.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Hal Seflieni Hypogeum",
+            "description": "An underground architectural marvel, this ancient burial site provides a rare glimpse into the prehistoric period of Malta. Booking in advance is highly recommended.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Tarxien Temples",
+            "description": "Among the oldest free-standing structures in the world, these temples stand as a testament to Malta's ancient past and architectural prowess.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Mnajdra and Ħaġar Qim Temples",
+            "description": "Set on a hilltop, these temples offer panoramic views of the sea and are significant archaeological sites that reflect Malta's Megalithic period.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Ghar Dalam Cave",
+            "description": "Known as the 'Cave of Darkness', this site offers insights into Malta's prehistory, housing fossils that date back thousands of years.",
+            "googleMap": "...",
+            "image": "..."
+          }
+        ]
+      },
+      {
+        "day": "Day 4: Gozo",
+        "attractions": [
+          {
+            "name": "Wied il-Ghasri",
+            "description": "A secluded and serene valley ending in a cove. A picturesque location that showcases the natural beauty and landscapes of Gozo.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Gozo's Inland Sea and Azure Window site",
+            "description": "Although the iconic Azure Window no longer stands, the site remains a significant attraction. Close by is the Inland Sea, a unique geological feature offering a blend of natural beauty.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "it-Tempji tal-Ggantija",
+            "description": "These megalithic temples are among the world's oldest free-standing structures, highlighting Gozo's ancient civilization and architectural wonders.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Bazilika Tal-Madonna Ta’ Pinu Mill Gharb",
+            "description": "A revered sanctuary and an architectural masterpiece, this basilica stands as a symbol of faith and devotion in Gozo.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Victoria",
+            "description": "The capital of Gozo, Victoria, also known as Rabat, is a blend of historic sites, narrow streets, and daily Maltese life.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Sanap Cliffs",
+            "description": "Offering panoramic views of Gozo's southern coast, these cliffs stand as a testament to the island's rugged and untouched beauty.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Ramla Beach",
+            "description": "Gozo's largest sandy beach, Ramla Bay is renowned for its unique red sand and historical legends, including the mythical Calypso's cave.",
+            "googleMap": "...",
+            "image": "..."
+          }
+        ]
+      },
+      {
+        "day": "Day 5: Comino and Remaining Spots in Malta",
+        "attractions": [
+          {
+            "name": "Blue Lagoon Comino Island",
+            "description": "A paradise for beach lovers, the Blue Lagoon on Comino Island boasts crystal-clear turquoise waters and pristine white sands. A haven for snorkelers and divers, its serene beauty and water activities make it a must-visit. However, it's recommended to get there early to beat the crowds and truly enjoy its tranquility.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Popeye Village",
+            "description": "Once the film set for the 1980 'Popeye' movie, this vibrant and colorful village has been transformed into a fun-filled attraction for visitors. Offering a unique experience with its wooden buildings, water activities, and live performances, it's a step into the whimsical world of the sailor man himself.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Golden Bay",
+            "description": "One of Malta's most renowned beaches, Golden Bay is blessed with golden sands and clear blue waters, making it a favorite spot for sunbathing, swimming, and enjoying Maltese sunsets. The surrounding cliffs provide a picturesque backdrop, enhancing the beach's natural allure.",
+            "googleMap": "...",
+            "image": "..."
+          },
+          {
+            "name": "Malta West Coast",
+            "description": "A diverse landscape featuring rugged cliffs, hidden coves, and picturesque bays, Malta's West Coast is an explorer's dream. Each spot provides a unique perspective of the island's natural beauty and the vast Mediterranean Sea.",
+            "googleMap": "...",
+            "image": "..."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Italy",
+    "flag": "italyFlag",
+    "days": [
+      {
+        "day": "Day 0",
+        "attractions": [
+          {
+            "name": "Attraction 0 in Rome",
+            "description": "...",
+            "googleMap": "...",
+            "image": "..."
+          }
+        ]
+      },
+      {
+        "day": "Day 1",
+        "attractions": [
+          {
+            "name": "Attraction 1 in Rome",
+            "description": "...",
+            "googleMap": "...",
+            "image": "..."
+          }
+        ]
+      },
+      {
+        "day": "Day 2",
+        "attractions": [
+          {
+            "name": "Attraction 2 in Rome",
+            "description": "...",
+            "googleMap": "...",
+            "image": "..."
+          }
+        ]
+      },
+      {
+        "day": "Day 3",
+        "attractions": [
+          {
+            "name": "Attraction 3 in Rome",
+            "description": "...",
+            "googleMap": "...",
+            "image": "..."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Spain",
+    "flag": "spainFlag",
+    "city": "Madrid",
+    "cities": [
+      {
+        "name": "Madrid",
+        "days": [
+          {
+            "day": "day 1",
+            "attractions": [
+              {
+                "name": "Attraction 0 in Rome",
+                "description": "...",
+                "googleMap": "...",
+                "image": "..."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Barcelona",
+        "days": [
+          {
+            "day": "Day 0",
+            "attractions": [
+              {
+                "name": "Attraction 0 in Rome",
+                "description": "...",
+                "googleMap": "...",
+                "image": "..."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Hungary",
+    "flag": "hungaryFlag",
+    "days": [
+      {
+        "day": "Day 0",
+        "attractions": [
+          {
+            "name": "Attraction 0 in Rome",
+            "description": "...",
+            "googleMap": "...",
+            "image": "..."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Bulgaria",
+    "flag": "bulgariaFlag",
+    "days": [
+      {
+        "day": "Day 0",
+        "attractions": [
+          {
+            "name": "Attraction 0 in Rome",
+            "description": "...",
+            "googleMap": "...",
+            "image": "..."
+          }
+        ]
+      }
+    ]
+  }
+]
