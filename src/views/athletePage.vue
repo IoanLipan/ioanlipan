@@ -1,35 +1,16 @@
 <!-- eslint-disable max-len -->
 <template>
-  <div class="grid-of-12-container bg-slate-800">
-    <div
-      class="p-4 md:p-0 col-start-1 col-span-12 font-mono text-white md:col-start-2 md:col-span-10"
-    >
-      <h1
-        class="text-4xl md:text-5xl text-center font-superstar p-4 pb-4 pt-10 tracking-wider"
-        v-motion-pop
-      >
-        My therapy is sport and healthy competition!
+  <div class="grid-of-12-container">
+    <div class="p-4 md:p-0 col-start-1 col-span-12 font-mono text-white md:col-start-2 md:col-span-10">
+      <h1 class="text-4xl md:text-5xl text-center font-superstar p-4 pb-4 pt-10 tracking-wider" v-motion-pop>
+        Mens sano in corpore sano!
       </h1>
-      <p
-        class="text-sm md:text-lg text-center px-8 py-6 tracking-wide rounded-2xl"
-        v-motion-pop
-        :delay="delay"
-      >
-        &emsp; I like to keep my mind and my body in shape. This helps me reach my maximum
-        potential. There is a saying: Mens sano in corpore sano . If problem-solving keeps the brain
-        active and healthy, the same is with sports and the body. Nowadays, most of the people are
-        negligent towards their body, especially programmers. The body reacts to what it is doing
-        most of the time. Having a sedentary job and 10+ hours of screentime should not be a
-        motivation to adopt a sedentary lifestyle. In order to compensate for the physical
-        inactivity of my job, I play every sport that I can, whenever I have the occasion.
+      <p class="text-sm md:text-lg text-center px-8 py-6 tracking-wide rounded-2xl" v-motion-pop :delay="delay">
+        Some of the sports I enjoy are:
       </p>
       <div v-for="article in athleteArticles" :key="article.title">
-        <TextWithImage
-          :imageIsRight="!!(article.articleNumber % 2)"
-          :title="article.title"
-          :text="article.text"
-          :image="article.image"
-        />
+        <TextWithImage :imageIsRight="!!(article.articleNumber % 2)" :title="article.title" :text="article.text"
+          :image="article.image" />
       </div>
     </div>
   </div>
