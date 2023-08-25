@@ -58,18 +58,8 @@
         <div class="h-full w-full md:w-fit pt-10 flex flex-col gap-4 text-base sm:text-lg lg:text-3xl items-start text-left">
           <HeaderMenuItem iconName="webdev" title="Web Developer" link="/" @click="closeMenu" />
           <HeaderMenuItem iconName="thanos" title="Tech Stacks" link="/tech-knowledge" @click="closeMenu" />
-          <div v-if="!showAboutMe" @click="toggleAboutMe($event)" class="cursor-pointer flex items-center gap-3">
-            <div class="p-2 flex items-center gap-5 justify-between">
-              <SvgIcon name="explore" />
-              More about me &#8600;
-            </div>
-          </div>
-          <div v-else class="flex flex-col gap-4 cursor-pointer items-start text-left" @click="toggleAboutMe($event)">
-            <div class="p-2 flex items-center gap-5 justify-between">
-              <SvgIcon name="explore" />
-              More about me &#8599;
-            </div>
-          </div>
+          <HeaderMenuItem v-if="!this.showAboutMe" iconName="explore" title="More about me &#8600;" @click.stop="toggleAboutMe($event)" v-motion-fade />
+          <HeaderMenuItem v-else iconName="explore" title="Less about me &#8599;" @click.stop="toggleAboutMe($event)" v-motion-fade />
           <HeaderMenuItem v-if="this.showAboutMe" iconName="engineer" title="Engineer" link="/engineer" @click="closeMenu" v-motion-fade />
           <HeaderMenuItem v-if="this.showAboutMe" iconName="athlete" title="Athlete" link="/athlete" @click="closeMenu" v-motion-fade />
           <HeaderMenuItem v-if="this.showAboutMe" iconName="solution" title="Problem Solver" link="/problem-solver" @click="closeMenu" v-motion-fade />
