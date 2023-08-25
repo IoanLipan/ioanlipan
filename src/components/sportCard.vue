@@ -1,6 +1,6 @@
 <template>
   <div class="relative rounded-2xl overflow-hidden cursor-pointer" @click="openPopover">
-    <img class="w-full h-56 object-cover" :src="image" :alt="title">
+    <img class="w-full h-80 object-cover" :src="image" :alt="title">
     <div
       class="absolute bottom-0 w-full bg-gradient-to-t from-slate-800 to-transparent text-white text-xl p-3 select-none">
       {{ title }}
