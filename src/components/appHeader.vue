@@ -1,6 +1,6 @@
 <!-- eslint-disable max-len -->
 <template>
-  <nav class="h-[72px] md:h-20 z-40 font-mono sm:mb-10">
+  <nav ref="menuRef" class="h-[72px] md:h-20 z-40 font-mono sm:mb-10">
     <!-- desktop menu -->
     <div class="hidden lg:block">
       <div class="w-full fixed bg-black text-white flex justify-between items-center p-4 px-8">
@@ -20,14 +20,11 @@
             v-motion-roll-right>
             <HeaderMenuItem iconName="thanosBig" title="Technologies" link="/tech-knowledge"
               @click="closeAboutMeDesktop" />
-            <HeaderMenuItem iconName="engineerBig" title="Engineer" link="/engineer"
-              @click="closeAboutMeDesktop" />
-            <HeaderMenuItem iconName="athleteBig" title="Athlete" link="/athlete"
-              @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="engineerBig" title="Engineer" link="/engineer" @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="athleteBig" title="Athlete" link="/athlete" @click="closeAboutMeDesktop" />
             <HeaderMenuItem iconName="solutionBig" title="Problem-Solver" link="/problem-solver"
               @click="closeAboutMeDesktop" />
-            <HeaderMenuItem iconName="travelBig" title="Travel" link="/travel"
-              @click="closeAboutMeDesktop" />
+            <HeaderMenuItem iconName="travelBig" title="Travel" link="/travel" @click="closeAboutMeDesktop" />
           </div>
         </div>
       </div>
@@ -58,30 +55,25 @@
       </div>
       <div v-show="showMenu"
         class="h-[94vh] top-[60px] sm:h-[92vh] sm:top-[72px] md:top-[110px] fixed z-50 bg-black md:bg-opacity-80 text-white w-full md:w-[38vw] px-6">
-        <div
-          class="h-full w-full md:w-fit pt-10 flex flex-col gap-4 text-base sm:text-lg lg:text-3xl items-start text-left">
+        <div class="h-full w-full md:w-fit pt-10 flex flex-col gap-4 text-base sm:text-lg lg:text-3xl items-start text-left">
           <HeaderMenuItem iconName="webdev" title="Web Developer" link="/" @click="closeMenu" />
           <HeaderMenuItem iconName="thanos" title="Tech Stacks" link="/tech-knowledge" @click="closeMenu" />
-          <div v-if="!showAboutMe" @click="toggleAboutMe" class="cursor-pointer flex items-center gap-3">
+          <div v-if="!showAboutMe" @click="toggleAboutMe($event)" class="cursor-pointer flex items-center gap-3">
             <div class="p-2 flex items-center gap-5 justify-between">
               <SvgIcon name="explore" />
               More about me &#8600;
             </div>
           </div>
-          <div v-else class="flex flex-col gap-4 cursor-pointer items-start text-left" @click="toggleAboutMe">
+          <div v-else class="flex flex-col gap-4 cursor-pointer items-start text-left" @click="toggleAboutMe($event)">
             <div class="p-2 flex items-center gap-5 justify-between">
               <SvgIcon name="explore" />
               More about me &#8599;
             </div>
           </div>
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="engineer" title="Engineer" link="/engineer" @click="closeMenu"
-            v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="athlete" title="Athlete" link="/athlete" @click="closeMenu"
-            v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="solution" title="Problem Solver" link="/problem-solver"
-            @click="closeMenu" v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="travel" title="Travel" link="/travel"
-            @click="closeMenu" v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="engineer" title="Engineer" link="/engineer" @click="closeMenu" v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="athlete" title="Athlete" link="/athlete" @click="closeMenu" v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="solution" title="Problem Solver" link="/problem-solver" @click="closeMenu" v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="travel" title="Travel" link="/travel" @click="closeMenu" v-motion-fade />
         </div>
       </div>
     </div>
@@ -103,8 +95,15 @@ export default {
       showAboutMeDesktop: false,
     };
   },
+  mounted() {
+    document.addEventListener('click', this.handleClickOutside);
+  },
+  beforeDestroy() {
+    document.removeEventListener('click', this.handleClickOutside);
+  },
   methods: {
-    toggleAboutMe() {
+    toggleAboutMe(event) {
+      event.stopPropagation();
       this.showAboutMe = !this.showAboutMe;
     },
     toggleAboutMeDesktop() {
@@ -120,6 +119,13 @@ export default {
     },
     closeAboutMeDesktop() {
       this.showAboutMeDesktop = false;
+    },
+    handleClickOutside(event) {
+      const { menuRef } = this.$refs;
+      if (!menuRef.contains(event.target) && event.target !== menuRef) {
+        this.closeMenu();
+        this.closeAboutMeDesktop();
+      }
     },
   },
 };
