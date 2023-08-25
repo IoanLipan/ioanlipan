@@ -11,13 +11,13 @@
     <div class="col-start-1 col-span-12 md:col-start-2 md:col-span-10 flex flex-col items-center">
       <RouterLink v-motion-pop :delay="600" to="/tech-knowledge" class="flex p-2 gap-2 mx-3 rounded-3xl text-center
           cursor-pointer bg-slate-600 hover:bg-slate-500 active:bg-slate-700 border-slate-500 border-4">
-        <SvgIcon name="click" class="rotate-90 " />
+        <SvgIcon name="click" class="rotate-90 my-auto" />
         <div class="min-w-[165px]">
           Click here
           <br />
           to see my stack
         </div>
-        <SvgIcon name="click" class="-rotate-90 scale-x-[-1]" />
+        <SvgIcon name="click" class="-rotate-90 scale-x-[-1] my-auto" />
       </RouterLink>
       <p v-motion-pop :delay="700" class="text-center py-4 md:py-8">
         OR
