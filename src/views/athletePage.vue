@@ -8,8 +8,13 @@
       <p class="text-sm md:text-lg text-center px-8 py-6 tracking-wide rounded-2xl" v-motion-pop :delay="delay">
         Some of the sports I enjoy are:
       </p>
-      <div v-for="article in athleteArticles" :key="article.title">
-        <TextWithImage :imageIsRight="!!(article.articleNumber % 2)" :title="article.title" :text="article.text"
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <SportCard
+          v-for="article in athleteArticles"
+          :key="article.title"
+          :title="article.title"
+          :text="article.text"
+          :icon="article.icon"
           :image="article.image" />
       </div>
     </div>
@@ -18,11 +23,12 @@
 
 <script>
 import { ref } from 'vue';
-import TextWithImage from '../components/textWithImage.vue';
+import SportCard from '../components/sportCard.vue';
 
 export default {
   name: 'AthletePage',
   title: 'Ioan Lipan | Athlete',
+  components: { SportCard },
   setup() {
     /* eslint-disable global-require */
     const athleteArticles = ref([
@@ -30,36 +36,36 @@ export default {
         articleNumber: 1,
         title: 'Basketball',
         image: require('../assets/images/basketball.jpeg'),
-        text: `I always liked basketball, but since it requires practice, I only started to be a good
-        basketball player when I started practicing more and training even more. The feeling was the
-        same as in programming. The better I got at scoring the ball, the more I loved the game and the
-        more competitive I got. I am now pursuing a shooter role in a division 2 league in my country
-        Romania, so good luck to me :D`,
+        icon: 'basketball',
+        text: "Basketball has always been a passion of mine. Like programming, it demands dedication, practice, and an evolving mindset. As my skills improved, so did my love for the game, fueling my competitive spirit. Here's to making every shot count!",
       },
       {
         articleNumber: 2,
         title: 'Kick-Boxing',
         image: require('../assets/images/kickbox.jpeg'),
-        text: `Kickboxing thaught me a lot about respect, conduite and hard work. If you
-          want a sport that is very challenging on your cardio-vascular system, pick kickboxing.
-          The amount of training that you have to do in order to perform good in kickboxing and
-          not get tired and gas you in the first 2 minutes is insane!`,
+        icon: 'kickbox',
+        text: "Kickboxing has been more than just a sport for me; it's a lesson in respect, discipline, and perseverance. Beyond its physical demands, it tests your mental stamina. Ensuring you're not winded within the initial minutes necessitates rigorous cardiovascular training. Every session is a step closer to mastering the art.",
       },
       {
         articleNumber: 3,
-        title: 'Gym',
-        image: require('../assets/images/gym.jpeg'),
-        text: `There are many things I like about the weight room. One of them is the fact that
-        it helps me grow in strength and muscle size, but I use the gym to get better at movements
-        that I want to improve for the sports I play. It helps me focus on my weaker movements like jumping.`,
+        title: 'Swimming',
+        image: require('../assets/images/swimming.jpeg'),
+        icon: 'swimming',
+        text: "Swimming, the dance of the water, offers a unique blend of relaxation and intense workout. It strengthens both the mind and body, teaching the essence of rhythm and breath control. Beyond being an excellent cardiovascular exercise, it's a meditation, a moment of synergy between human and water.",
       },
       {
         articleNumber: 4,
+        title: 'Gym',
+        image: require('../assets/images/gym.jpeg'),
+        icon: 'gym',
+        text: "The weight room offers more than just physical growth; it's a sanctuary for holistic development. While I appreciate the strength and muscle gains, my primary goal is to refine sport-specific movements. The gym allows me to focus on enhancing my weaker areas, such as my jumping technique.",
+      },
+      {
+        articleNumber: 5,
         title: 'Ping-Pong',
         image: require('../assets/images/pingpong.jpeg'),
-        text: `Ping pong is a great sport in my opinion. It demonstrates that consistency is key to
-        perfecting and that the little things count. I also like the fact that it trains the agility,
-        dexterity and the reaction time.`,
+        icon: 'pingpong',
+        text: "Ping pong, to me, epitomizes the importance of consistency and attention to detail. It's a game where every swift movement matters, honing agility, dexterity, and reaction time. It's not just about hitting the ball but mastering the rhythm of the game.",
       },
     ]);
     return { athleteArticles };
@@ -70,6 +76,5 @@ export default {
       delay: 200,
     };
   },
-  components: { TextWithImage },
 };
 </script>
