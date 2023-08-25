@@ -17,12 +17,12 @@
       <h3 class="text-2xl text-lime-300 underline pt-2">{{ title }}</h3>
       <p class="bg-slate-400 rounded-b-2xl text-black">Click to flip the card!</p>
     </div>
-    <div class="back-of-card bg-slate-300 rounded-3xl border-4 border-slate-700 cursor-pointer
+    <div class="back-of-card bg-slate-300 rounded-3xl border-4 border-slate-600 cursor-pointer
     flex flex-col justify-between">
-      <a v-if="url" :href="url" class="bg-slate-700 rounded-t-2xl">Click for repo/project!</a>
-      <p v-else class="bg-slate-700 rounded-t-2xl">The repo/project is confidential</p>
+      <a v-if="url" :href="url" class="bg-slate-600 rounded-t-2xl">Click for repo/project!</a>
+      <p v-else class="bg-slate-600 rounded-t-2xl">The repo/project is confidential</p>
       <p class="p-2 xl:px-8 min-h-28 text-black">{{ description }}</p>
-      <div class="text-orange-400 font-semibold bg-slate-700 rounded-b-2xl
+      <div class="text-orange-400 font-semibold bg-slate-600 rounded-b-2xl
        w-full mx-auto px-5 py-2 h-20 flex items-center justify-center">
         {{ usedTech }}
       </div>
