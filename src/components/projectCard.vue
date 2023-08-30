@@ -13,7 +13,7 @@
         Personal Project
       </div>
       <SvgIcon :name="imageName"
-      class="self-center fill-white h-[120px] md:h-[200px] flex justify-center pt-5" />
+      class="self-center fill-white h-[180px] md:h-[200px] flex justify-center pt-5 scale-75 md:scale-100" />
       <h3 class="text-2xl text-lime-300 underline pt-2">{{ title }}</h3>
       <p class="bg-slate-400 rounded-b-2xl text-black">Click to flip the card!</p>
     </div>
