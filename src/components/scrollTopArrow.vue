@@ -2,9 +2,9 @@
   <div
     @click="scrollTop"
     v-show="visibleScroll"
-    class="fill-slate-400 fixed bottom-10 right-3 md:bottom-20 md:right-5 cursor-pointer z-30"
+    class="fill-slate-400 fixed bottom-10 right-3 lg:bottom-20 lg:right-5 cursor-pointer z-30"
   >
-    <SvgIcon name="arrowUp" class="w-24 h-24 md:w-36" />
+    <SvgIcon name="arrowUp" class="w-24 h-24 lg:w-36" />
   </div>
 </template>
 
