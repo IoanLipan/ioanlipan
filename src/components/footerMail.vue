@@ -3,7 +3,7 @@
   <div class="grid-of-12-container w-[100vw]">
     <article
       class="col-start-2 col-span-10 lg:col-start-3 lg:col-span-8 2xl:mx-20 p-4 md:p-6 bg-slate-900 border-slate-700 rounded-3xl my-10 font-mono text-slate-100">
-      <form class="flex flex-col gap-4" :action="FORM_ENDPOINT" @submit="handleSubmit" method="POST" target="_parent">
+      <form class="flex flex-col gap-4" :action="VUE_APP_FORM_ENDPOINT" method="POST">
         <h3 class="text-3xl py-6 text-center text-white">
           Contact me and lets start working on your website!
         </h3>
@@ -33,9 +33,13 @@
           v-if="forbiddenWords">
           ⛔️ Let's speak like adults!
         </div>
-        <button type="submit" :class="'text-2xl p-2 w-1/2 bg-slate-500 self-center ' + submitButtonClass" @click="verifyEmail">
+        <button v-if="isFormOk" type="submit" :class="'text-2xl p-2 w-1/2 bg-slate-500 self-center ' + submitButtonClass"
+          @click="handleSubmit">
           Send
         </button>
+        <div style="text-indent:-99999px; white-space:nowrap; overflow:hidden; position:absolute;" aria-hidden="true">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+        </div>
       </form>
       <div v-if="submitted" class="text-center mt-10">
         <h2 class="text-2xl">Thank you!</h2>
@@ -55,10 +59,13 @@ export default {
       messageInputLength: 0,
       messageMaxLength: 250,
       submitted: false,
-      FORM_ENDPOINT: process.env.FORM_ENDPOINT,
+      VUE_APP_FORM_ENDPOINT: process.env.VUE_APP_FORM_ENDPOINT,
       isEmailValid: 0,
       forbiddenWords: false,
     };
+  },
+  created() {
+    this.VUE_APP_FORM_ENDPOINT = process.env.VUE_APP_FORM_ENDPOINT;
   },
   computed: {
     getMessageColor() {
@@ -67,19 +74,30 @@ export default {
     submitButtonClass() {
       return this.isEmailValid ? 'cursor-pointer bg-green-500 rounded-2xl' : 'cursor-not-allowed rounded-2xl';
     },
+    isFormOk() {
+      return this.isEmailValid && !this.forbiddenWords && this.messageInputLength;
+    },
   },
   methods: {
     async verifyEmail() {
-      const API_KEY = process.env.VUE_APP_ABSTRACT_API_KEY;
-      const email = this.$refs.emailInput.value;
-      const API_URL = `https://emailvalidation.abstractapi.com/v1/?api_key=${API_KEY}`;
-      const fullURL = `${API_URL}&email=${email}`;
-      const apiResponse = await fetch(fullURL);
-      const data = await apiResponse.json();
-      this.isEmailValid = false;
-      const isValid = data.is_valid_format && data.is_valid_format.value && data.deliverability === 'DELIVERABLE';
-      this.isEmailValid = isValid;
-      return isValid;
+      try {
+        const API_KEY = process.env.VUE_APP_ABSTRACT_API_KEY;
+        const email = this.$refs.emailInput.value;
+
+        const API_URL = `https://emailvalidation.abstractapi.com/v1/?api_key=${API_KEY}&email=${email}`;
+
+        const apiResponse = await fetch(API_URL);
+
+        if (!apiResponse.ok) {
+          return;
+        }
+
+        const data = await apiResponse.json();
+
+        this.isEmailValid = data.is_valid_format && data.is_valid_format.value && data.deliverability === 'DELIVERABLE';
+      } catch (error) {
+        this.isEmailValid = false;
+      }
     },
     handleSubmit(e) {
       if (!this.isEmailValid) {
