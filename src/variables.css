@@ -1,0 +1,51 @@
+/* variables.css */
+
+/* Default Palette */
+:root {
+  --primary: #1B3A57;
+  --secondary: #F25F5C;
+  --accent: #F7FFF7;
+  --neutral: #F1D3B2;
+  --textcolor: #262626;
+  --negative: #DB0001;
+}
+
+/* Palette 1 */
+[data-theme="palette1"] {
+  --primary: #FF5733;
+  --secondary: #33FF57;
+  --accent: #FFF700;
+  --neutral: #900C3F;
+  --textcolor: #C70039;
+  --negative: #581845;
+}
+
+/* Palette 2 */
+[data-theme="palette2"] {
+  --primary: #DAF7A6;
+  --secondary: #FFC300;
+  --accent: #FF5733;
+  --neutral: #C70039;
+  --textcolor: #900C3F;
+  --negative: #581845;
+}
+
+/* Palette 3 */
+[data-theme="palette3"] {
+  --primary: #6C3483;
+  --secondary: #1F618D;
+  --accent: #28B463;
+  --neutral: #D4AC0D;
+  --textcolor: #CA6F1E;
+  --negative: #BA4A00;
+}
+
+/* Palette 4 */
+[data-theme="palette4"] {
+  --primary: #196F3D;
+  --secondary: #F39C12;
+  --accent: #D35400;
+  --neutral: #C0392B;
+  --textcolor: #7B241C;
+  --negative: #641E16;
+}

@@ -1,6 +1,6 @@
 <!-- eslint-disable max-len -->
 <template>
-  <nav ref="menuRef" class="h-[72px] md:h-20 z-40 sm:mb-10">
+  <nav ref="menuRef" class="h-[72px] md:h-20 z-40 sm:mb-4 lg:mb-6">
     <!-- desktop menu -->
     <div class="hidden lg:block">
       <div class="w-full fixed bg-primary text-neutral flex justify-between items-center p-4 px-8">

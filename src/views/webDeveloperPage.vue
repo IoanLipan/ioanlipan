@@ -12,7 +12,7 @@
       <RouterLink v-motion-pop :delay="600" to="/tech-knowledge" class="flex p-3 gap-2 mx-3 rounded-3xl text-center
           cursor-pointer bg-secondary hover:bg-opacity-90 group">
         <SvgIcon name="click" class="rotate-90 group-hover:rotate-[450deg] point-finger" />
-        <div class="min-w-[165px] text-neutral point-finger">
+        <div class="min-w-[165px] text-accent point-finger">
           Click here
           <br />
           to see my stack

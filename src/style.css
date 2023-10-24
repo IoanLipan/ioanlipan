@@ -20,7 +20,7 @@
 }
 
 .secondary-button {
-    @apply text-neutral bg-secondary px-5 py-4 rounded-3xl text-center cursor-pointer
+    @apply text-accent bg-secondary px-5 py-4 rounded-3xl text-center cursor-pointer
     hover:bg-opacity-80 text-xl;
 }
 

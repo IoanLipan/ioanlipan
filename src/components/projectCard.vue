@@ -7,7 +7,7 @@
       <div v-if="workRelated" class="bg-accent text-textcolor card-tag">
         Work Related
       </div>
-      <div v-else class="bg-secondary text-neutral card-tag">
+      <div v-else class="bg-secondary text-accent card-tag">
         Personal Project
       </div>
       <SvgIcon :name="imageName"
