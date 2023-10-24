@@ -2,11 +2,11 @@
 
 /* Default Palette */
 :root {
-  --primary: #1B3A57;
-  --secondary: #F25F5C;
+  --primary: #164571;
+  --secondary: #f7893f;
   --accent: #F7FFF7;
-  --neutral: #f3e0cb;
-  --textcolor: #262626;
+  --neutral: #f3e5d7;
+  --textcolor: #2d2d2d;
   --negative: #DB0001;
 }
 
