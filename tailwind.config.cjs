@@ -7,9 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        superstar: ['SUPERSTAR'],
-        cinzel: ['Cinzel'],
-        coolvetica: ['Coolvetica'],
+        rubik: ['Rubik'],
       },
     },
   },

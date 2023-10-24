@@ -21,8 +21,8 @@
     flex flex-col justify-between">
       <a v-if="url" :href="url" class="bg-slate-600 rounded-t-2xl">Click for repo/project!</a>
       <p v-else class="bg-slate-600 rounded-t-2xl">The repo/project is confidential</p>
-      <p class="p-2 xl:px-8 min-h-28 text-black">{{ description }}</p>
-      <div class="text-orange-400 font-semibold bg-slate-600 rounded-b-2xl
+      <p class="p-2 xl:px-8 md:text-xl min-h-28 text-black">{{ description }}</p>
+      <div class="text-orange-400 font-medium bg-slate-600 rounded-b-2xl
        w-full mx-auto px-5 py-2 h-20 flex items-center justify-center">
         {{ usedTech }}
       </div>

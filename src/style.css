@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "SUPERSTAR";
-    src: url("../public/fonts/superstar_m54/Superstar\ M54.ttf");
+    font-family: "Rubik";
+    src: url("../public/fonts/Rubik/Rubik-VariableFont_wght.ttf");
 }
 
 .grid-of-12-container {

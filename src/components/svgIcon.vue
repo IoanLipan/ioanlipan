@@ -50,7 +50,7 @@
     <svg v-else-if="name === 'arrowRight'" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10.211 7.155c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591zm.289 7.563v-5.446l3.522 2.719z" fill-rule="nonzero"/></svg>
     <svg v-else-if="name === 'arrowUp'" height="100" width="100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16.843 13.789c.108.141.157.3.157.456 0 .389-.306.755-.749.755h-8.501c-.445 0-.75-.367-.75-.755 0-.157.05-.316.159-.457 1.203-1.554 3.252-4.199 4.258-5.498.142-.184.36-.29.592-.29.23 0 .449.107.591.291zm-7.564-.289h5.446l-2.718-3.522z" fill-rule="nonzero"/></svg>
     <svg v-else-if="name === 'check'"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#008000" id="check"><path fill="#03c04a" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Zm3.536-13.536A1 1 0 0 1 16.95 9.88l-5.653 5.653-.004.004a.997.997 0 0 1-1.414 0l-.004-.004-2.825-2.825a1 1 0 1 1 1.414-1.414l2.122 2.121 4.95-4.95Z" clip-rule="evenodd"></path></svg>
-    <img v-else src="../assets/images/placeholder.png" />
+    <img v-else height="100" width="100" src="../assets/images/placeholder.png" />
   </div>
 </template>
 

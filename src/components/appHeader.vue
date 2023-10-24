@@ -8,7 +8,7 @@
           <router-link to="/" @click="closeAboutMeDesktop()">
             <img src="../assets/ILLogo.png" class="h-10 w-auto" />
           </router-link>
-          <HeaderMenuItem title="Ioan Lipan" description="WEB DEVELOPER" class="text-3xl tracking-widest" link="/" />
+          <HeaderMenuItem title="Ioan Lipan" description="WEB DEVELOPER" class="text-3xl tracking-[0.2em]" link="/" />
         </div>
         <HeaderMenuItem class="text-2xl cursor-pointer hidden" title="💰 Freelance services" link="/services" />
         <div class="flex flex-col z-40">
@@ -45,7 +45,7 @@
             ]" />
           </div>
           <HeaderMenuItem title="Ioan Lipan" description="WEB DEVELOPER"
-            class="text-2xl md:text-4xl col-span-3 text-center tracking-widest" link="/" @click="closeMenu()" />
+            class="text-2xl md:text-4xl col-span-3 text-center tracking-[0.25em]" link="/" @click="closeMenu()" />
           <div class="flex items-center justify-end col-start-5">
             <router-link to="/" @click="closeMenu()">
               <img src="../assets/ILLogo.png" class="h-10 w-auto" />

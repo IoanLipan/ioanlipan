@@ -6,7 +6,7 @@
     >
       <svgIcon :name="svgName" />
     </span>
-    <h3 class="mb-1 text-lg font-semibold text-white">
+    <h3 class="mb-1 text-lg font-semibold tracking-widest text-white">
       {{ title }}
       <span v-if="svgName === 'diploma'"
       class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3">
@@ -14,7 +14,7 @@
       </span>
     </h3>
     <time class="block mb-2 text-sm font-normal leading-none text-gray-400"> {{ period }} </time>
-    <p class="text-base font-normal text-white">
+    <p class="text-base font-light tracking-wide text-white">
       {{ description }}
     </p>
   </li>
