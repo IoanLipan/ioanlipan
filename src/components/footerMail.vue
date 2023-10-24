@@ -5,15 +5,18 @@
       class="col-start-2 col-span-10 lg:col-start-3 lg:col-span-8 2xl:mx-20 p-4 md:p-6 bg-slate-900 border-slate-700 rounded-3xl my-10 font-mono text-slate-100">
       <form class="flex flex-col gap-4" :action="VUE_APP_FORM_ENDPOINT" method="POST">
         <h3 class="text-3xl py-6 text-center text-white">
-          Contact me and lets start working on your website!
+          Contact me and lets start working on your idea!
         </h3>
         <label class="text-xl text-red-500">Name:</label>
         <input name="name" type="text" ref="name" required @keyup="catchForbiddenWords()" @paste="catchForbiddenWords()"
           placeholder="Your Name ..." maxlength="30"
           class="p-3 rounded-2xl focus:outline-none focus:bg-red-200 text-black w-full" />
-        <label class="text-xl text-blue-400">Email:</label>
-        <input name="email" type="email" ref="emailInput" @blur="verifyEmail" required placeholder="Your Email ..."
-          maxlength="30" class="p-3 rounded-2xl focus:outline-none focus:bg-blue-200 text-black w-full" />
+        <label class="text-xl text-blue-400">Email (verify first):</label>
+        <div class="flex">
+          <input name="email" type="email" ref="emailInput" required placeholder="Your Email ..." maxlength="30"
+          class="p-3 rounded-2xl focus:outline-none focus:bg-blue-200 text-black w-full" @change="isEmailValid = false" />
+          <SvgIcon @click="verifyEmail" class="flex items-center ml-3 p-3 rounded-2xl bg-green-900 hover:bg-green-700" name="check" />
+        </div>
         <label class="text-xl text-yellow-500">Your idea:</label>
         <textarea ref="messageInput" name="message" rows="5"
           placeholder="Your extraordinary idea (max 250 characters) ..." maxlength="250" required
@@ -51,9 +54,11 @@
 
 <script>
 import FORBIDDEN_WORDS from './forbiddenWords';
+import SvgIcon from './svgIcon.vue';
 
 export default {
   name: 'ContactMe',
+  components: { SvgIcon },
   data() {
     return {
       messageInputLength: 0,
@@ -83,17 +88,12 @@ export default {
       try {
         const API_KEY = process.env.VUE_APP_ABSTRACT_API_KEY;
         const email = this.$refs.emailInput.value;
-
         const API_URL = `https://emailvalidation.abstractapi.com/v1/?api_key=${API_KEY}&email=${email}`;
-
         const apiResponse = await fetch(API_URL);
-
         if (!apiResponse.ok) {
           return;
         }
-
         const data = await apiResponse.json();
-
         this.isEmailValid = data.is_valid_format && data.is_valid_format.value && data.deliverability === 'DELIVERABLE';
       } catch (error) {
         this.isEmailValid = false;
@@ -108,7 +108,6 @@ export default {
         e.preventDefault();
         return;
       }
-
       setTimeout(() => {
         this.submitted = true;
       }, 100);
@@ -121,7 +120,6 @@ export default {
       const nameContent = this.$refs.name.value.toLowerCase();
       const isNameForbidden = FORBIDDEN_WORDS.some((forb) => nameContent.includes(forb));
       const isMessageForbidden = FORBIDDEN_WORDS.some((forb) => messageContent.includes(forb));
-
       if (isNameForbidden || isMessageForbidden) {
         this.forbiddenWords = true;
       } else this.forbiddenWords = false;
