@@ -1,6 +1,6 @@
 <!-- eslint-disable max-len -->
 <template>
-  <nav ref="menuRef" class="h-[72px] md:h-20 z-40 font-mono sm:mb-10">
+  <nav ref="menuRef" class="h-[72px] md:h-20 z-40 sm:mb-10">
     <!-- desktop menu -->
     <div class="hidden lg:block">
       <div class="w-full fixed bg-black text-white flex justify-between items-center p-4 px-8">
@@ -55,15 +55,22 @@
       </div>
       <div v-show="showMenu"
         class="h-[94vh] top-[60px] sm:h-[92vh] sm:top-[72px] md:top-[110px] fixed z-50 bg-black md:bg-opacity-80 text-white w-full md:w-[38vw] px-6">
-        <div class="h-full w-full md:w-fit pt-10 flex flex-col gap-4 text-base sm:text-lg lg:text-3xl items-start text-left">
+        <div
+          class="h-full w-full md:w-fit pt-10 flex flex-col gap-4 text-base sm:text-lg lg:text-3xl items-start text-left">
           <HeaderMenuItem iconName="webdev" title="Web Developer" link="/" @click="closeMenu" />
           <HeaderMenuItem iconName="thanos" title="Tech Stacks" link="/tech-knowledge" @click="closeMenu" />
-          <HeaderMenuItem v-if="!this.showAboutMe" iconName="explore" title="More about me &#8600;" @click.stop="toggleAboutMe($event)" v-motion-fade />
-          <HeaderMenuItem v-else iconName="explore" title="Less about me &#8599;" @click.stop="toggleAboutMe($event)" v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="engineer" title="Engineer" link="/engineer" @click="closeMenu" v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="athlete" title="Athlete" link="/athlete" @click="closeMenu" v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="solution" title="Problem Solver" link="/problem-solver" @click="closeMenu" v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="travel" title="Travel" link="/travel" @click="closeMenu" v-motion-fade />
+          <HeaderMenuItem v-if="!this.showAboutMe" iconName="explore" title="More about me &#8600;"
+            @click.stop="toggleAboutMe($event)" v-motion-fade />
+          <HeaderMenuItem v-else iconName="explore" title="Less about me &#8599;" @click.stop="toggleAboutMe($event)"
+            v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="engineer" title="Engineer" link="/engineer" @click="closeMenu"
+            v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="athlete" title="Athlete" link="/athlete" @click="closeMenu"
+            v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="solution" title="Problem Solver" link="/problem-solver"
+            @click="closeMenu" v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="travel" title="Travel" link="/travel" @click="closeMenu"
+            v-motion-fade />
         </div>
       </div>
     </div>
@@ -79,7 +86,6 @@ export default {
   components: { HeaderMenuItem, SvgIcon },
   data() {
     return {
-      showDropdown: false,
       showMenu: false,
       showAboutMe: false,
       showAboutMeDesktop: false,
@@ -111,10 +117,12 @@ export default {
       this.showAboutMeDesktop = false;
     },
     handleClickOutside(event) {
-      const { menuRef } = this.$refs;
-      if (!menuRef.contains(event.target) && event.target !== menuRef) {
-        this.closeMenu();
-        this.closeAboutMeDesktop();
+      if (this.showMenu || this.showAboutMeDesktop || this.showAboutMe) {
+        const { menuRef } = this.$refs;
+        if (!menuRef.contains(event.target) && event.target !== menuRef) {
+          this.closeMenu();
+          this.closeAboutMeDesktop();
+        }
       }
     },
   },
