@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class='flex flex-col hover:bg-textcolor hover:bg-opacity-60 transition-all p-5 rounded-full' @click="openModal">
+    <div class='flex flex-col hover:bg-slate-500 transition-all p-5 rounded-full' @click="openModal">
       <div class="w-24 h-24 flex items-center justify-center">
         <SvgIcon :name='imageName' />
       </div>
