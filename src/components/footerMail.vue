@@ -2,7 +2,7 @@
 <template>
   <div class="grid-of-12-container w-[100vw]">
     <article
-      class="col-start-2 col-span-10 lg:col-start-3 lg:col-span-8 2xl:mx-20 p-4 md:p-6 bg-slate-900 border-slate-700 rounded-3xl my-10 font-mono text-slate-100">
+      class="col-start-2 col-span-10 lg:col-start-3 lg:col-span-8 2xl:mx-20 p-4 md:p-6 bg-slate-900 border-slate-700 rounded-3xl my-10 text-slate-100">
       <form class="flex flex-col gap-4" :action="VUE_APP_FORM_ENDPOINT" method="POST">
         <h3 class="text-3xl py-6 text-center text-white">
           Contact me and lets start working on your idea!
@@ -13,23 +13,12 @@
           class="p-3 rounded-2xl focus:outline-none focus:bg-red-200 text-black w-full" />
         <label class="text-xl text-blue-400">Email (verify first):</label>
         <div class="flex">
-    <input
-      name="email"
-      type="email"
-      ref="emailInput"
-      required
-      placeholder="Your Email ..."
-      maxlength="30"
-      class="p-3 rounded-2xl focus:outline-none focus:bg-blue-200 text-black w-full"
-      @change="isEmailValid = false"
-    />
-    <SvgIcon
-      @click="verifyEmail"
-      class="flex items-center ml-3 p-3 rounded-2xl"
-      :class="verifyEmailButtonClass"
-      name="check"
-    />
-  </div>
+          <input name="email" type="email" ref="emailInput" required placeholder="Your Email ..." maxlength="30"
+            class="p-3 rounded-2xl focus:outline-none focus:bg-blue-200 text-black w-full"
+            @change="isEmailValid = false" />
+          <SvgIcon @click="verifyEmail" class="flex items-center ml-3 p-3 rounded-2xl" :class="verifyEmailButtonClass"
+            name="check" />
+        </div>
         <label class="text-xl text-yellow-500">Your idea:</label>
         <textarea ref="messageInput" name="message" rows="5"
           placeholder="Your extraordinary idea (max 250 characters) ..." maxlength="250" required
