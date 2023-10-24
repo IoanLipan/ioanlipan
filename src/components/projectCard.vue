@@ -2,27 +2,25 @@
   <div class="card text-white rounded-3xl
     items-center text-center w-[320px] sm:w-[45%] h-64 md:h-80 mb-10" :class="{ 'flipped': isFlipped }"
     @click="flipCard">
-    <div class="front-of-card bg-slate-900 rounded-3xl border-4 border-slate-400 cursor-pointer
+    <div class="front-of-card bg-primary rounded-3xl border-4 border-secondary cursor-pointer
     flex flex-col justify-between">
-      <div v-if="workRelated" class="absolute -top-3 -right-6 bg-blue-600
-        z-10 w-fit self-end p-1 mr-3 rounded-xl max-w-[100px]">
+      <div v-if="workRelated" class="bg-accent text-textcolor card-tag">
         Work Related
       </div>
-      <div v-else class="absolute -top-3 -right-6 bg-green-600
-        z-10 w-fit self-end p-1 mr-3 rounded-xl max-w-[100px]">
+      <div v-else class="bg-secondary text-neutral card-tag">
         Personal Project
       </div>
       <SvgIcon :name="imageName"
-        class="self-center fill-white h-[180px] md:h-[200px] flex justify-center pt-5 scale-75 md:scale-100" />
-      <h3 class="text-2xl text-lime-300 underline pt-2">{{ title }}</h3>
-      <p class="bg-slate-400 rounded-b-2xl text-black">Click to flip the card!</p>
+        class="self-center fill-neutral h-[180px] md:h-[200px] flex justify-center pt-5 scale-75 md:scale-100" />
+      <h3 class="text-2xl text-accent underline pt-2">{{ title }}</h3>
+      <p class="bg-secondary rounded-b-2xl text-textcolor">Click to flip the card!</p>
     </div>
-    <div class="back-of-card bg-slate-300 rounded-3xl border-4 border-slate-600 cursor-pointer
+    <div class="back-of-card bg-neutral rounded-3xl border-4 border-primary cursor-pointer
     flex flex-col justify-between">
-      <a v-if="url" :href="url" class="bg-slate-600 rounded-t-2xl">Click for repo/project!</a>
-      <p v-else class="bg-slate-600 rounded-t-2xl">The repo/project is confidential</p>
-      <p class="p-2 xl:px-8 md:text-xl min-h-28 text-black">{{ description }}</p>
-      <div class="text-orange-400 font-medium bg-slate-600 rounded-b-2xl
+      <a v-if="url" :href="url" class="card-border rounded-t-2xl">Click for repo/project!</a>
+      <p v-else class="card-border rounded-t-2xl">The repo/project is confidential</p>
+      <p class="p-2 xl:px-8 md:text-xl min-h-28 text-textcolor">{{ description }}</p>
+      <div class="bg-primary text-xl rounded-b-2xl tracking-widest text-secondary
        w-full mx-auto px-5 py-2 h-20 flex items-center justify-center">
         {{ usedTech }}
       </div>

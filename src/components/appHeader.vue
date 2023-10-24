@@ -3,7 +3,7 @@
   <nav ref="menuRef" class="h-[72px] md:h-20 z-40 sm:mb-10">
     <!-- desktop menu -->
     <div class="hidden lg:block">
-      <div class="w-full fixed bg-black text-white flex justify-between items-center p-4 px-8">
+      <div class="w-full fixed bg-primary text-neutral flex justify-between items-center p-4 px-8">
         <div class="flex gap-5 items-center">
           <router-link to="/" @click="closeAboutMeDesktop()">
             <img src="../assets/ILLogo.png" class="h-10 w-auto" />
@@ -16,7 +16,7 @@
             <SvgIcon name="info" />About Me
           </div>
           <div v-if="showAboutMeDesktop"
-            class="text-3xl absolute top-20 right-0 flex flex-col gap-3 pl-4 pr-2 pb-3 bg-black rounded-bl-2xl"
+            class="text-3xl absolute top-20 right-0 flex flex-col gap-3 pl-4 pr-2 pb-3 bg-primary rounded-bl-2xl"
             v-motion-roll-right>
             <HeaderMenuItem iconName="thanosBig" title="Technologies" link="/tech-knowledge"
               @click="closeAboutMeDesktop" />
@@ -31,16 +31,16 @@
     </div>
     <!-- mobile menu -->
     <div class="lg:hidden">
-      <div class="w-full fixed bg-black px-5 sm:p-5 text-white">
+      <div class="w-full fixed bg-primary px-5 sm:py-2 text-neutral">
         <div class="grid grid-cols-5 items-center">
           <div class="space-y-2 w-8 ease-in transition-all duration-500 cursor-pointer" @click="toggleMenu">
             <div :class="[
-              'h-0.5 bg-gray-200 transition-all duration-400',
+              'h-0.5 bg-neutral transition-all duration-400',
               showMenu ? 'rotate-45 translate-y-[5px]' : '',
             ]" />
-            <div :class="['h-0.5 bg-gray-200 transition-all duration-300', showMenu ? 'hidden' : '']" />
+            <div :class="['h-0.5 bg-neutral transition-all duration-300', showMenu ? 'hidden' : '']" />
             <div :class="[
-              'h-0.5 bg-gray-200 transition-all duration-400',
+              'h-0.5 bg-neutral transition-all duration-400',
               showMenu ? '-rotate-45 -translate-y-[5px]' : '',
             ]" />
           </div>
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div v-show="showMenu"
-        class="h-[94vh] top-[60px] sm:h-[92vh] sm:top-[72px] md:top-[110px] fixed z-50 bg-black md:bg-opacity-80 text-white w-full md:w-[38vw] px-6">
+        class="h-[94vh] top-[60px] sm:h-[92vh] sm:top-[72px] md:top-[88px] fixed z-50 bg-primary md:bg-opacity-80 text-neutral w-full md:w-[38vw] px-6">
         <div
           class="h-full w-full md:w-fit pt-10 flex flex-col gap-4 text-base sm:text-lg lg:text-3xl items-start text-left">
           <HeaderMenuItem iconName="webdev" title="Web Developer" link="/" @click="closeMenu" />

@@ -1,8 +1,8 @@
 <template>
   <div class="grid-of-12-container">
     <!-- <svgIcon name="arrowLeft" class="fill-white col-span-1 col-start-1 align-middle" /> -->
-    <div class="cols-2-10 mt-10 text-white text-center">
-      <h1 class="text-3xl font-semibold">I'm always looking for a new challenge!</h1>
+    <div class="cols-2-10 mt-10 text-textcolor text-center">
+      <h1 class="text-3xl tracking-wide">I'm always looking for a new challenge!</h1>
       <swiper :modules="modules" :space-between="20" :slides-per-view="getSlidesPerView" :loop="true"
         :pagination="{ clickable: true }" :autoplay="{
           delay: 5000,

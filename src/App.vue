@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-slate-700 font-rubik">
+  <div class="min-h-screen flex flex-col bg-neutral text-textcolor font-rubik">
     <AppHeader />
     <router-view class="max-w-fit" />
     <ContactMe class="max-w-fit mx-auto" />

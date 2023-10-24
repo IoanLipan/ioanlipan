@@ -1,6 +1,6 @@
 <template>
-  <div class="text-2xl md:text-4xl xl:my-[15vh] text-white grid grid-cols-12 mx-auto">
-    <div class="col-start-2 col-span-10 md:col-start-3 md:col-span-8 text-center p-4 md:p-10 mb-20">
+  <div class="text-2xl md:text-4xl xl:my-[15vh] text-textcolor grid grid-cols-12 mx-auto">
+    <div class="col-start-2 col-span-10 md:col-start-3 md:col-span-8 text-center p-4 md:p-10 xl:mb-20">
       These are the technologies that I am proficient in:
     </div>
     <div class="col-start-2 col-span-10 flex justify-evenly items-center flex-wrap">

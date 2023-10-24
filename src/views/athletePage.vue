@@ -1,7 +1,7 @@
 <!-- eslint-disable max-len -->
 <template>
   <div class="grid-of-12-container max-w-[100vw]">
-    <div class="p-4 md:p-0 col-start-1 col-span-12 text-white md:col-start-2 md:col-span-10">
+    <div class="p-4 md:p-0 col-start-1 col-span-12 md:col-start-2 md:col-span-10">
       <h1 class="text-4xl md:text-5xl text-center p-2 pb-4 md:pt-10 tracking-wider" v-motion-pop>
         "Mens sano in corpore sano"
       </h1>

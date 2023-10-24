@@ -1,16 +1,16 @@
 <template>
   <div>
-    <div class='flex flex-col hover:bg-slate-600 transition-all p-5 rounded-full' @click="openModal">
+    <div class='flex flex-col hover:bg-textcolor hover:bg-opacity-60 transition-all p-5 rounded-full' @click="openModal">
       <div class="w-24 h-24 flex items-center justify-center">
         <SvgIcon :name='imageName' />
       </div>
     </div>
-    <div class="modal-overlay" v-if="isModalOpen" @click="closeModal">
-      <div class="modal text-center flex flex-col justify-around gap-8 rounded-[36px]">
+    <div class="modal-overlay bg-textcolor bg-opacity-40" v-if="isModalOpen" @click="closeModal">
+      <div class="modal bg-textcolor text-center flex flex-col justify-around gap-8 rounded-[36px]">
         <SvgIcon :name='imageName' class="mx-auto" />
-        <h2 class="text-white">{{ title }}</h2>
+        <h2 class="text-accent">{{ title }}</h2>
         <StarRating :level="level" />
-        <p class="text-slate-400 text-base">{{ description }}</p>
+        <p class="text-neutral text-base">{{ description }}</p>
       </div>
     </div>
   </div>
@@ -64,14 +64,12 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(34, 35, 34, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .modal {
-  background-color: rgb(75, 73, 73);
   padding: 20px;
   max-width: 400px;
   border-radius: 36px;

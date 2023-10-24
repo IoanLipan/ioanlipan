@@ -1,8 +1,8 @@
 <!-- eslint-disable max-len vue/no-use-v-if-with-v-for -->
 <template>
-  <div class="w-full max-w-[100vw]">
-    <h1 class="py-4 text-center text-3xl text-white">Where you could've find me:</h1>
-    <div class="text-white grid grid-cols-12">
+  <div class="w-full max-w-[100vw] text-textcolor">
+    <h1 class="py-4 text-center text-3xl">Where you could've find me:</h1>
+    <div class="grid grid-cols-12">
       <div class="col-start-2 col-span-10">
         <!-- Country Menu -->
         <div class="flex items-center overflow-x-auto overflow-y-hidden mb-4 w-full styled-scrollbar">

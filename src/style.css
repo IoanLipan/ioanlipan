@@ -11,6 +11,35 @@
     @apply grid grid-cols-12;
 }
 
+.card-tag {
+    @apply absolute -top-3 -right-6 z-10 w-fit self-end p-1 mr-3 rounded-xl max-w-[100px] border-2 border-secondary;
+}
+
+.card-border {
+    @apply bg-primary text-accent;
+}
+
+.secondary-button {
+    @apply text-neutral bg-secondary px-5 py-4 rounded-3xl text-center cursor-pointer
+    hover:bg-opacity-80 text-xl;
+}
+
+.point-finger {
+    @apply  transition-[0.7s] my-auto group-hover:scale-150 stroke-textcolor;
+}
+
+.form-label {
+    @apply text-xl text-center;
+}
+
+.form-input {
+    @apply p-3 rounded-2xl focus:outline-none focus:bg-neutral text-black w-full;
+}
+
+.alert {
+    @apply relative tracking-wider bottom-6 text-negative text-center text-lg bg-accent w-3/4 md:w-2/3 p-3 rounded-3xl mx-auto;
+}
+
 .cols-2-10 {
     @apply col-start-2 col-span-10;
 }

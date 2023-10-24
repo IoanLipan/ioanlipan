@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-of-12-container w-[100vw] mx-auto text-white">
+  <div class="grid-of-12-container w-[100vw] mx-auto text-textcolor">
     <article class="md:text-2xl text-center tracking-widest leading-relaxed
       col-start-2 col-span-10 md:col-start-4 md:col-span-6 py-10" v-motion-fade>
       My dev mindstate: anything can be <br />
@@ -9,23 +9,23 @@
       <span class="text-yellow-400" v-motion-pop :delay="1000">&lt;broken/&gt;</span>
     </article>
     <div class="col-start-1 col-span-12 md:col-start-2 md:col-span-10 flex flex-col items-center">
-      <RouterLink v-motion-pop :delay="600" to="/tech-knowledge" class="flex p-2 gap-2 mx-3 rounded-3xl text-center
-          cursor-pointer bg-slate-600 hover:bg-slate-500 active:bg-slate-700 border-slate-500 border-4">
-        <SvgIcon name="click" class="rotate-90 my-auto" />
-        <div class="min-w-[165px]">
+      <RouterLink v-motion-pop :delay="600" to="/tech-knowledge" class="flex p-3 gap-2 mx-3 rounded-3xl text-center
+          cursor-pointer bg-secondary hover:bg-opacity-90 group">
+        <SvgIcon name="click" class="rotate-90 group-hover:rotate-[450deg] point-finger" />
+        <div class="min-w-[165px] text-neutral point-finger">
           Click here
           <br />
           to see my stack
         </div>
-        <SvgIcon name="click" class="-rotate-90 scale-x-[-1] my-auto" />
+        <SvgIcon name="click" class="-rotate-90 scale-x-[-1] group-hover:rotate-[270deg] point-finger" />
       </RouterLink>
       <p v-motion-pop :delay="700" class="text-center py-4 md:py-8">
         OR
       </p>
       <h3 v-motion-pop :delay="800" class="text-center px-8 md:text-2xl pb-5 md:pb-10 flex justify-between items-center">
-        <SvgIcon name="chevron-down" />
+        <SvgIcon name="chevron-down" class="stroke-textcolor" />
         Check out the projects I worked on below:
-        <SvgIcon name="chevron-down" />
+        <SvgIcon name="chevron-down" class="stroke-textcolor" />
       </h3>
       <article v-motion-pop :delay="900" class="text-normal p-5 lg:px-10 flex flex-row flex-wrap justify-evenly w-full">
         <ProjectCard title="What to wear" usedTech="ReactJS, TailwindCSS, genez.io"
@@ -39,8 +39,7 @@
         <ProjectCard title="TLC" usedTech="ReactJS, TailWindCSS"
           description="A e-commerce website for a dentist accessories company" imageName="e-commerce" workRelated
           url="https://theloupescompany.com/" v-motion-roll-bottom />
-        <div v-if="!showMore" class="text-white bg-slate-600 px-5 py-4 rounded-3xl text-center cursor-pointer
-          hover:bg-slate-500 active:bg-slate-700 text-xl" @click="ShowMoreProjects()">
+        <div v-if="!showMore" class="secondary-button" @click="ShowMoreProjects()">
           ✨ Show More Programming Projects ...
         </div>
         <ProjectCard v-if="showMore" title="AVM Assistant" usedTech="ReactJS, DJango"
@@ -59,8 +58,7 @@
           description="A game of Battleplanes that can be played in the console" imageName="plane"
           url="https://github.com/IoanLipan/TicTacToe" v-motion-roll-bottom />
       </article>
-      <div v-if="showMore" class="text-white bg-slate-600 py-4 rounded-3xl text-center mb-5 cursor-pointer
-       hover:bg-slate-500 active:bg-slate-700 text-xl w-[240px] mx-auto" @click="ShowLessProjects()">
+      <div v-if="showMore" class="secondary-button w-[240px]" @click="ShowLessProjects()">
         ⏫ Show less ...
       </div>
     </div>
