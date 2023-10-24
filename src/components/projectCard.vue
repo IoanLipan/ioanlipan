@@ -1,5 +1,5 @@
 <template>
-  <div class="card text-white rounded-3xl
+  <div class="card rounded-3xl
     items-center text-center w-[320px] sm:w-[45%] h-64 md:h-80 mb-10" :class="{ 'flipped': isFlipped }"
     @click="flipCard">
     <div class="front-of-card bg-primary rounded-3xl border-4 border-secondary cursor-pointer
@@ -11,7 +11,7 @@
         Personal Project
       </div>
       <SvgIcon :name="imageName"
-        class="self-center fill-neutral h-[180px] md:h-[200px] flex justify-center pt-5 scale-75 md:scale-100" />
+        class="self-center fill-accent h-[180px] md:h-[200px] flex justify-center pt-5 scale-75 md:scale-100" />
       <h3 class="text-2xl text-accent underline pt-2">{{ title }}</h3>
       <p class="bg-secondary rounded-b-2xl text-textcolor">Click to flip the card!</p>
     </div>

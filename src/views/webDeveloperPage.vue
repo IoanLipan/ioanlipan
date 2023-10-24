@@ -1,16 +1,12 @@
 <template>
   <div class="grid-of-12-container w-[100vw] mx-auto text-textcolor">
     <article class="md:text-2xl text-center tracking-widest leading-relaxed
-      col-start-2 col-span-10 md:col-start-4 md:col-span-6 py-10" v-motion-fade>
-      My dev mindstate: anything can be <br />
-      <span class="text-lime-400" v-motion-pop :delay="250">&lt;created&gt;</span> =>
-      <span class="text-green-500" v-motion-pop :delay="500">&lt;improved/&gt;</span> and
-      <span class="text-red-500" v-motion-pop :delay="750">&lt;fixed&gt;</span> if
-      <span class="text-yellow-400" v-motion-pop :delay="1000">&lt;broken/&gt;</span>
+      col-start-2 col-span-10 md:col-start-3 md:col-span-8 py-10" v-motion-fade>
+      Remember, anything is possible with the right approach!
     </article>
     <div class="col-start-1 col-span-12 md:col-start-2 md:col-span-10 flex flex-col items-center">
       <RouterLink v-motion-pop :delay="600" to="/tech-knowledge" class="flex p-3 gap-2 mx-3 rounded-3xl text-center
-          cursor-pointer bg-secondary hover:bg-opacity-90 group">
+          cursor-pointer bg-secondary hover:bg-opacity-90 group text-accent">
         <SvgIcon name="click" class="rotate-90 group-hover:rotate-[450deg] point-finger" />
         <div class="min-w-[165px] text-accent point-finger">
           Click here
@@ -24,7 +20,9 @@
       </p>
       <h3 v-motion-pop :delay="800" class="text-center px-8 md:text-2xl pb-5 md:pb-10 flex justify-between items-center">
         <SvgIcon name="chevron-down" class="stroke-textcolor" />
-        Check out the projects I worked on below:
+        <div>Check out the <span
+            class="text-secondary font-semibold tracking-wider capitalize">&nbsp;projects&nbsp;</span> I worked on below:
+        </div>
         <SvgIcon name="chevron-down" class="stroke-textcolor" />
       </h3>
       <article v-motion-pop :delay="900" class="text-normal p-5 lg:px-10 flex flex-row flex-wrap justify-evenly w-full">

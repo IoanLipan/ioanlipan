@@ -25,7 +25,7 @@
 }
 
 .point-finger {
-    @apply  transition-[0.7s] my-auto group-hover:scale-150 stroke-textcolor;
+    @apply  transition-[0.7s] my-auto group-hover:scale-150;
 }
 
 .form-label {
