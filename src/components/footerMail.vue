@@ -13,10 +13,23 @@
           class="p-3 rounded-2xl focus:outline-none focus:bg-red-200 text-black w-full" />
         <label class="text-xl text-blue-400">Email (verify first):</label>
         <div class="flex">
-          <input name="email" type="email" ref="emailInput" required placeholder="Your Email ..." maxlength="30"
-          class="p-3 rounded-2xl focus:outline-none focus:bg-blue-200 text-black w-full" @change="isEmailValid = false" />
-          <SvgIcon @click="verifyEmail" class="flex items-center ml-3 p-3 rounded-2xl bg-green-900 hover:bg-green-700" name="check" />
-        </div>
+    <input
+      name="email"
+      type="email"
+      ref="emailInput"
+      required
+      placeholder="Your Email ..."
+      maxlength="30"
+      class="p-3 rounded-2xl focus:outline-none focus:bg-blue-200 text-black w-full"
+      @change="isEmailValid = false"
+    />
+    <SvgIcon
+      @click="verifyEmail"
+      class="flex items-center ml-3 p-3 rounded-2xl"
+      :class="verifyEmailButtonClass"
+      name="check"
+    />
+  </div>
         <label class="text-xl text-yellow-500">Your idea:</label>
         <textarea ref="messageInput" name="message" rows="5"
           placeholder="Your extraordinary idea (max 250 characters) ..." maxlength="250" required
@@ -67,12 +80,17 @@ export default {
       VUE_APP_FORM_ENDPOINT: process.env.VUE_APP_FORM_ENDPOINT,
       isEmailValid: 0,
       forbiddenWords: false,
+      lastEmailVerified: 0,
+      canVerifyEmail: true,
     };
   },
   created() {
     this.VUE_APP_FORM_ENDPOINT = process.env.VUE_APP_FORM_ENDPOINT;
   },
   computed: {
+    verifyEmailButtonClass() {
+      return this.canVerifyEmail ? 'bg-green-900 hover:bg-green-700' : 'bg-gray-500 cursor-not-allowed';
+    },
     getMessageColor() {
       return this.messageInputLength > (this.messageMaxLength - 1) ? 'text-red-500' : 'text-slate-400';
     },
@@ -85,18 +103,32 @@ export default {
   },
   methods: {
     async verifyEmail() {
+      const now = Date.now();
+      if (now - this.lastEmailVerified < 5000) {
+        return;
+      }
+
+      this.lastEmailVerified = now;
+      this.canVerifyEmail = false;
+
       try {
         const API_KEY = process.env.VUE_APP_ABSTRACT_API_KEY;
         const email = this.$refs.emailInput.value;
         const API_URL = `https://emailvalidation.abstractapi.com/v1/?api_key=${API_KEY}&email=${email}`;
         const apiResponse = await fetch(API_URL);
+
         if (!apiResponse.ok) {
           return;
         }
+
         const data = await apiResponse.json();
         this.isEmailValid = data.is_valid_format && data.is_valid_format.value && data.deliverability === 'DELIVERABLE';
       } catch (error) {
         this.isEmailValid = false;
+      } finally {
+        setTimeout(() => {
+          this.canVerifyEmail = true;
+        }, 4000);
       }
     },
     handleSubmit(e) {
