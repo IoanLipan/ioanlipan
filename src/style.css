@@ -33,7 +33,7 @@
 }
 
 .form-input {
-    @apply p-3 rounded-2xl focus:outline-none focus:bg-neutral text-black w-full;
+    @apply p-3 rounded-2xl focus:outline-none text-black w-full;
 }
 
 .alert {

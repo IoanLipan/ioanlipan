@@ -5,10 +5,10 @@
         <SvgIcon :name='imageName' />
       </div>
     </div>
-    <div class="modal-overlay bg-textcolor bg-opacity-40" v-if="isModalOpen" @click="closeModal">
+    <div class="modal-overlay bg-gray-500 bg-opacity-80" v-if="isModalOpen" @click="closeModal">
       <div class="modal bg-textcolor text-center flex flex-col justify-around gap-8 rounded-[36px]">
         <SvgIcon :name='imageName' class="mx-auto" />
-        <h2 class="text-accent">{{ title }}</h2>
+        <h2 class="text-neutral">{{ title }}</h2>
         <StarRating :level="level" />
         <p class="text-neutral text-base">{{ description }}</p>
       </div>

@@ -4,7 +4,7 @@
     @click="flipCard">
     <div class="front-of-card bg-primary rounded-3xl border-4 border-secondary cursor-pointer
     flex flex-col justify-between">
-      <div v-if="workRelated" class="bg-accent text-textcolor card-tag">
+      <div v-if="workRelated" class="bg-accent text-secondary card-tag">
         Work Related
       </div>
       <div v-else class="bg-secondary text-accent card-tag">

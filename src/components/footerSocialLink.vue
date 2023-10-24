@@ -1,7 +1,7 @@
 <template>
   <a class="flex justify-center w-fit gap-3 items-center justify-self-center p-0.5 px-3
-    cursor-pointer border-2 rounded-xl bg-accent border-neutral text-textcolor h-10
-    hover:bg-neutral" :href="url">
+    cursor-pointer border-2 rounded-xl bg-accent border-neutral text-primary h-10
+    hover:bg-secondary hover:text-accent" :href="url">
     <div class="w-[24px]">
       <svgIcon :name=image />
     </div>

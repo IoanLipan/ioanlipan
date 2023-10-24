@@ -2,12 +2,12 @@
   <div class="relative rounded-2xl overflow-hidden cursor-pointer" @click="openPopover">
     <img class="w-full h-80 object-cover" :src="image" :alt="title">
     <div
-      class="absolute bottom-0 w-full bg-gradient-to-t from-primary to-transparent text-neutral text-xl p-3 select-none">
+      class="absolute bottom-0 w-full bg-gradient-to-t from-textcolor to-transparent text-neutral text-xl p-3 select-none">
       {{ title }}
     </div>
     <div v-if="showPopover" class="fixed inset-0 flex justify-center items-center z-50 blur-bg"
       @click.self="closePopover">
-      <div class="bg-primary p-4 rounded-2xl shadow-lg w-4/5 md:w-2/5 text-neutral xl:text-2xl">
+      <div class="bg-neutral p-4 rounded-2xl shadow-lg w-4/5 md:w-2/5 text-textcolor xl:text-2xl">
         <SvgIcon :name="icon" class="mx-auto pb-5" />
         {{ text }}
       </div>
