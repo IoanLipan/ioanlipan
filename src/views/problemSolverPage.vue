@@ -1,27 +1,16 @@
 <template>
   <div class="grid-of-12-container">
     <!-- <svgIcon name="arrowLeft" class="fill-white col-span-1 col-start-1 align-middle" /> -->
-    <div class="cols-2-10 mt-10 font-mono text-white text-center">
+    <div class="cols-2-10 mt-10 text-white text-center">
       <h1 class="text-3xl font-semibold">I'm always looking for a new challenge!</h1>
-      <swiper
-        :modules="modules"
-        :space-between="20"
-        :slides-per-view="getSlidesPerView"
-        :loop="true"
-        :pagination="{ clickable: true }"
-        :autoplay="{
+      <swiper :modules="modules" :space-between="20" :slides-per-view="getSlidesPerView" :loop="true"
+        :pagination="{ clickable: true }" :autoplay="{
           delay: 5000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
-        }"
-        class="my-10"
-      >
+        }" class="my-10">
         <swiper-slide v-for="problem in swiperProblems" :key="problem.description">
-          <ProblemCard
-            :image="problem.image"
-            :title="problem.title"
-            :description="problem.description"
-          />
+          <ProblemCard :image="problem.image" :title="problem.title" :description="problem.description" />
         </swiper-slide>
       </swiper>
     </div>

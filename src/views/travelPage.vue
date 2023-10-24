@@ -1,6 +1,6 @@
 <!-- eslint-disable max-len vue/no-use-v-if-with-v-for -->
 <template>
-  <div class="w-full max-w-[100vw] font-mono">
+  <div class="w-full max-w-[100vw]">
     <h1 class="py-4 text-center text-3xl text-white">Where you could've find me:</h1>
     <div class="text-white grid grid-cols-12">
       <div class="col-start-2 col-span-10">
@@ -12,8 +12,9 @@
 
               <img :src="require(`../assets/images/flags/${country.flag}.jpeg`)"
                 class="h-10 w-16 min-h-10 min-w-16 mx-auto" />
-              <h2 class="text-center pt-4 whitespace-nowrap">{{ country === selectedCountry ? "> " : "" }}{{ country.country }}{{ country
-                === selectedCountry ? " <" : "" }}</h2>
+              <h2 class="text-center pt-4 whitespace-nowrap">{{ country === selectedCountry ? "> " : "" }}{{
+                country.country }}{{ country
+    === selectedCountry ? " <" : "" }}</h2>
             </div>
           </div>
         </div>

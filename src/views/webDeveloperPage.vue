@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-of-12-container w-[100vw] mx-auto font-mono text-white">
+  <div class="grid-of-12-container w-[100vw] mx-auto text-white">
     <article class="md:text-2xl text-center tracking-widest leading-relaxed
       col-start-2 col-span-10 md:col-start-4 md:col-span-6 py-10" v-motion-fade>
       My dev mindstate: anything can be <br />
@@ -35,13 +35,12 @@
           description="A library with homogenized UI components for developers" imageName="library" workRelated
           v-motion-roll-top />
         <ProjectCard title="Guardian" usedTech="Shopify, CSS" url="https://guardian-armour-up.myshopify.com/"
-          description="A e-commerce website for a phone protection company" imageName="protection"
-          v-motion-roll-top />
+          description="A e-commerce website for a phone protection company" imageName="protection" v-motion-roll-top />
         <ProjectCard title="TLC" usedTech="ReactJS, TailWindCSS"
           description="A e-commerce website for a dentist accessories company" imageName="e-commerce" workRelated
           url="https://theloupescompany.com/" v-motion-roll-bottom />
-          <div v-if="!showMore" class="text-white bg-slate-600 px-5 py-4 rounded-3xl text-center cursor-pointer
-          hover:bg-slate-500 active:bg-slate-700 font-mono text-xl" @click="ShowMoreProjects()">
+        <div v-if="!showMore" class="text-white bg-slate-600 px-5 py-4 rounded-3xl text-center cursor-pointer
+          hover:bg-slate-500 active:bg-slate-700 text-xl" @click="ShowMoreProjects()">
           ✨ Show More Programming Projects ...
         </div>
         <ProjectCard v-if="showMore" title="AVM Assistant" usedTech="ReactJS, DJango"
@@ -61,7 +60,7 @@
           url="https://github.com/IoanLipan/TicTacToe" v-motion-roll-bottom />
       </article>
       <div v-if="showMore" class="text-white bg-slate-600 py-4 rounded-3xl text-center mb-5 cursor-pointer
-       hover:bg-slate-500 active:bg-slate-700 font-mono text-xl w-[240px] mx-auto" @click="ShowLessProjects()">
+       hover:bg-slate-500 active:bg-slate-700 text-xl w-[240px] mx-auto" @click="ShowLessProjects()">
         ⏫ Show less ...
       </div>
     </div>
