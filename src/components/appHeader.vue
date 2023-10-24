@@ -26,10 +26,12 @@
               class="text-3xl absolute top-20 right-0 flex flex-col gap-3 pl-4 pr-2 pb-3 bg-primary rounded-bl-2xl"
               v-motion-roll-right>
               <HeaderMenuItem iconName="webdevBig" title="Projects" link="/projects" @click="closeAboutMeDesktop" />
-              <HeaderMenuItem iconName="thanosBig" title="Technologies" link="/tech-knowledge" @click="closeAboutMeDesktop" />
+              <HeaderMenuItem iconName="thanosBig" title="Technologies" link="/tech-knowledge"
+                @click="closeAboutMeDesktop" />
               <HeaderMenuItem iconName="engineerBig" title="Engineer" link="/engineer" @click="closeAboutMeDesktop" />
               <HeaderMenuItem iconName="athleteBig" title="Athlete" link="/athlete" @click="closeAboutMeDesktop" />
-              <HeaderMenuItem iconName="solutionBig" title="Problem-Solver" link="/problem-solver" @click="closeAboutMeDesktop" />
+              <HeaderMenuItem iconName="solutionBig" title="Problem-Solver" link="/problem-solver"
+                @click="closeAboutMeDesktop" />
               <HeaderMenuItem iconName="travelBig" title="Travel" link="/travel" @click="closeAboutMeDesktop" />
             </div>
           </div>
@@ -74,11 +76,16 @@
           <HeaderMenuItem iconName="thanos" title="Tech Stacks" link="/tech-knowledge" @click="closeMenu" />
           <HeaderMenuItem v-if="!this.showAboutMe" iconName="explore" title="More about me &#8600;"
             @click.stop="toggleAboutMe($event)" v-motion-fade />
-          <HeaderMenuItem v-else iconName="explore" title="Less about me &#8599;" @click.stop="toggleAboutMe($event)" v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="engineer" title="Engineer" link="/engineer" @click="closeMenu" v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="athlete" title="Athlete" link="/athlete" @click="closeMenu" v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="solution" title="Problem Solver" link="/problem-solver" @click="closeMenu" v-motion-fade />
-          <HeaderMenuItem v-if="this.showAboutMe" iconName="travel" title="Travel" link="/travel" @click="closeMenu" v-motion-fade />
+          <HeaderMenuItem v-else iconName="explore" title="Less about me &#8599;" @click.stop="toggleAboutMe($event)"
+            v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="engineer" title="Engineer" link="/engineer" @click="closeMenu"
+            v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="athlete" title="Athlete" link="/athlete" @click="closeMenu"
+            v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="solution" title="Problem Solver" link="/problem-solver"
+            @click="closeMenu" v-motion-fade />
+          <HeaderMenuItem v-if="this.showAboutMe" iconName="travel" title="Travel" link="/travel" @click="closeMenu"
+            v-motion-fade />
         </div>
       </div>
     </div>
@@ -148,7 +155,7 @@ export default {
 <style>
 .theme-toggle-container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   padding-right: 20px;
 }
@@ -197,5 +204,4 @@ input:checked+.slider {
 
 input:checked+.slider:before {
   transform: translateX(26px);
-}
-</style>
+}</style>
