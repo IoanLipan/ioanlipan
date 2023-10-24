@@ -26,6 +26,12 @@
         <SvgIcon name="chevron-down" class="stroke-textcolor" />
       </h3>
       <article v-motion-pop :delay="900" class="text-normal p-5 lg:px-10 flex flex-row flex-wrap justify-evenly w-full">
+        <ProjectCard title="Pizza Menu" usedTech="ReactJS, CSS"
+          description="A simple pizza menu. You can see if the restaurant is open right now!" imageName="pizza"
+          url="https://pizza-menu-sand.vercel.app/" v-motion-roll-top />
+        <ProjectCard title="Advice App" usedTech="ReactJS"
+          description="Advice app connected to AdvicesApi. Click to see another advice!" imageName="advice"
+          url="https://react-advice-app-topaz.vercel.app/" v-motion-roll-top />
         <ProjectCard title="What to wear" usedTech="ReactJS, TailwindCSS, genez.io"
           description="A weather app with suggestions for dressing properly for the weather" imageName="weather"
           url="https://rose-junior-opossum.app.genez.io/" v-motion-roll-top />
