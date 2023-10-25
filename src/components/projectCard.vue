@@ -1,9 +1,9 @@
 <template>
   <div class="card rounded-3xl
-    items-center text-center w-[320px] sm:w-[45%] h-64 md:h-80 mb-10" :class="{ 'flipped': isFlipped }"
-    @click="flipCard">
+    items-center text-center w-[320px] sm:w-[45%] h-64 md:h-80 mb-10" :class="{ 'flipped': isFlipped, 'hovered': isHovered }"
+    @click="flipCard" @mouseenter="hoverCard" @mouseleave="unHoverCard">
     <div class="front-of-card bg-primary rounded-3xl border-4 border-secondary cursor-pointer
-    flex flex-col justify-between">
+    flex flex-col justify-between" :style="{ transform: frontTransform }">
       <div v-if="workRelated" class="bg-accent text-secondary card-tag">
         Work Related
       </div>
@@ -16,7 +16,7 @@
       <p class="bg-secondary rounded-b-2xl text-textcolor">Click to flip the card!</p>
     </div>
     <div class="back-of-card bg-neutral rounded-3xl border-4 border-primary cursor-pointer
-    flex flex-col justify-between">
+    flex flex-col justify-between" :style="{ transform: backTransform }">
       <a v-if="url" :href="url" class="card-border rounded-t-2xl">Click for repo/project!</a>
       <p v-else class="card-border rounded-t-2xl">The repo/project is confidential</p>
       <p class="p-2 xl:px-8 md:text-xl min-h-28 text-textcolor">{{ description }}</p>
@@ -64,11 +64,30 @@ export default {
   data() {
     return {
       isFlipped: false,
+      isHovered: false,
     };
+  },
+  computed: {
+    frontTransform() {
+      const baseRotate = this.isFlipped ? -180 : 0;
+      const hoverRotate = this.isHovered ? 20 : 0;
+      return `rotateY(${baseRotate + hoverRotate}deg)`;
+    },
+    backTransform() {
+      const baseRotate = this.isFlipped ? 0 : 180;
+      const hoverRotate = this.isHovered ? -20 : 0; // Notice the negative here to rotate in the opposite direction
+      return `rotateY(${baseRotate + hoverRotate}deg)`;
+    },
   },
   methods: {
     flipCard() {
       this.isFlipped = !this.isFlipped;
+    },
+    hoverCard() {
+      this.isHovered = true;
+    },
+    unHoverCard() {
+      this.isHovered = false;
     },
   },
 };
