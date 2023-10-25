@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class='flex flex-col hover:bg-slate-500 transition-all p-5 rounded-full' @click="openModal">
+    <div class='flex flex-col bg-gray-500 bg-opacity-0 hover:bg-opacity-60 hover:scale-125 transition-all p-5 rounded-full' @click="openModal">
       <div class="w-24 h-24 flex items-center justify-center">
         <SvgIcon :name='imageName' />
       </div>
     </div>
     <div class="modal-overlay bg-gray-500 bg-opacity-80" v-if="isModalOpen" @click="closeModal">
-      <div class="modal bg-textcolor text-center flex flex-col justify-around gap-8 rounded-[36px]">
+      <div class="modal bg-textcolor text-center flex flex-col justify-around gap-8 rounded-[36px]" v-motion-pop>
         <SvgIcon :name='imageName' class="mx-auto" />
         <h2 class="text-neutral">{{ title }}</h2>
         <StarRating :level="level" />
