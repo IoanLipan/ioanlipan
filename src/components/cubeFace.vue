@@ -1,5 +1,5 @@
 <template>
-  <div class="face bg-primary text-accent border-secondary border-4 rounded-3xl
+  <div class="face bg-primary text-accent border-secondary border-4 rounded-xl
     flex items-center justify-center text-lg p-2 text-center"
     :class="faceClass">
     <slot></slot>

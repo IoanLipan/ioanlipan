@@ -2,7 +2,7 @@
   <div class="m-40 mx-auto select-none cursor-pointer">
     <xyzCube>
       <template #front>
-        <div>Talk is cheap. Show me the code. - Linus Torvalds</div>
+        <div>Code is like humor. When you have to explain it, it's bad. -Cory House</div>
       </template>
       <template #back>
         <div>Code never lies; comments do. - Ron Jeffries</div>
@@ -11,7 +11,7 @@
         <div>Debugging is like being the detective in a crime movie. - Filipe Fortes</div>
       </template>
       <template #right>
-        <div>Code is like humor. When you have to explain it, it's bad. -Cory House</div>
+        <div>Talk is cheap. Show me the code. - Linus Torvalds</div>
       </template>
       <template #top>
         <SvgIcon name="solutionBig" class="scale-[2.5]" />
