@@ -1,7 +1,8 @@
 <template>
   <div class="card rounded-3xl
-    items-center text-center w-[320px] sm:w-[45%] h-64 md:h-80 mb-10" :class="{ 'flipped': isFlipped, 'hovered': isHovered }"
-    @click="flipCard" @mouseenter="hoverCard" @mouseleave="unHoverCard">
+    items-center text-center w-[320px] sm:w-[45%] h-64 md:h-80 mb-10"
+    :class="{ 'flipped': isFlipped, 'hovered': isHovered }" @click="flipCard" @mouseenter="hoverCard"
+    @mouseleave="unHoverCard">
     <div class="front-of-card bg-primary rounded-3xl border-4 border-secondary cursor-pointer
     flex flex-col justify-between" :style="{ transform: frontTransform }">
       <div v-if="workRelated" class="bg-accent text-secondary card-tag">
@@ -65,6 +66,7 @@ export default {
     return {
       isFlipped: false,
       isHovered: false,
+      isTouchDevice: 'ontouchstart' in window || navigator.maxTouchPoints > 0,
     };
   },
   computed: {
@@ -84,10 +86,14 @@ export default {
       this.isFlipped = !this.isFlipped;
     },
     hoverCard() {
-      this.isHovered = true;
+      if (!this.isTouchDevice) {
+        this.isHovered = true;
+      }
     },
     unHoverCard() {
-      this.isHovered = false;
+      if (!this.isTouchDevice) {
+        this.isHovered = false;
+      }
     },
   },
 };
