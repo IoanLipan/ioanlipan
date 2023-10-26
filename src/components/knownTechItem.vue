@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="modal-overlay bg-gray-500 bg-opacity-80" v-if="isModalOpen" @click="closeModal">
-      <div class="modal bg-textcolor text-center flex flex-col justify-around gap-8 rounded-[36px]" v-motion-pop>
+      <div class="modal bg-textcolor text-center flex flex-col justify-around gap-8 rounded-[36px] border-4 border-secondary">
         <SvgIcon :name='imageName' class="mx-auto" />
         <h2 class="text-neutral">{{ title }}</h2>
         <StarRating :level="level" />
