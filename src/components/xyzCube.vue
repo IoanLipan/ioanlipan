@@ -20,6 +20,14 @@
         <slot name="bottom"></slot>
       </CubeFace>
     </div>
+    <div class="my-24 flex flex-wrap gap-4">
+      <button @click="rotate('X', 90)" :class="buttonClass(rotationAxes.upDown === 'X')">Rotate X</button>
+      <button @click="rotate('X', -90)" :class="buttonClass(rotationAxes.upDown === 'X')">Rotate -X</button>
+      <button @click="rotate('Y', 90)" :class="buttonClass(rotationAxes.leftRight === 'Y')">Rotate Y</button>
+      <button @click="rotate('Y', -90)" :class="buttonClass(rotationAxes.leftRight === 'Y')">Rotate -Y</button>
+      <button @click="rotate('Z', 90)" :class="buttonClass(rotationAxes.leftRight === 'Z')">Rotate Z</button>
+      <button @click="rotate('Z', -90)" :class="buttonClass(rotationAxes.leftRight === 'Z')">Rotate -Z</button>
+    </div>
   </div>
 </template>
 
@@ -82,6 +90,19 @@ export default {
     },
   },
   methods: {
+    buttonClass(isActive) {
+      return [
+        'text-accent',
+        'px-2',
+        'py-1',
+        'rounded-3xl',
+        'text-center',
+        'cursor-pointer',
+        'hover:bg-opacity-80',
+        'text-lg',
+        isActive ? 'bg-secondary' : 'bg-gray-500',
+      ].join(' ');
+    },
     startDrag(event) {
       this.dragging = true;
       this.lastX = event.clientX;
@@ -105,6 +126,9 @@ export default {
 
       this.lastX = event.clientX;
       this.lastY = event.clientY;
+    },
+    rotate(axis, angle) {
+      this[`rotate${axis}`] += angle;
     },
   },
 };

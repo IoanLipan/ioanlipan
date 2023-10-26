@@ -1,5 +1,5 @@
 <template>
-  <div class="m-40 mx-auto select-none cursor-pointer">
+  <div class="mx-auto mt-24 mb-64 select-none cursor-pointer" v-motion-pop>
     <xyzCube>
       <template #front>
         <div>Code is like humor. When you have to explain it, it's bad. -Cory House</div>
