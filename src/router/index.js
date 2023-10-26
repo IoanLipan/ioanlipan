@@ -1,12 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
-// import LandingPage from '../views/landingPage.vue';
-import webDeveloperPage from '../views/webDeveloperPage.vue';
+import LandingPage from '../views/landingPage.vue';
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: webDeveloperPage,
+    component: LandingPage,
     meta: { title: 'Ioan Lipan' },
   },
   {

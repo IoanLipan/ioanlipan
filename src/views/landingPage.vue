@@ -1,20 +1,34 @@
 <template>
-  <div>
-    <article class="md:text-2xl text-center tracking-widest leading-relaxed
-      col-start-2 col-span-10 md:col-start-4 md:col-span-6 py-10" v-motion-fade>
-      My dev mindstate: anything can be <br />
-      <span class="text-lime-400" v-motion-pop :delay="250">&lt;created&gt;</span> =>
-      <span class="text-green-500" v-motion-pop :delay="500">&lt;improved/&gt;</span> and
-      <span class="text-red-500" v-motion-pop :delay="750">&lt;fixed&gt;</span> if
-      <span class="text-yellow-400" v-motion-pop :delay="1000">&lt;broken/&gt;</span>
-    </article>
-    <h1>Landing</h1>
+  <div class="m-40 mx-auto select-none cursor-pointer">
+    <xyzCube>
+      <template #front>
+        <div>Talk is cheap. Show me the code. - Linus Torvalds</div>
+      </template>
+      <template #back>
+        <div>Code never lies; comments do. - Ron Jeffries</div>
+      </template>
+      <template #left>
+        <div>Debugging is like being the detective in a crime movie. - Filipe Fortes</div>
+      </template>
+      <template #right>
+        <div>First, solve the problem. Then, write the code. - John Johnson</div>
+      </template>
+      <template #top>
+        <div>Code is like humor. When you have to explain it, it’s bad. - Cory House</div>
+      </template>
+      <template #bottom>
+        <div>Simplicity is the soul of efficiency. - Austin Freeman</div>
+      </template>
+    </xyzCube>
   </div>
 </template>
 
 <script>
+import xyzCube from '../components/xyzCube.vue';
+
 export default {
   name: 'LandingPage',
   title: 'Ioan Lipan',
+  components: { xyzCube },
 };
 </script>
