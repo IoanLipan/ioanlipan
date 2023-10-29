@@ -1,8 +1,7 @@
 <template>
   <div class="card rounded-3xl
     items-center text-center w-[320px] sm:w-[45%] h-64 md:h-80 mb-10"
-    :class="{ 'flipped': isFlipped, 'hovered': isHovered }" @click="flipCard" @mouseenter="hoverCard"
-    @mouseleave="unHoverCard">
+    :class="{ 'flipped': isFlipped, 'hovered': isHovered }" @click="flipCard" @mouseenter="hoverCard">
     <div class="front-of-card bg-primary rounded-3xl border-4 border-secondary cursor-pointer
     flex flex-col justify-between" :style="{ transform: frontTransform }">
       <div v-if="workRelated" class="bg-accent text-secondary card-tag">
@@ -77,7 +76,7 @@ export default {
     },
     backTransform() {
       const baseRotate = this.isFlipped ? 0 : 180;
-      const hoverRotate = this.isHovered ? -20 : 0; // Notice the negative here to rotate in the opposite direction
+      const hoverRotate = this.isHovered ? -20 : 0;
       return `rotateY(${baseRotate + hoverRotate}deg)`;
     },
   },
@@ -86,13 +85,11 @@ export default {
       this.isFlipped = !this.isFlipped;
     },
     hoverCard() {
-      if (!this.isTouchDevice) {
+      if (!this.isTouchDevice && !this.isFlipped) {
         this.isHovered = true;
-      }
-    },
-    unHoverCard() {
-      if (!this.isTouchDevice) {
-        this.isHovered = false;
+        setTimeout(() => {
+          this.isHovered = false;
+        }, 300);
       }
     },
   },
