@@ -157,7 +157,10 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 20px;
+
+  @media (min-width: 640px) {
+    padding-right: 20px;
+  }
 }
 
 .switch {
@@ -199,7 +202,6 @@ export default {
 
 input:checked+.slider {
   background-color: #FF4500;
-  /* Lamborghini's vibrant orange */
 }
 
 input:checked+.slider:before {

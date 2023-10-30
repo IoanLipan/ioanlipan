@@ -20,14 +20,14 @@
         <slot name="bottom"></slot>
       </CubeFace>
     </div>
-    <div class="my-24 flex flex-wrap gap-4">
+    <!-- <div class="my-24 flex flex-wrap gap-4">
       <button @click="rotate('X', 90)" :class="buttonClass(rotationAxes.upDown === 'X')">Rotate X</button>
       <button @click="rotate('X', -90)" :class="buttonClass(rotationAxes.upDown === 'X')">Rotate -X</button>
       <button @click="rotate('Y', 90)" :class="buttonClass(rotationAxes.leftRight === 'Y')">Rotate Y</button>
       <button @click="rotate('Y', -90)" :class="buttonClass(rotationAxes.leftRight === 'Y')">Rotate -Y</button>
       <button @click="rotate('Z', 90)" :class="buttonClass(rotationAxes.leftRight === 'Z')">Rotate Z</button>
       <button @click="rotate('Z', -90)" :class="buttonClass(rotationAxes.leftRight === 'Z')">Rotate -Z</button>
-    </div>
+    </div> -->
   </div>
 </template>
 

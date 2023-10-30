@@ -79,7 +79,6 @@ export default {
   right: 0;
   bottom: 0;
   backdrop-filter: blur(5px);
-  /* Adjust the blur value as needed */
   z-index: -1;
 }
 </style>
