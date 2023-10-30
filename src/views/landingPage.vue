@@ -1,15 +1,17 @@
 <template>
   <div class="mx-auto w-full text-center text-textcolor">
-    <div class="text-5xl font-light pt-[10%] px-5">Hello! I am <span
-        class="font-semibold text-secondary tracking-wider">Ioan
-        Lipan</span>
-    </div>
-    <div class="tracking-widest pt-4 font-thin text-2xl px-5">
-      I am here to help you <span class="text-secondary font-medium">digitalize your business!</span>
-      <br>
-      <button class="p-2 my-8 px-3 rounded-2xl bg-secondary text-accent text-lg font-extralight" @click="scrollDown">
-        Let's get in touch and start working on it!
-      </button>
+    <div class="pt-[7%] pb-[5%]">
+      <div class="text-5xl font-light px-5">Hello! I am <span
+          class="font-semibold text-secondary tracking-wider">Ioan
+          Lipan</span>
+      </div>
+      <div class="tracking-widest pt-4 font-thin text-2xl px-5">
+        I am here to help you <span class="text-secondary font-medium">digitalize your business!</span>
+        <br>
+        <button class="p-2 my-8 px-3 rounded-2xl bg-secondary text-accent text-lg font-extralight" @click="scrollDown">
+          Let's get in touch and start working on it!
+        </button>
+      </div>
     </div>
     <div class="bg-primary text-accent box pb-20">
       <h2 class="title pt-16 pb-6 lg:pt-32 lg:pb-12">Why Digitalize?</h2>
