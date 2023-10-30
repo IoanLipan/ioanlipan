@@ -1,6 +1,4 @@
-/* variables.css */
 
-/* Default Palette */
 :root {
   --primary: #164571;
   --secondary: #f7893f;
@@ -11,10 +9,10 @@
 }
 
 :root[data-theme='dark'] {
-  --primary: #1C1C1C; /* Dark slate color for background, like the night road */
-  --secondary: #FF4500; /* Lamborghini's vibrant orange */
-  --accent: #f9f6f6; /* Slightly lighter gray for subtle accents and backgrounds */
-  --neutral: #535151; /* Neutral gray */
-  --textcolor: #EFEFEF; /* Light color for text readability against the dark background */
-  --negative: #FF6347; /* Tomato red for alertness in dark mode */
+  --primary: #1C1C1C;
+  --secondary: #FF4500;
+  --accent: #f9f6f6;
+  --neutral: #535151;
+  --textcolor: #EFEFEF;
+  --negative: #FF6347;
 }
