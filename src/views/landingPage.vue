@@ -7,7 +7,7 @@
     <div class="tracking-widest pt-4 font-thin text-2xl px-5">
       I am here to help you <span class="text-secondary font-medium">digitalize your business!</span>
       <br>
-      <button class="p-2 my-8 px-3 rounded-2xl bg-secondary text-accent text-lg font-extralight">
+      <button class="p-2 my-8 px-3 rounded-2xl bg-secondary text-accent text-lg font-extralight" @click="scrollDown">
         Let's get in touch and start working on it!
       </button>
     </div>
@@ -19,13 +19,13 @@
         deserves.
       </div>
       <div class="flex justify-between bg-neutral py-12 box2 max-w-2xl mx-auto">
-        <router-link to="/tech-knowledge" class="ribbon-left">
+        <router-link to="/tech-knowledge" class="ribbon-left py-2">
           See Tech Stacks
         </router-link>
-        <router-link to="/projects" class="ribbon-middle flex items-center">
+        <router-link to="/projects" class="ribbon-middle flex items-center my-2">
           See My Projects
         </router-link>
-        <router-link to="/engineer" class="ribbon-right">
+        <router-link to="/engineer" class="ribbon-right py-2">
           See My Califications
         </router-link>
       </div>
@@ -68,7 +68,7 @@
         </article>
       </section>
     </div>
-    <div class="my-24 select-none cursor-pointer flex justify-center">
+    <div class="my-24 select-none cursor-pointer flex justify-center" ref="cube">
       <xyzCube>
         <template #front>
           <div>Code is like humor. When you have to explain it, it's bad. -Cory House</div>
@@ -101,16 +101,25 @@ export default {
   name: 'LandingPage',
   title: 'Ioan Lipan',
   components: { xyzCube, SvgIcon },
+  methods: {
+    scrollDown() {
+      this.$nextTick(() => {
+        const component = this.$refs.cube;
+        const position = component.offsetTop + component.offsetHeight;
+        window.scrollTo({ top: position, behavior: 'smooth' });
+      });
+    },
+  },
 };
 </script>
 
 <style>
 .box {
   --mask:
-    conic-gradient(from 130deg at top,#0000,#000 1deg 99deg,#0000 100deg) top/71.51px 51% repeat-x,
-    conic-gradient(from -50deg at bottom,#0000,#000 1deg 99deg,#0000 100deg) bottom/71.51px 51% repeat-x;
+    conic-gradient(from 130deg at top, #0000, #000 1deg 99deg, #0000 100deg) top/71.51px 51% repeat-x,
+    conic-gradient(from -50deg at bottom, #0000, #000 1deg 99deg, #0000 100deg) bottom/71.51px 51% repeat-x;
   -webkit-mask: var(--mask);
-          mask: var(--mask);
+  mask: var(--mask);
 }
 
 .box2 {
@@ -123,7 +132,9 @@ export default {
   mask: var(--mask);
 }
 
-.ribbon-left, .ribbon-middle, .ribbon-right {
+.ribbon-left,
+.ribbon-middle,
+.ribbon-right {
   --r: 20px;
   line-height: 1.8;
 }
