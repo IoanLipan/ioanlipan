@@ -13,7 +13,7 @@
 }
 
 .front-of-card, .back-of-card {
-  transition: transform 0.3s ease-in-out; /* Add transition here too */
+  transition: transform 0.3s ease-in-out;
 }
 
 .front-of-card {
