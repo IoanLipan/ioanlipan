@@ -1,7 +1,7 @@
 <template>
   <div class="p-0">
     <router-link :to="{ path: link }" class="p-2 flex items-center
-      lg:hover:bg-slate-700 lg:not:hover:bg-transparent rounded-lg w-full"
+      lg:hover:bg-secondary lg:not:hover:bg-transparent rounded-lg w-full"
       :class="iconName ? 'flex-row gap-3' : 'flex-col'">
       <SvgIcon v-if="iconName" :name="iconName" />
       <div>

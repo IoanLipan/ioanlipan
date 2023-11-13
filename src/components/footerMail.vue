@@ -2,43 +2,36 @@
 <template>
   <div class="grid-of-12-container w-[100vw]">
     <article
-      class="col-start-2 col-span-10 lg:col-start-3 lg:col-span-8 2xl:mx-20 p-4 md:p-6 bg-slate-900 border-slate-700 rounded-3xl my-10 text-slate-100">
+      class="col-start-2 col-span-10 lg:col-start-3 lg:col-span-8 2xl:mx-20 p-4 md:p-6 bg-primary bg-opacity-90 rounded-3xl my-10 text-accent">
       <form class="flex flex-col gap-4" :action="VUE_APP_FORM_ENDPOINT" method="POST">
-        <h3 class="text-3xl py-6 text-center text-white">
+        <h3 class="text-3xl py-6 text-center tracking-wide">
           Contact me and lets start working on your idea!
         </h3>
-        <label class="text-xl text-red-500">Name:</label>
+        <label class="form-label">Name:</label>
         <input name="name" type="text" ref="name" required @keyup="catchForbiddenWords()" @paste="catchForbiddenWords()"
-          placeholder="Your Name ..." maxlength="30"
-          class="p-3 rounded-2xl focus:outline-none focus:bg-red-200 text-black w-full" />
-        <label class="text-xl text-blue-400">Email (verify first):</label>
+          placeholder="Your Name ..." maxlength="30" class="form-input" />
+        <label class="form-label">Email (verify first):</label>
         <div class="flex">
           <input name="email" type="email" ref="emailInput" required placeholder="Your Email ..." maxlength="30"
-            class="p-3 rounded-2xl focus:outline-none focus:bg-blue-200 text-black w-full"
-            @change="isEmailValid = false" />
+            class="form-input" @change="isEmailValid = false" />
           <SvgIcon @click="verifyEmail" class="flex items-center ml-3 p-3 rounded-2xl" :class="verifyEmailButtonClass"
             name="check" />
         </div>
-        <label class="text-xl text-yellow-500">Your idea:</label>
+        <label class="form-label">Your idea:</label>
         <textarea ref="messageInput" name="message" rows="5"
           placeholder="Your extraordinary idea (max 250 characters) ..." maxlength="250" required
           @keypress="getMessageInputLength()" @keyup="getMessageInputLength(); catchForbiddenWords()"
-          @paste="getMessageInputLength(); catchForbiddenWords();"
-          class="p-3 rounded-2xl focus:outline-none focus:bg-yellow-200 text-black w-full" />
+          @paste="getMessageInputLength(); catchForbiddenWords();" class="form-input" />
         <div :class="'relative text-end bottom-12 right-4 w-full ' + getMessageColor">
           maximum characters {{ messageInputLength }}/{{ messageMaxLength }}
         </div>
-        <div
-          class="relative bottom-6 text-red-600 text-center text-lg bg-amber-400 w-3/4 md:w-2/3 p-3 rounded-3xl mx-auto"
-          v-if="!isEmailValid && isEmailValid !== 0">
+        <div class="alert" v-if="!isEmailValid && isEmailValid !== 0">
           ⛔️ You should choose a valid email!
         </div>
-        <div
-          class="relative bottom-6 text-red-600 text-center text-lg bg-amber-400 w-3/4 md:w-2/3 p-3 rounded-3xl mx-auto"
-          v-if="forbiddenWords">
+        <div class="alert" v-if="forbiddenWords">
           ⛔️ Let's speak like adults!
         </div>
-        <button v-if="isFormOk" type="submit" :class="'text-2xl p-2 w-1/2 bg-slate-500 self-center ' + submitButtonClass"
+        <button v-if="isFormOk" type="submit" class="text-2xl p-2 w-1/2 self-center cursor-pointer bg-green-600 rounded-2xl"
           @click="handleSubmit">
           Send
         </button>
@@ -78,13 +71,10 @@ export default {
   },
   computed: {
     verifyEmailButtonClass() {
-      return this.canVerifyEmail ? 'bg-green-900 hover:bg-green-700' : 'bg-gray-500 cursor-not-allowed';
+      return this.canVerifyEmail ? 'bg-green-900 hover:bg-green-800' : 'bg-gray-500 cursor-not-allowed';
     },
     getMessageColor() {
-      return this.messageInputLength > (this.messageMaxLength - 1) ? 'text-red-500' : 'text-slate-400';
-    },
-    submitButtonClass() {
-      return this.isEmailValid ? 'cursor-pointer bg-green-500 rounded-2xl' : 'cursor-not-allowed rounded-2xl';
+      return this.messageInputLength > (this.messageMaxLength - 1) ? 'text-negative' : 'text-textcolor text-opacity-50';
     },
     isFormOk() {
       return this.isEmailValid && !this.forbiddenWords && this.messageInputLength;

@@ -1,0 +1,18 @@
+
+:root {
+  --primary: #164571;
+  --secondary: #f7893f;
+  --accent: #F7FFF7;
+  --neutral: #f3e5d7;
+  --textcolor: #2d2d2d;
+  --negative: #DB0001;
+}
+
+:root[data-theme='dark'] {
+  --primary: #1C1C1C;
+  --secondary: #FF4500;
+  --accent: #f9f6f6;
+  --neutral: #535151;
+  --textcolor: #EFEFEF;
+  --negative: #FF6347;
+}

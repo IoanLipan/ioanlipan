@@ -1,8 +1,8 @@
 <!-- eslint-disable max-len vue/no-use-v-if-with-v-for -->
 <template>
-  <div class="w-full max-w-[100vw]">
-    <h1 class="py-4 text-center text-3xl text-white">Where you could've find me:</h1>
-    <div class="text-white grid grid-cols-12">
+  <div class="w-full max-w-[100vw] text-textcolor">
+    <h1 class="py-4 text-center text-3xl">Where you could've find me:</h1>
+    <div class="grid grid-cols-12">
       <div class="col-start-2 col-span-10">
         <!-- Country Menu -->
         <div class="flex items-center overflow-x-auto overflow-y-hidden mb-4 w-full styled-scrollbar">
@@ -58,21 +58,16 @@ export default {
 <style>
 .styled-scrollbar::-webkit-scrollbar {
   height: 10px;
-  /* width of the entire scrollbar */
 }
 
 .styled-scrollbar::-webkit-scrollbar-track {
   background: transparent;
-  /* color of the tracking area */
 }
 
 .styled-scrollbar::-webkit-scrollbar-thumb {
   background-color: rgba(155, 155, 155, 0.7);
-  /* color of the scroll thumb */
   border-radius: 2px;
-  /* roundness of the scroll thumb */
   border: 1px solid transparent;
-  /* creates padding around scroll thumb */
   background-clip: content-box;
 }
 
