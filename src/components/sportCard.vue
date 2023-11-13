@@ -7,7 +7,7 @@
     </div>
     <div v-if="showPopover" class="fixed inset-0 flex justify-center items-center z-50 blur-bg"
       @click.self="closePopover">
-      <div class="bg-neutral p-4 rounded-2xl shadow-lg w-4/5 md:w-2/5 text-textcolor xl:text-2xl">
+      <div class="bg-neutral p-4 rounded-2xl shadow-lg w-4/5 md:w-2/5 text-textcolor text-center xl:text-2xl">
         <SvgIcon :name="icon" class="mx-auto pb-5" />
         {{ text }}
       </div>
