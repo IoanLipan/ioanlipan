@@ -17,10 +17,7 @@
 www.ioanlipan.com
 
 ### Contact me and let's start working on your business digitalization
-# ioanlipan1@gmail.com
-# 0751844414
-# www.ioanlipan.com
-# https://www.linkedin.com/in/ioan-lipan-4539891b2/
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+ioanlipan1@gmail.com
+0751844414
+www.ioanlipan.com
+https://www.linkedin.com/in/ioan-lipan-4539891b2/
