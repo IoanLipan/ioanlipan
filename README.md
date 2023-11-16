@@ -1,7 +1,7 @@
 # Ioan Lipan
 
 ## I'm a Front-End Developer (+3y)
-# tech:
+# Tech Stack:
 - React
 - Vue
 - JavaScript
@@ -17,7 +17,11 @@
 www.ioanlipan.com
 
 ### Contact me and let's start working on your business digitalization
+
 ioanlipan1@gmail.com
+
 0751844414
+
 www.ioanlipan.com
+
 https://www.linkedin.com/in/ioan-lipan-4539891b2/
