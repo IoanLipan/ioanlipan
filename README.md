@@ -20,8 +20,6 @@ www.ioanlipan.com
 
 ioanlipan1@gmail.com
 
-0751844414
-
-www.ioanlipan.com
++(40) 751 844 414
 
 https://www.linkedin.com/in/ioan-lipan-4539891b2/
