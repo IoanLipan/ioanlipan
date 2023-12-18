@@ -1,24 +1,25 @@
-# ioanlipan
+# Ioan Lipan
 
-## Project setup
-```
-npm install
-```
+## I'm a Front-End Developer (+3y)
+# Tech Stack:
+- React
+- Vue
+- JavaScript
+- TypeScript
+- NodeJS + ExpressJS
+- MongoDB
+- Html/CSS
+- TailwindCSS
+- GitHub / GitLab / BitBucket
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Check out my personal portfolio website
 
-### Compiles and minifies for production
-```
-npm run build
-```
+www.ioanlipan.com
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Contact me and let's start working on your business digitalization
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+ioanlipan1@gmail.com
+
++(40) 751 844 414
+
+https://www.linkedin.com/in/ioan-lipan-4539891b2/
